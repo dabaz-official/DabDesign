@@ -8,9 +8,9 @@ description: >
   decision — architectural or numeric — is an explicit record in the decision
   roadmap; none are pre-decided.
 colors:
-  # Neutral primitives — DAB-004 (approved 2026-11-06). Thirteen steps, frozen.
-  # Semantic color roles join this block as DAB-005/DAB-006 reach Approved.
-  gray-0: "#FFFFFF"
+  # Neutral primitives — DAB-004, amended by DAB-017 (2026-11-07).
+  # Eleven steps 50–950; white and black are separate primitives.
+  white: "#FFFFFF"
   gray-50: "#FAFAFA"
   gray-100: "#F5F5F5"
   gray-200: "#E5E5E5"
@@ -22,7 +22,7 @@ colors:
   gray-800: "#262626"
   gray-900: "#171717"
   gray-950: "#0A0A0A"
-  gray-1000: "#000000"
+  black: "#000000"
 themes:
   # Semantic mappings — DAB-005 and DAB-006 (approved 2026-11-06). Action roles
   # (color-primary*) are per-site by DAB-003 and are not defined here.
@@ -203,7 +203,7 @@ containers:
 
 # DabWave Design System — Specification
 
-**Document status:** Draft — DAB-001…DAB-013 ratified; foundation test page built and verified, awaiting Owner acceptance; DAB-014…DAB-016 proposed post-1.0  
+**Document status:** Draft — DAB-001…DAB-013 ratified; DAB-017 ratified; foundation test page built and verified, awaiting Owner acceptance; DAB-014…DAB-016 proposed post-1.0  
 **Spec version:** 0.1.0  
 **Owner:** DabAZ  
 **Last updated:** 2026-11-07  
@@ -267,7 +267,7 @@ and ambiguity is treated as a defect (§2.3).
 | Kind | Contents | Where |
 |---|---|---|
 | **Framework** (process law) | Governance, RFC and versioning, token discipline, component lifecycle and states, accessibility checklist, content and i18n rules, quality gates | §2, §3, §9, §10, §11, §12 |
-| **Design decisions** | System architecture, theming model, color, typography, space, motion, layout, component scope, accessibility target | §13 roadmap — DAB-001…DAB-013 Approved; DAB-014…DAB-016 proposed for the component layer |
+| **Design decisions** | System architecture, theming model, color, typography, space, motion, layout, component scope, accessibility target | §13 roadmap — DAB-001…DAB-013 and DAB-017 Approved; DAB-014…DAB-016 proposed for the component layer |
 
 Framework sections define *how decisions are made and enforced*. They do not
 presuppose their outcomes.
@@ -400,6 +400,7 @@ from retired documents carry no status and are not inherited.
 | ADR-011 | 2026-11-07 | Elevation and motion: flat at rest with one `shadow-floating` token `2px 4px 16px rgba(0, 0, 0, 0.16)`, used only for the hover lift of interactive cards and floating layers; hover lift is `scale(1.01)` plus the shadow, with geometry, 300ms duration, and `cubic-bezier(0, 0, 0.5, 1)` easing measured from the Apple Store card CSS; durations 100/200/300ms, `linear` for color-only transitions; only transform, opacity, color, background, border, and shadow animate; press is a color change, not a scale; reduced motion disables transform/scale/parallax/auto-play while keeping color and opacity | One shadow keeps the system flat without losing functional depth for floating layers; the Apple Store hover is measured and restrained (1% scale, 16% shadow, 300ms); animating layout or radius would fight the fixed scales; disabling only movement under reduced motion preserves state feedback. Alternatives rejected: no shadows at all (floating layers lose their only depth cue in light theme), three elevation levels (invisible in dark and contrary to the flat character), animating radius or layout (thrash, fixed scale), Apple's `scale(0.95)` press (too loud for every control), disabling all animation under reduced motion (loses non-motion state feedback) | Accepted (Owner) |
 | ADR-012 | 2026-11-07 | Layout: mobile-first breakpoints 640/768/1024/1280/1536 as minimum widths; containers 640/768/1024/1200/1280/fluid with `container-xl` (1200) as default; gutters `space-4`/`space-6`/`space-8` (16/24/32) by viewport band; a 12-column grid available for wide compositions with 24/16 gaps and cards reflowing by minimum usable width; all values carried unchanged from canonical `design.md` §8.2–8.4 | Mobile-first is already approved in canonical `design.md` §8.1, matches the min-width breakpoint definitions, keeps overrides additive, and forces content priority at the 375px validation width; the canonical values already match this spec's validation set and 4px spacing scale, so reusing them avoids a second layout vocabulary. Alternatives rejected: three breakpoints only (drops the 640 and 1536 review widths), a single 1200px container (reading and dashboard layouts need different caps), a 1440px maximum (conflicts with the canonical 1280 cap), an 8-column grid (12 supports both 3- and 4-up), fixed desktop columns on mobile (cards must reflow) | Accepted (Owner) |
 | ADR-013 | 2026-11-07 | Component scope: an eight-component shared-layer pilot in dependency order — Button, Text input, Checkbox/radio/switch, Select, Card, Dialog, Toast/alert, Empty state; pilot sites in order DabAZ official site → a game (DabSudoku or DabMinesweeper) → DabMusic; hero/marketing composition, player controls, game board/HUD, and illustration stay in the site theme layer; navigation, footer, tabs, table, pagination, tooltip, badge, avatar, and skeleton are deferred to a follow-up scope decision; no frontmatter change because scope is not a token decision | Dependency order minimizes rework; the eight cover forms, containers, feedback, and empty states — the four patterns every site needs — without taking on navigation and footer variance; running restrained → dense → complex surfaces surfaces failures early, before DabMusic's player. Alternatives rejected: six components (leaves checkbox/radio and empty states unvalidated), ten including navigation and footer (premature abstraction), usage-frequency order (feedback designed before button states settle), parallel pilots (same component churns in two densities), game-first (marketing typography and forms validated last) | Accepted (Owner) |
+| ADR-017 | 2026-11-07 | Ramp endpoints: remove steps 0 and 1000 from every ramp, including gray. Ramps run `50`–`950`; `white` and `black` are separate primitives. Semantic roles reference them directly where an absolute color is meant — surface, inverse text, on-colors. Values are unchanged; only token names and ramp length change | The Owner directed one endpoint vocabulary: repeating white and black inside twelve ramps duplicated the same two colors and made the endpoints look like color stops. Separate primitives make them explicit and keep every hue at eleven meaningful steps. Alternatives rejected: keep 0/1000 (duplicates white/black across every ramp), name them `gray-white`/`gray-black` (less direct), regenerate values (unnecessary churn) | Accepted (Owner) |
 
 ### 2.6 Deprecation policy
 
@@ -444,7 +445,8 @@ Specification-level changes are listed here; file history lives in git.
 | `0.1.0` | 2026-11-07 | DAB-015 proposed — functional hover/pressed fills for solid status buttons (post-1.0, §4.9) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-016 proposed — 13-step 12-hue ramp catalog, functional colors as ramp references; 144/144 checks pass (§4.10) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-016 revised — fixed H per hue, per-hue anchors, shifted chroma curve; 216/216 checks pass; the 30° single-anchor draft is superseded within the proposal | Draft |
-| `0.1.0` | 2026-11-07 | DAB-016 revised again — Tailwind CSS v4 palettes adopted (12 hues, 13 steps, display 500, fill and link-safe text steps); 288/288 checks pass | Draft |
+| `0.1.0` | 2026-11-07 | DAB-016 revised again — Tailwind CSS v4 palettes adopted (12 hues, 11 steps + white/black, display 500, fill and link-safe text steps); 288/288 checks pass | Draft |
+| `0.1.0` | 2026-11-07 | DAB-017 accepted — every ramp drops steps 0/1000; `white` and `black` become separate primitives (ADR-017) | Draft |
 
 ---
 
@@ -538,7 +540,9 @@ Specification-level changes are listed here; file history lives in git.
 
 > **Status: Approved (Owner, 2026-11-06) — ADR-003.** This section fixes
 > structure and governance only; values are decided in DAB-004…DAB-007.
-> Amended by the DAB-016 proposal (§4.10): the accent ramp becomes 13 steps.
+> Amended by the DAB-016 proposal (§4.10): the accent ramp becomes eleven steps
+> `accent-50`…`accent-950`, with `white` and `black` as separate primitives
+> (ADR-017).
 
 **Family model — three families:**
 
@@ -609,18 +613,26 @@ layer governable).
 
 ### 4.5 DAB-004 — Neutral palette (approved 2026-11-06)
 
-> **Status: Approved (Owner, 2026-11-06) — ADR-004.** Values live in the
-> frontmatter (§3.3); this section defines the ramp's structure and rules.
+> **Status: Approved (Owner, 2026-11-06) — ADR-004; endpoint structure amended
+> by ADR-017 (2026-11-07).** Values live in the frontmatter (§3.3); this section
+> defines the ramp's structure and rules.
 
-**Ramp.** Thirteen steps with fixed names: `gray-0`, `gray-50`, `gray-100`,
-`gray-200`, `gray-300`, `gray-400`, `gray-500`, `gray-600`, `gray-700`,
-`gray-800`, `gray-900`, `gray-950`, `gray-1000`. Shared by every site; no site
-theme carries its own neutral values.
+**Ramp.** Eleven steps with fixed names: `gray-50`, `gray-100`, `gray-200`,
+`gray-300`, `gray-400`, `gray-500`, `gray-600`, `gray-700`, `gray-800`,
+`gray-900`, `gray-950`. White and black are separate primitives (`white`,
+`black`), not ramp steps. Shared by every site; no site theme carries its own
+neutral values.
 
-**Provenance.** The values are the retired `design.md` neutral set (Tailwind
-Neutral lineage) minus `gray-150`. They are adopted, not regenerated: the OKLCH
-ladder is the accent mechanism, and regenerating neutrals would invalidate every
-ratio already measured against this set for no perceptual gain.
+**Endpoints (ADR-017).** `white` and `black` exist once, outside every ramp.
+No hue ramp repeats them as step 0 or 1000; every ramp starts at 50 and ends at
+950. Semantic roles reference `white` and `black` directly where an absolute
+color is meant — surface, inverse text, on-colors.
+
+**Provenance.** The eleven values are the retired `design.md` neutral set
+(Tailwind Neutral lineage) minus `gray-150` and the two endpoints. They are
+adopted, not regenerated: the OKLCH ladder is the accent mechanism, and
+regenerating neutrals would invalidate every ratio already measured against
+this set for no perceptual gain.
 
 **Frozen.** Changing any neutral value is a breaking change (§2.4). There is no
 "close enough" substitution inside a component; if a step does not fit, the
@@ -639,8 +651,8 @@ and measure the pair (§10.1); do not interpolate.
 ### 4.6 DAB-005 — Semantic roles and light/dark mappings (approved 2026-11-06)
 
 > **Status: Approved (Owner, 2026-11-06) — ADR-005.** Values are in the
-> frontmatter (`colors.gray-*`, `themes.light.*`, `themes.dark.*`); this
-> section explains intent and usage.
+> frontmatter (`colors.white`, `colors.gray-*`, `colors.black`,
+> `themes.light.*`, `themes.dark.*`); this section explains intent and usage.
 
 **Role set.**
 
@@ -666,12 +678,12 @@ and measure the pair (§10.1); do not interpolate.
 | Role | Light | Dark | Lowest measured¹ | Requirement |
 |---|---|---|---|---|
 | `color-background` | `gray-50` | `gray-950` | — | — |
-| `color-surface` | `gray-0` | `gray-900` | — | — |
+| `color-surface` | `white` | `gray-900` | — | — |
 | `color-surface-secondary` | `gray-100` | `gray-800` | — | — |
 | `color-text-primary` | `gray-900` | `gray-50` | 14.50:1 | 4.5:1 |
 | `color-text-secondary` | `gray-700` | `gray-300` | 9.51:1 | 4.5:1 |
 | `color-text-tertiary` | `gray-600` | `gray-400` | 6.00:1 | 4.5:1 |
-| `color-text-inverse` | `gray-0` | `gray-900` | 17.18:1 | 4.5:1 |
+| `color-text-inverse` | `white` | `gray-900` | 17.18:1 | 4.5:1 |
 | `color-text-disabled` | `gray-400` | `gray-600` | 2.29:1 | Exempt, recorded |
 | `color-border` | `gray-200` | `gray-800` | 1.18:1 | Decorative |
 | `color-border-strong` | `gray-500` | `gray-500` | 3.19:1 | 3:1 |
@@ -741,7 +753,7 @@ the accent ramp, gamut-clamped by reducing C only):
 
 Light roles use L 0.52 (base), 0.44 (strong), 0.95 (subtle, C × 0.25); dark
 roles use L 0.72 (base), 0.82 (strong), 0.25 (subtle, C × 0.35). `on-*` is
-`#FFFFFF` in light and `gray-1000` in dark. Values are generated, never
+`white` in light and `black` in dark. Values are generated, never
 hand-picked; changing any input means re-running the derivation and
 re-measuring every pair below.
 
@@ -750,11 +762,11 @@ re-measuring every pair below.
 | Status | Theme | base | strong | subtle | on |
 |---|---|---|---|---|---|
 | success | light | `#007F38` | `#00642B` | `#DDF6E1` | `#FFFFFF` |
-| success | dark | `#50BF6F` | `#72E08D` | `#0B2913` | `gray-1000` |
+| success | dark | `#50BF6F` | `#72E08D` | `#0B2913` | `black` |
 | warning | light | `#856300` | `#694E00` | `#F7EED9` | `#FFFFFF` |
-| warning | dark | `#C59F47` | `#E6BE68` | `#2A2008` | `gray-1000` |
+| warning | dark | `#C59F47` | `#E6BE68` | `#2A2008` | `black` |
 | danger | light | `#BE222A` | `#9E0017` | `#FFE9E6` | `#FFFFFF` |
-| danger | dark | `#FF716B` | `#FFAAA3` | `#3C1211` | `gray-1000` |
+| danger | dark | `#FF716B` | `#FFAAA3` | `#3C1211` | `black` |
 
 **Role use.**
 
@@ -830,7 +842,7 @@ Not for hover or pressed states — those are token changes (§9.2). Not for med
 caption backdrops: a content overlay is a component-level concern with its own
 measured contrast, not a system role.
 
-**Measured.** Light theme: `gray-50` page under scrim 3.94:1, `gray-0` dialog
+**Measured.** Light theme: `gray-50` page under scrim 3.94:1, `white` dialog
 over scrim 4.12:1. Dark theme: page 1.03:1, dialog 1.14:1. At 40% the light
 value measures 2.96:1 (below 3:1), which is why 50% is the floor.
 
@@ -879,7 +891,7 @@ roles. The existing four roles are unchanged.
 **Generation.** Same hue and chroma as DAB-006 (success 150.0/0.154, warning
 85.2/0.115, danger 24.9/0.190). Light uses L 0.48 (hover) and 0.40 (pressed);
 dark uses L 0.78 and 0.88. Gamut mapping reduces C only. `on-*` is unchanged:
-white in light, `gray-1000` in dark.
+white in light, `black` in dark.
 
 **Use.** These roles are for solid status fills only — destructive buttons and
 status badges. `strong` remains the text role on neutral surfaces; `base`
@@ -920,9 +932,9 @@ pressed state); a brightness filter (not a token, not measurable).
 
 - The core adopts **12 Tailwind CSS v4 palettes**: red, orange, amber, yellow,
   lime, green, teal, cyan, blue, indigo, violet, fuchsia.
-- Steps are **0 (white) + Tailwind 50–950 + 1000 (black)** — thirteen steps
-  with the same names as gray. The accent contract becomes
-  `accent-0` … `accent-1000`.
+- Steps are **Tailwind 50–950**, eleven steps. `white` and `black` are
+  separate primitives, not ramp steps. The accent contract becomes
+  `accent-50` … `accent-950`.
 - Gray is unchanged: it is Tailwind Neutral minus `gray-150`.
 - Functional colors are ramp references: success → green, warning → amber,
   danger → red.
@@ -986,9 +998,9 @@ dark.
 
 | Role | Ramp | Light base / hover / pressed / strong / subtle / on | Dark base / hover / pressed / strong / subtle / on |
 |---|---|---|---|
-| success | green | 700 / 800 / 900 / 700 / 100 / 0 | 400 / 500 / 600 / 400 / 900 / 1000 |
-| warning | amber | 700 / 800 / 900 / 700 / 100 / 0 | 400 / 500 / 600 / 400 / 900 / 1000 |
-| danger | red | 600 / 700 / 800 / 700 / 100 / 0 | 300 / 400 / 500 / 300 / 900 / 1000 |
+| success | green | 700 / 800 / 900 / 700 / 100 / white | 400 / 500 / 600 / 400 / 900 / black |
+| warning | amber | 700 / 800 / 900 / 700 / 100 / white | 400 / 500 / 600 / 400 / 900 / black |
+| danger | red | 600 / 700 / 800 / 700 / 100 / white | 300 / 400 / 500 / 300 / 900 / black |
 
 **Validation.** `node scripts/hue-catalog.mjs` reads the frozen Tailwind
 source and checks 288 pairs — fill states, on-colors, link text, functional
@@ -1008,7 +1020,7 @@ aliases, link-safe steps, functional mapping, and the contrast summary;
   superseded.
 - `oklch-brand-color.md` is retired or rewritten around the adopted palette.
 - Site theme documents select one hue, record the fill and text steps, and
-  cite the catalog instead of copying thirteen hexes.
+  cite the catalog instead of copying eleven hexes.
 - Frontmatter records the step list, display step, fill aliases, text step, and
   functional references; the raw values stay in `palettes/ramps.json` (§3.3).
 
@@ -1827,12 +1839,13 @@ frontmatter if a token is involved, and adding a changelog row.
 | `DAB-013` | Component scope | Shared-layer pilot set and order | most | **Approved (2026-11-07)** — ADR-013 |
 | `DAB-014` | Iconography | Icon set, grid, stroke, sizes, icon accessibility | DAB-010 | Proposed (2026-11-07) — §6.5 |
 | `DAB-015` | Functional states | Hover and pressed fill roles for status colors | DAB-006 | Proposed — superseded by DAB-016 (§4.10) |
-| `DAB-016` | Hue ramps | Tailwind v4 12-hue ramps, 13 steps, fill and link-safe steps; functional colors as ramp references | DAB-003, DAB-004, DAB-006, DAB-015 | Proposed (2026-11-07) — §4.10 |
+| `DAB-016` | Hue ramps | Tailwind v4 12-hue ramps, 11 steps + white/black, fill and link-safe steps; functional colors as ramp references | DAB-003, DAB-004, DAB-006, DAB-015 | Proposed (2026-11-07) — §4.10 |
+| `DAB-017` | Ramp endpoints | Ramps run 50–950; `white` and `black` are separate primitives | DAB-004 | **Approved (2026-11-07)** — ADR-017 |
 
 Working agreement: decisions are taken in roadmap order (dependencies may pull
-one forward with the owner's sign-off). `DAB-001`…`DAB-013` are Approved;
-`DAB-014`…`DAB-016` are post-1.0 proposals. `1.0.0` ships when the foundation
-test page (§12.1) passes.
+one forward with the owner's sign-off). `DAB-001`…`DAB-013` and `DAB-017` are
+Approved; `DAB-014`…`DAB-016` are post-1.0 proposals. `1.0.0` ships when the
+foundation test page (§12.1) passes.
 
 ---
 

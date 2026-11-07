@@ -4,9 +4,18 @@
 `scripts/hue-catalog.mjs`; do not consume in a site until ratified.
 
 Adopted from Tailwind CSS v4 (`https://raw.githubusercontent.com/tailwindlabs/tailwindcss/main/packages/tailwindcss/theme.css`, MIT, frozen 2026-11-07).
-Steps 0 and 1000 are white and black; steps 50–950 are Tailwind.
-Tailwind hand-tunes each hue at a different lightness, which is what makes
-the warm ramps vivid; gray is already Tailwind Neutral.
+Eleven steps, 50–950. White and black are separate primitives, not ramp
+steps. Tailwind hand-tunes each hue at a different lightness, which is what
+makes the warm ramps vivid; gray is already Tailwind Neutral.
+
+## White and black
+
+Separate primitives, not ramp steps:
+
+| Token | Hex |
+|---|---|
+| `white` | `#FFFFFF` |
+| `black` | `#000000` |
 
 ## Hue ramps
 
@@ -14,7 +23,6 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#FEF2F2` | `oklch(97.1% 0.013 17.38)` |
 | 100 | `#FFE2E2` | `oklch(93.6% 0.032 17.717)` |
 | 200 | `#FFC9C9` | `oklch(88.5% 0.062 18.334)` |
@@ -26,13 +34,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#9F0712` | `oklch(44.4% 0.177 26.899)` |
 | 900 | `#82181A` | `oklch(39.6% 0.141 25.723)` |
 | 950 | `#460809` | `oklch(25.8% 0.092 26.042)` |
-| 1000 | `#000000` | `black` |
 
 ### orange — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#FFF7ED` | `oklch(98% 0.016 73.684)` |
 | 100 | `#FFEDD4` | `oklch(95.4% 0.038 75.164)` |
 | 200 | `#FFD6A7` | `oklch(90.1% 0.076 70.697)` |
@@ -44,13 +50,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#9F2D00` | `oklch(47% 0.157 37.304)` |
 | 900 | `#7E2A0C` | `oklch(40.8% 0.123 38.172)` |
 | 950 | `#441306` | `oklch(26.6% 0.079 36.259)` |
-| 1000 | `#000000` | `black` |
 
 ### amber — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#FFFBEB` | `oklch(98.7% 0.022 95.277)` |
 | 100 | `#FEF3C6` | `oklch(96.2% 0.059 95.617)` |
 | 200 | `#FEE685` | `oklch(92.4% 0.12 95.746)` |
@@ -62,13 +66,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#973C00` | `oklch(47.3% 0.137 46.201)` |
 | 900 | `#7B3306` | `oklch(41.4% 0.112 45.904)` |
 | 950 | `#461901` | `oklch(27.9% 0.077 45.635)` |
-| 1000 | `#000000` | `black` |
 
 ### yellow — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#FEFCE8` | `oklch(98.7% 0.026 102.212)` |
 | 100 | `#FEF9C2` | `oklch(97.3% 0.071 103.193)` |
 | 200 | `#FFF085` | `oklch(94.5% 0.129 101.54)` |
@@ -80,13 +82,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#894B00` | `oklch(47.6% 0.114 61.907)` |
 | 900 | `#733E0A` | `oklch(42.1% 0.095 57.708)` |
 | 950 | `#432004` | `oklch(28.6% 0.066 53.813)` |
-| 1000 | `#000000` | `black` |
 
 ### lime — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#F7FEE7` | `oklch(98.6% 0.031 120.757)` |
 | 100 | `#ECFCCA` | `oklch(96.7% 0.067 122.328)` |
 | 200 | `#D8F999` | `oklch(93.8% 0.127 124.321)` |
@@ -98,13 +98,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#3C6300` | `oklch(45.3% 0.124 130.933)` |
 | 900 | `#35530E` | `oklch(40.5% 0.101 131.063)` |
 | 950 | `#192E03` | `oklch(27.4% 0.072 132.109)` |
-| 1000 | `#000000` | `black` |
 
 ### green — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#F0FDF4` | `oklch(98.2% 0.018 155.826)` |
 | 100 | `#DCFCE7` | `oklch(96.2% 0.044 156.743)` |
 | 200 | `#B9F8CF` | `oklch(92.5% 0.084 155.995)` |
@@ -116,13 +114,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#016630` | `oklch(44.8% 0.119 151.328)` |
 | 900 | `#0D542B` | `oklch(39.3% 0.095 152.535)` |
 | 950 | `#032E15` | `oklch(26.6% 0.065 152.934)` |
-| 1000 | `#000000` | `black` |
 
 ### teal — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#F0FDFA` | `oklch(98.4% 0.014 180.72)` |
 | 100 | `#CBFBF1` | `oklch(95.3% 0.051 180.801)` |
 | 200 | `#96F7E4` | `oklch(91% 0.096 180.426)` |
@@ -134,13 +130,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#005F5A` | `oklch(43.7% 0.078 188.216)` |
 | 900 | `#0B4F4A` | `oklch(38.6% 0.063 188.416)` |
 | 950 | `#022F2E` | `oklch(27.7% 0.046 192.524)` |
-| 1000 | `#000000` | `black` |
 
 ### cyan — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#ECFEFF` | `oklch(98.4% 0.019 200.873)` |
 | 100 | `#CEFAFE` | `oklch(95.6% 0.045 203.388)` |
 | 200 | `#A2F4FD` | `oklch(91.7% 0.08 205.041)` |
@@ -152,13 +146,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#005F78` | `oklch(45% 0.085 224.283)` |
 | 900 | `#104E64` | `oklch(39.8% 0.07 227.392)` |
 | 950 | `#053345` | `oklch(30.2% 0.056 229.695)` |
-| 1000 | `#000000` | `black` |
 
 ### blue — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#EFF6FF` | `oklch(97% 0.014 254.604)` |
 | 100 | `#DBEAFE` | `oklch(93.2% 0.032 255.585)` |
 | 200 | `#BEDBFF` | `oklch(88.2% 0.059 254.128)` |
@@ -170,13 +162,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#193CB8` | `oklch(42.4% 0.199 265.638)` |
 | 900 | `#1C398E` | `oklch(37.9% 0.146 265.522)` |
 | 950 | `#162456` | `oklch(28.2% 0.091 267.935)` |
-| 1000 | `#000000` | `black` |
 
 ### indigo — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#EEF2FF` | `oklch(96.2% 0.018 272.314)` |
 | 100 | `#E0E7FF` | `oklch(93% 0.034 272.788)` |
 | 200 | `#C6D2FF` | `oklch(87% 0.065 274.039)` |
@@ -188,13 +178,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#372AAC` | `oklch(39.8% 0.195 277.366)` |
 | 900 | `#312C85` | `oklch(35.9% 0.144 278.697)` |
 | 950 | `#1E1A4D` | `oklch(25.7% 0.09 281.288)` |
-| 1000 | `#000000` | `black` |
 
 ### violet — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#F5F3FF` | `oklch(96.9% 0.016 293.756)` |
 | 100 | `#EDE9FE` | `oklch(94.3% 0.029 294.588)` |
 | 200 | `#DDD6FF` | `oklch(89.4% 0.057 293.283)` |
@@ -206,13 +194,11 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#5D0EC0` | `oklch(43.2% 0.232 292.759)` |
 | 900 | `#4D179A` | `oklch(38% 0.189 293.745)` |
 | 950 | `#2F0D68` | `oklch(28.3% 0.141 291.089)` |
-| 1000 | `#000000` | `black` |
 
 ### fuchsia — display 500
 
 | Step | Hex | OKLCH |
 |---:|---|---|
-| 0 | `#FFFFFF` | `white` |
 | 50 | `#FDF4FF` | `oklch(97.7% 0.017 320.058)` |
 | 100 | `#FAE8FF` | `oklch(95.2% 0.037 318.852)` |
 | 200 | `#F6CFFF` | `oklch(90.3% 0.076 319.62)` |
@@ -224,7 +210,6 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 | 800 | `#8A0194` | `oklch(45.2% 0.211 324.591)` |
 | 900 | `#721378` | `oklch(40.1% 0.17 325.612)` |
 | 950 | `#4B004F` | `oklch(29.3% 0.136 325.661)` |
-| 1000 | `#000000` | `black` |
 
 ## Fill aliases
 
@@ -264,9 +249,9 @@ the warm ramps vivid; gray is already Tailwind Neutral.
 
 | Role | Ramp | Light base / hover / pressed / strong / subtle / on | Dark base / hover / pressed / strong / subtle / on |
 |---|---|---|---|
-| success | green | 700 / 800 / 900 / 700 / 100 / 0 | 400 / 500 / 600 / 400 / 900 / 1000 |
-| warning | amber | 700 / 800 / 900 / 700 / 100 / 0 | 400 / 500 / 600 / 400 / 900 / 1000 |
-| danger | red | 600 / 700 / 800 / 700 / 100 / 0 | 300 / 400 / 500 / 300 / 900 / 1000 |
+| success | green | 700 / 800 / 900 / 700 / 100 / white | 400 / 500 / 600 / 400 / 900 / black |
+| warning | amber | 700 / 800 / 900 / 700 / 100 / white | 400 / 500 / 600 / 400 / 900 / black |
+| danger | red | 600 / 700 / 800 / 700 / 100 / white | 300 / 400 / 500 / 300 / 900 / black |
 
 ## Contrast results
 

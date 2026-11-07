@@ -6,11 +6,10 @@ deprecated.
 
 ## What this is
 
-Twelve hue ramps adopted from **Tailwind CSS v4** (MIT), with the same 13 step
-names as gray: `0 / 50 / 100 / 200 / 300 / 400 / 500 / 600 / 700 / 800 / 900 /
-950 / 1000`. Steps 0 and 1000 are white and black; steps 50–950 are Tailwind's
-hand-tuned palette. Gray is already Tailwind Neutral, so both layers now come
-from one source.
+Twelve hue ramps adopted from **Tailwind CSS v4** (MIT), with eleven steps:
+`50 / 100 / 200 / 300 / 400 / 500 / 600 / 700 / 800 / 900 / 950`. White and
+black are separate primitives, not ramp steps. Gray is already Tailwind
+Neutral, so both layers come from one source.
 
 | Hue | Display step |
 |---|---:|
@@ -34,13 +33,13 @@ lightness — red 500 L 0.637, orange 0.705, amber 0.769, yellow 0.795, lime
 ## Pick a hue for a site
 
 1. Choose one hue ramp. One accent per site remains the rule (DAB-001/DAB-003).
-2. Expose it as the site's `accent-0` … `accent-1000` steps.
+2. Expose it as the site's `accent-50` … `accent-950` steps.
 3. Map the **fill aliases** from `catalog.md`. The fill range is chosen by
    contrast, so on a light background it may sit at 600/700 rather than 500.
 4. Map links and inline emphasis to the **link-safe text step** in the catalog.
    `color-primary` is the fill role; `color-primary-text` is the text role.
 5. Record the hue, the fill and text steps, and the measured ratios in the site
-   theme document. Cite the catalog; do not copy thirteen hexes into it.
+   theme document. Cite the catalog; do not copy eleven hexes into it.
 
 Functional colors are not a site choice. Success uses `green`, warning uses
 `amber`, and danger uses `red` — at the fixed steps in the catalog.

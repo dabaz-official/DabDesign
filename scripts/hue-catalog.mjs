@@ -5,10 +5,10 @@
  * Usage:
  *   node scripts/hue-catalog.mjs
  *
- * The 12 hue ramps are adopted from Tailwind CSS v4 (MIT). Steps 0 and 1000
- * are added as white and black, so a ramp has the same 13 step names as gray.
- * Values are not regenerated; this script selects contrast-safe action ranges,
- * computes functional mappings, and writes the catalog.
+ * The 12 hue ramps are adopted from Tailwind CSS v4 (MIT). Ramps run 50–950;
+ * white and black are separate primitives, not steps. This script selects
+ * contrast-safe action ranges, computes functional mappings, and writes the
+ * catalog.
  *
  * Writes palettes/ramps.json and palettes/catalog.md. Exits non-zero if any
  * checked pair misses its threshold.
@@ -22,16 +22,19 @@ import path from 'node:path';
 const SOURCE_FILE = path.join(process.cwd(), 'palettes', 'tailwind-source.json');
 const source = JSON.parse(fs.readFileSync(SOURCE_FILE, 'utf8'));
 const COLORS = Object.keys(source.colors);
-const STEPS = [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000];
+const STEPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 const TAILWIND_STEPS = source.steps;
+const WHITE = '#FFFFFF';
+const BLACK = '#000000';
 
 const GRAY = {
   0: '#FFFFFF', 50: '#FAFAFA', 100: '#F5F5F5', 200: '#E5E5E5', 300: '#D4D4D4',
   400: '#A3A3A3', 500: '#737373', 600: '#525252', 700: '#404040', 800: '#262626',
   900: '#171717', 950: '#0A0A0A', 1000: '#000000',
 };
-const LIGHT_SURFACES = [50, 0, 100];
-const DARK_SURFACES = [950, 900, 800];
+const LIGHT_SURFACES = ['white', 'gray-50', 'gray-100'];
+const DARK_SURFACES = ['gray-950', 'gray-900', 'gray-800'];
+const surfaceHex = (name) => (name === 'white' ? WHITE : GRAY[name.replace('gray-', '')]);
 
 function hexToLin(hex) {
   const n = hex.replace('#', '');
@@ -50,10 +53,7 @@ const round2 = (n) => Number(n.toFixed(2));
 // ---------- build ramps ----------
 const ramps = {};
 for (const name of COLORS) {
-  const steps = {
-    0: { hex: '#FFFFFF', oklch: 'white', L: 1, C: 0, H: null },
-    1000: { hex: '#000000', oklch: 'black', L: 0, C: 0, H: null },
-  };
+  const steps = {};
   for (const step of TAILWIND_STEPS) {
     const v = source.colors[name][step];
     steps[step] = { hex: v.hex, oklch: v.oklch, L: v.L, C: v.C, H: v.H };
@@ -78,7 +78,7 @@ function findFillRange(ramp, theme) {
 
   for (const steps of windows) {
     const hexes = steps.map((s) => ramp[s].hex);
-    if (hexes.some((h) => surfaces.some((s) => contrast(h, GRAY[s]) < 3))) continue;
+    if (hexes.some((h) => surfaces.some((s) => contrast(h, surfaceHex(s)) < 3))) continue;
     for (const [name, hex] of onCandidates) {
       if (hexes.every((h) => contrast(hex, h) >= 4.5)) {
         return {
@@ -99,7 +99,7 @@ function findTextStep(ramp, theme) {
     ? [600, 700, 800, 900, 950]
     : [400, 300, 200, 100, 50];
   for (const step of order) {
-    if (surfaces.every((s) => contrast(ramp[step].hex, GRAY[s]) >= 4.5)) {
+    if (surfaces.every((s) => contrast(ramp[step].hex, surfaceHex(s)) >= 4.5)) {
       return { step, hex: ramp[step].hex };
     }
   }
@@ -115,7 +115,7 @@ function findStrong(ramp, theme) {
   for (const step of order) {
     const hex = ramp[step].hex;
     if (
-      surfaces.every((s) => contrast(hex, GRAY[s]) >= 4.5) &&
+      surfaces.every((s) => contrast(hex, surfaceHex(s)) >= 4.5) &&
       contrast(hex, ramp[subtle].hex) >= 4.5
     ) return step;
   }
@@ -167,7 +167,7 @@ for (const { role, ramp } of FUNCTIONAL) {
         hover: range ? range.hover : null,
         pressed: range ? range.pressed : null,
         strong, subtle,
-        on: range ? (range.on === 'white' ? 0 : 1000) : null,
+        on: range ? range.on : null,
       },
     };
 
@@ -182,8 +182,8 @@ for (const { role, ramp } of FUNCTIONAL) {
     checks.push([theme, `${role}: on on hover`, contrast(m.on, m.hover), 4.5]);
     checks.push([theme, `${role}: on on pressed`, contrast(m.on, m.pressed), 4.5]);
     for (const s of surfaces) {
-      checks.push([theme, `${role}: strong on gray-${s}`, m.strong ? contrast(m.strong, GRAY[s]) : 0, 4.5]);
-      checks.push([theme, `${role}: base on gray-${s}`, contrast(m.base, GRAY[s]), 3]);
+      checks.push([theme, `${role}: strong on ${s}`, m.strong ? contrast(m.strong, surfaceHex(s)) : 0, 4.5]);
+      checks.push([theme, `${role}: base on ${s}`, contrast(m.base, surfaceHex(s)), 3]);
     }
     checks.push([theme, `${role}: text-primary on subtle`, contrast(textMain, m.subtle), 4.5]);
     checks.push([theme, `${role}: base on subtle`, contrast(m.base, m.subtle), 3]);
@@ -201,8 +201,8 @@ for (const name of COLORS) {
     if (!fill || !link) continue;
     const surfaces = theme === 'light' ? LIGHT_SURFACES : DARK_SURFACES;
     for (const s of surfaces) {
-      checks.push([theme, `${name}: primary on gray-${s}`, contrast(h.steps[fill.primary].hex, GRAY[s]), 3]);
-      checks.push([theme, `${name}: text step on gray-${s}`, contrast(link.hex, GRAY[s]), 4.5]);
+      checks.push([theme, `${name}: primary on ${s}`, contrast(h.steps[fill.primary].hex, surfaceHex(s)), 3]);
+      checks.push([theme, `${name}: text step on ${s}`, contrast(link.hex, surfaceHex(s)), 4.5]);
     }
     checks.push([theme, `${name}: on on primary`, contrast(fill.onHex, h.steps[fill.primary].hex), 4.5]);
     checks.push([theme, `${name}: on on hover`, contrast(fill.onHex, h.steps[fill.hover].hex), 4.5]);
@@ -238,9 +238,18 @@ lines.push('**Status: Proposed (DAB-016).** Not approved. Generated by');
 lines.push('`scripts/hue-catalog.mjs`; do not consume in a site until ratified.');
 lines.push('');
 lines.push(`Adopted from Tailwind CSS v4 (\`${source.source}\`, MIT, frozen ${source.fetched}).`);
-lines.push('Steps 0 and 1000 are white and black; steps 50–950 are Tailwind.');
-lines.push('Tailwind hand-tunes each hue at a different lightness, which is what makes');
-lines.push('the warm ramps vivid; gray is already Tailwind Neutral.');
+lines.push('Eleven steps, 50–950. White and black are separate primitives, not ramp');
+lines.push('steps. Tailwind hand-tunes each hue at a different lightness, which is what');
+lines.push('makes the warm ramps vivid; gray is already Tailwind Neutral.');
+lines.push('');
+lines.push('## White and black');
+lines.push('');
+lines.push('Separate primitives, not ramp steps:');
+lines.push('');
+lines.push('| Token | Hex |');
+lines.push('|---|---|');
+lines.push('| `white` | `#FFFFFF` |');
+lines.push('| `black` | `#000000` |');
 lines.push('');
 lines.push('## Hue ramps');
 lines.push('');

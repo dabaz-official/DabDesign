@@ -5,7 +5,6 @@
   "source": "https://raw.githubusercontent.com/tailwindlabs/tailwindcss/main/packages/tailwindcss/theme.css",
   "license": "MIT",
   "steps": [
-    0,
     50,
     100,
     200,
@@ -16,20 +15,12 @@
     700,
     800,
     900,
-    950,
-    1000
+    950
   ],
   "hues": {
     "red": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#FEF2F2",
           "oklch": "oklch(97.1% 0.013 17.38)",
@@ -106,13 +97,6 @@
           "L": 0.258,
           "C": 0.092,
           "H": 26.042
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -147,13 +131,6 @@
     "orange": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#FFF7ED",
           "oklch": "oklch(98% 0.016 73.684)",
@@ -230,13 +207,6 @@
           "L": 0.266,
           "C": 0.079,
           "H": 36.259
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -271,13 +241,6 @@
     "amber": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#FFFBEB",
           "oklch": "oklch(98.7% 0.022 95.277)",
@@ -354,13 +317,6 @@
           "L": 0.27899999999999997,
           "C": 0.077,
           "H": 45.635
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -395,13 +351,6 @@
     "yellow": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#FEFCE8",
           "oklch": "oklch(98.7% 0.026 102.212)",
@@ -478,13 +427,6 @@
           "L": 0.28600000000000003,
           "C": 0.066,
           "H": 53.813
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -519,13 +461,6 @@
     "lime": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#F7FEE7",
           "oklch": "oklch(98.6% 0.031 120.757)",
@@ -602,13 +537,6 @@
           "L": 0.27399999999999997,
           "C": 0.072,
           "H": 132.109
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -643,13 +571,6 @@
     "green": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#F0FDF4",
           "oklch": "oklch(98.2% 0.018 155.826)",
@@ -726,13 +647,6 @@
           "L": 0.266,
           "C": 0.065,
           "H": 152.934
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -767,13 +681,6 @@
     "teal": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#F0FDFA",
           "oklch": "oklch(98.4% 0.014 180.72)",
@@ -850,13 +757,6 @@
           "L": 0.27699999999999997,
           "C": 0.046,
           "H": 192.524
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -891,13 +791,6 @@
     "cyan": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#ECFEFF",
           "oklch": "oklch(98.4% 0.019 200.873)",
@@ -974,13 +867,6 @@
           "L": 0.302,
           "C": 0.056,
           "H": 229.695
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -1015,13 +901,6 @@
     "blue": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#EFF6FF",
           "oklch": "oklch(97% 0.014 254.604)",
@@ -1098,13 +977,6 @@
           "L": 0.282,
           "C": 0.091,
           "H": 267.935
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -1139,13 +1011,6 @@
     "indigo": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#EEF2FF",
           "oklch": "oklch(96.2% 0.018 272.314)",
@@ -1222,13 +1087,6 @@
           "L": 0.257,
           "C": 0.09,
           "H": 281.288
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -1263,13 +1121,6 @@
     "violet": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#F5F3FF",
           "oklch": "oklch(96.9% 0.016 293.756)",
@@ -1346,13 +1197,6 @@
           "L": 0.28300000000000003,
           "C": 0.141,
           "H": 291.089
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -1387,13 +1231,6 @@
     "fuchsia": {
       "display": 500,
       "steps": {
-        "0": {
-          "hex": "#FFFFFF",
-          "oklch": "white",
-          "L": 1,
-          "C": 0,
-          "H": null
-        },
         "50": {
           "hex": "#FDF4FF",
           "oklch": "oklch(97.7% 0.017 320.058)",
@@ -1470,13 +1307,6 @@
           "L": 0.293,
           "C": 0.136,
           "H": 325.661
-        },
-        "1000": {
-          "hex": "#000000",
-          "oklch": "black",
-          "L": 0,
-          "C": 0,
-          "H": null
         }
       },
       "fill": {
@@ -1525,7 +1355,7 @@
           "pressed": 900,
           "strong": 700,
           "subtle": 100,
-          "on": 0
+          "on": "white"
         }
       },
       "dark": {
@@ -1541,7 +1371,7 @@
           "pressed": 600,
           "strong": 400,
           "subtle": 900,
-          "on": 1000
+          "on": "black"
         }
       }
     },
@@ -1560,7 +1390,7 @@
           "pressed": 900,
           "strong": 700,
           "subtle": 100,
-          "on": 0
+          "on": "white"
         }
       },
       "dark": {
@@ -1576,7 +1406,7 @@
           "pressed": 600,
           "strong": 400,
           "subtle": 900,
-          "on": 1000
+          "on": "black"
         }
       }
     },
@@ -1595,7 +1425,7 @@
           "pressed": 800,
           "strong": 700,
           "subtle": 100,
-          "on": 0
+          "on": "white"
         }
       },
       "dark": {
@@ -1611,7 +1441,7 @@
           "pressed": 500,
           "strong": 300,
           "subtle": 900,
-          "on": 1000
+          "on": "black"
         }
       }
     }
@@ -1637,6 +1467,18 @@
     },
     {
       "theme": "light",
+      "label": "success: strong on white",
+      "ratio": 4.95,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
+      "label": "success: base on white",
+      "ratio": 4.95,
+      "min": 3
+    },
+    {
+      "theme": "light",
       "label": "success: strong on gray-50",
       "ratio": 4.74,
       "min": 4.5
@@ -1645,18 +1487,6 @@
       "theme": "light",
       "label": "success: base on gray-50",
       "ratio": 4.74,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "success: strong on gray-0",
-      "ratio": 4.95,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "success: base on gray-0",
-      "ratio": 4.95,
       "min": 3
     },
     {
@@ -1781,6 +1611,18 @@
     },
     {
       "theme": "light",
+      "label": "warning: strong on white",
+      "ratio": 5.03,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
+      "label": "warning: base on white",
+      "ratio": 5.03,
+      "min": 3
+    },
+    {
+      "theme": "light",
       "label": "warning: strong on gray-50",
       "ratio": 4.82,
       "min": 4.5
@@ -1789,18 +1631,6 @@
       "theme": "light",
       "label": "warning: base on gray-50",
       "ratio": 4.82,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "warning: strong on gray-0",
-      "ratio": 5.03,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "warning: base on gray-0",
-      "ratio": 5.03,
       "min": 3
     },
     {
@@ -1925,6 +1755,18 @@
     },
     {
       "theme": "light",
+      "label": "danger: strong on white",
+      "ratio": 6.42,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
+      "label": "danger: base on white",
+      "ratio": 4.77,
+      "min": 3
+    },
+    {
+      "theme": "light",
       "label": "danger: strong on gray-50",
       "ratio": 6.15,
       "min": 4.5
@@ -1933,18 +1775,6 @@
       "theme": "light",
       "label": "danger: base on gray-50",
       "ratio": 4.57,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "danger: strong on gray-0",
-      "ratio": 6.42,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "danger: base on gray-0",
-      "ratio": 4.77,
       "min": 3
     },
     {
@@ -2051,6 +1881,18 @@
     },
     {
       "theme": "light",
+      "label": "red: primary on white",
+      "ratio": 4.77,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "red: text step on white",
+      "ratio": 6.42,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "red: primary on gray-50",
       "ratio": 4.57,
       "min": 3
@@ -2059,18 +1901,6 @@
       "theme": "light",
       "label": "red: text step on gray-50",
       "ratio": 6.15,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "red: primary on gray-0",
-      "ratio": 4.77,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "red: text step on gray-0",
-      "ratio": 6.42,
       "min": 4.5
     },
     {
@@ -2159,6 +1989,18 @@
     },
     {
       "theme": "light",
+      "label": "orange: primary on white",
+      "ratio": 5.22,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "orange: text step on white",
+      "ratio": 5.22,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "orange: primary on gray-50",
       "ratio": 5,
       "min": 3
@@ -2167,18 +2009,6 @@
       "theme": "light",
       "label": "orange: text step on gray-50",
       "ratio": 5,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "orange: primary on gray-0",
-      "ratio": 5.22,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "orange: text step on gray-0",
-      "ratio": 5.22,
       "min": 4.5
     },
     {
@@ -2267,6 +2097,18 @@
     },
     {
       "theme": "light",
+      "label": "amber: primary on white",
+      "ratio": 5.03,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "amber: text step on white",
+      "ratio": 5.03,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "amber: primary on gray-50",
       "ratio": 4.82,
       "min": 3
@@ -2275,18 +2117,6 @@
       "theme": "light",
       "label": "amber: text step on gray-50",
       "ratio": 4.82,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "amber: primary on gray-0",
-      "ratio": 5.03,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "amber: text step on gray-0",
-      "ratio": 5.03,
       "min": 4.5
     },
     {
@@ -2375,6 +2205,18 @@
     },
     {
       "theme": "light",
+      "label": "yellow: primary on white",
+      "ratio": 4.93,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "yellow: text step on white",
+      "ratio": 4.93,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "yellow: primary on gray-50",
       "ratio": 4.72,
       "min": 3
@@ -2383,18 +2225,6 @@
       "theme": "light",
       "label": "yellow: text step on gray-50",
       "ratio": 4.72,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "yellow: primary on gray-0",
-      "ratio": 4.93,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "yellow: text step on gray-0",
-      "ratio": 4.93,
       "min": 4.5
     },
     {
@@ -2483,6 +2313,18 @@
     },
     {
       "theme": "light",
+      "label": "lime: primary on white",
+      "ratio": 4.98,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "lime: text step on white",
+      "ratio": 4.98,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "lime: primary on gray-50",
       "ratio": 4.77,
       "min": 3
@@ -2491,18 +2333,6 @@
       "theme": "light",
       "label": "lime: text step on gray-50",
       "ratio": 4.77,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "lime: primary on gray-0",
-      "ratio": 4.98,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "lime: text step on gray-0",
-      "ratio": 4.98,
       "min": 4.5
     },
     {
@@ -2591,6 +2421,18 @@
     },
     {
       "theme": "light",
+      "label": "green: primary on white",
+      "ratio": 4.95,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "green: text step on white",
+      "ratio": 4.95,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "green: primary on gray-50",
       "ratio": 4.74,
       "min": 3
@@ -2599,18 +2441,6 @@
       "theme": "light",
       "label": "green: text step on gray-50",
       "ratio": 4.74,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "green: primary on gray-0",
-      "ratio": 4.95,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "green: text step on gray-0",
-      "ratio": 4.95,
       "min": 4.5
     },
     {
@@ -2699,6 +2529,18 @@
     },
     {
       "theme": "light",
+      "label": "teal: primary on white",
+      "ratio": 5.36,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "teal: text step on white",
+      "ratio": 5.36,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "teal: primary on gray-50",
       "ratio": 5.14,
       "min": 3
@@ -2707,18 +2549,6 @@
       "theme": "light",
       "label": "teal: text step on gray-50",
       "ratio": 5.14,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "teal: primary on gray-0",
-      "ratio": 5.36,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "teal: text step on gray-0",
-      "ratio": 5.36,
       "min": 4.5
     },
     {
@@ -2807,6 +2637,18 @@
     },
     {
       "theme": "light",
+      "label": "cyan: primary on white",
+      "ratio": 5.28,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "cyan: text step on white",
+      "ratio": 5.28,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "cyan: primary on gray-50",
       "ratio": 5.06,
       "min": 3
@@ -2815,18 +2657,6 @@
       "theme": "light",
       "label": "cyan: text step on gray-50",
       "ratio": 5.06,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "cyan: primary on gray-0",
-      "ratio": 5.28,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "cyan: text step on gray-0",
-      "ratio": 5.28,
       "min": 4.5
     },
     {
@@ -2915,6 +2745,18 @@
     },
     {
       "theme": "light",
+      "label": "blue: primary on white",
+      "ratio": 5.25,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "blue: text step on white",
+      "ratio": 5.25,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "blue: primary on gray-50",
       "ratio": 5.03,
       "min": 3
@@ -2923,18 +2765,6 @@
       "theme": "light",
       "label": "blue: text step on gray-50",
       "ratio": 5.03,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "blue: primary on gray-0",
-      "ratio": 5.25,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "blue: text step on gray-0",
-      "ratio": 5.25,
       "min": 4.5
     },
     {
@@ -3023,6 +2853,18 @@
     },
     {
       "theme": "light",
+      "label": "indigo: primary on white",
+      "ratio": 4.58,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "indigo: text step on white",
+      "ratio": 6.46,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "indigo: primary on gray-50",
       "ratio": 4.38,
       "min": 3
@@ -3031,18 +2873,6 @@
       "theme": "light",
       "label": "indigo: text step on gray-50",
       "ratio": 6.19,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "indigo: primary on gray-0",
-      "ratio": 4.58,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "indigo: text step on gray-0",
-      "ratio": 6.46,
       "min": 4.5
     },
     {
@@ -3131,6 +2961,18 @@
     },
     {
       "theme": "light",
+      "label": "violet: primary on white",
+      "ratio": 5.89,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "violet: text step on white",
+      "ratio": 5.89,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "violet: primary on gray-50",
       "ratio": 5.65,
       "min": 3
@@ -3139,18 +2981,6 @@
       "theme": "light",
       "label": "violet: text step on gray-50",
       "ratio": 5.65,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "violet: primary on gray-0",
-      "ratio": 5.89,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "violet: text step on gray-0",
-      "ratio": 5.89,
       "min": 4.5
     },
     {
@@ -3239,6 +3069,18 @@
     },
     {
       "theme": "light",
+      "label": "fuchsia: primary on white",
+      "ratio": 4.66,
+      "min": 3
+    },
+    {
+      "theme": "light",
+      "label": "fuchsia: text step on white",
+      "ratio": 6.27,
+      "min": 4.5
+    },
+    {
+      "theme": "light",
       "label": "fuchsia: primary on gray-50",
       "ratio": 4.46,
       "min": 3
@@ -3247,18 +3089,6 @@
       "theme": "light",
       "label": "fuchsia: text step on gray-50",
       "ratio": 6.01,
-      "min": 4.5
-    },
-    {
-      "theme": "light",
-      "label": "fuchsia: primary on gray-0",
-      "ratio": 4.66,
-      "min": 3
-    },
-    {
-      "theme": "light",
-      "label": "fuchsia: text step on gray-0",
-      "ratio": 6.27,
       "min": 4.5
     },
     {

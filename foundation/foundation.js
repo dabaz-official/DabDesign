@@ -76,7 +76,7 @@
 
   var ROLE_PRIMITIVES = {
     background: { light: 'gray-50', dark: 'gray-950' },
-    surface: { light: 'gray-0', dark: 'gray-900' },
+    surface: { light: 'white', dark: 'gray-900' },
     'surface-secondary': { light: 'gray-100', dark: 'gray-800' }
   };
   function renderRoleLabels() {
@@ -122,29 +122,39 @@
 
   /* ---------- 2. palette ---------- */
   var GRAYS = [
-    'gray-0', 'gray-50', 'gray-100', 'gray-200', 'gray-300', 'gray-400', 'gray-500',
-    'gray-600', 'gray-700', 'gray-800', 'gray-900', 'gray-950', 'gray-1000'
+    'gray-50', 'gray-100', 'gray-200', 'gray-300', 'gray-400', 'gray-500',
+    'gray-600', 'gray-700', 'gray-800', 'gray-900', 'gray-950'
   ];
+  var ENDPOINTS = ['white', 'black'];
+
+  function swatchItem(name) {
+    var item = document.createElement('div');
+    item.className = 'swatch-item';
+    var chip = document.createElement('div');
+    chip.className = 'swatch';
+    chip.style.setProperty('--swatch', 'var(--' + name + ')');
+    var label = document.createElement('span');
+    label.className = 'swatch__name';
+    label.textContent = name;
+    var value = document.createElement('span');
+    value.className = 'swatch__hex';
+    value.textContent = token('--' + name);
+    item.appendChild(chip);
+    item.appendChild(label);
+    item.appendChild(value);
+    return item;
+  }
+
+  function renderEndpoints() {
+    var row = document.getElementById('endpoints');
+    if (!row) return;
+    ENDPOINTS.forEach(function (name) { row.appendChild(swatchItem(name)); });
+  }
+
   function renderSwatches() {
     var grid = document.getElementById('swatches');
     if (!grid) return;
-    GRAYS.forEach(function (name) {
-      var item = document.createElement('div');
-      item.className = 'swatch-item';
-      var chip = document.createElement('div');
-      chip.className = 'swatch';
-      chip.style.setProperty('--swatch', 'var(--' + name + ')');
-      var label = document.createElement('span');
-      label.className = 'swatch__name';
-      label.textContent = name;
-      var value = document.createElement('span');
-      value.className = 'swatch__hex';
-      value.textContent = token('--' + name);
-      item.appendChild(chip);
-      item.appendChild(label);
-      item.appendChild(value);
-      grid.appendChild(item);
-    });
+    GRAYS.forEach(function (name) { grid.appendChild(swatchItem(name)); });
   }
 
   /* ---------- 3. typography ---------- */
@@ -378,6 +388,7 @@
   }
 
   /* ---------- boot ---------- */
+  renderEndpoints();
   renderSwatches();
   renderTypes();
   renderSpaces();

@@ -16,7 +16,8 @@ under the browser's font CORS rules.
 ## What it demonstrates
 
 1. Light and dark themes, surfaces, overlay, text hierarchy
-2. The 13-step neutral palette with token names and hex values
+2. The 11-step neutral palette with token names and hex values, plus white and
+   black as separate primitives
 3. Every `text-*` role in English, Simplified Chinese, and mixed text
 4. The 4px spacing scale and four applied spacing patterns
 5. The Apple radius ladder, including pill and full
