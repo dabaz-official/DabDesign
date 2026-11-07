@@ -2,12 +2,12 @@
 
 **Status:** Draft (2026-11-07) — awaiting Owner review; not Adopted.
 **Preview:** `preview/button.html` (Draft specimen; solid danger uses the
-Proposed DAB-015 values).
+DAB-016 Tailwind ramp values).
 **Pilot site:** none yet.
 **Depends on:** DAB-002 (focus, contrast), DAB-003 (action aliases), DAB-006
-(functional values), DAB-009 (label type), DAB-010 (sizes, radius, borders),
-DAB-011 (motion), DAB-014 (icons, proposed), DAB-015 (solid status fills,
-proposed).
+(functional shape), DAB-009 (label type), DAB-010 (sizes, radius, borders),
+DAB-011 (motion), DAB-014 (icons, proposed), DAB-016 (Tailwind ramp values and
+fill aliases).
 
 ## Purpose
 
@@ -53,9 +53,9 @@ target, and require `aria-label`.
 `color-primary*` resolves per site theme. A site with a neutral identity may
 map the action aliases onto ink (DAB-003); the Button does not branch on it.
 
-The solid `danger` variant uses the `-hover` and `-pressed` fill roles proposed
-in DAB-015 (§4.9). Until that decision is approved, the variant is a Draft
-specimen and must not be shipped.
+The solid `danger` variant uses the `-hover` and `-pressed` fill roles from
+DAB-016 (§4.10). The Button specification itself is still Draft and must not
+be shipped as an Adopted component.
 
 ## State matrix (§9.2)
 
@@ -76,7 +76,7 @@ sticky hover state. Pressed is a color and border change, never a scale
 definition site, as §4.2 permits: `secondary` uses the text role
 `color-text-primary` as an emphasized border, `danger-outline` uses
 `color-danger-strong`, and the solid `danger` hover/pressed fills use the
-DAB-015 roles whose primary purpose is a fill. No raw value is introduced.
+DAB-016 roles whose primary purpose is a fill. No raw value is introduced.
 
 **Disabled is not opacity.** All variants collapse to the same disabled
 treatment: `color-surface-secondary` fill, `color-text-disabled` label,
@@ -147,8 +147,8 @@ through §2.2 before use.
 
 ## Open questions
 
-1. **Approval dependency.** Solid `danger` needs DAB-015 (§4.9) approved;
-   icons need DAB-014 (§6.5) approved. The spec is Draft until both land.
+1. **Approval dependency.** Icons need DAB-014 (§6.5) approved. Functional
+   colors are settled by DAB-016.
 2. **Focus on tinted surroundings.** `color-focus` was measured against the
    three neutral surfaces only. A focused button placed directly on an
    accent-subtle or functional-subtle surface is not yet verified; do not do it

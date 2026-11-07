@@ -8,8 +8,8 @@
   --color-primary-hover: #2455BD;
   --color-primary-pressed: #163F99;
   --color-on-primary: #FFFFFF;
-  --color-danger-hover: #B00A1E;
-  --color-danger-pressed: #8B0013;
+  --color-danger-hover: #C10007;
+  --color-danger-pressed: #9F0712;
 }
 
 [data-theme="dark"] {
@@ -17,8 +17,8 @@
   --color-primary-hover: #7BA6FB;
   --color-primary-pressed: #A1C1FE;
   --color-on-primary: #000000;
-  --color-danger-hover: #FF958E;
-  --color-danger-pressed: #FFC8C3;
+  --color-danger-hover: #FF6467;
+  --color-danger-pressed: #FB2C36;
 }
 
 .button-row {
