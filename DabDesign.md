@@ -443,6 +443,7 @@ Specification-level changes are listed here; file history lives in git.
 | `0.1.0` | 2026-11-07 | DAB-014 proposed — Tabler outline icon system (post-1.0, §6.5) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-015 proposed — functional hover/pressed fills for solid status buttons (post-1.0, §4.9) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-016 proposed — 13-step 12-hue ramp catalog, functional colors as ramp references; 144/144 checks pass (§4.10) | Draft |
+| `0.1.0` | 2026-11-07 | DAB-016 revised — fixed H per hue, per-hue anchors, shifted chroma curve; 216/216 checks pass; the 30° single-anchor draft is superseded within the proposal | Draft |
 
 ---
 
@@ -907,66 +908,108 @@ pressed state); a brightness filter (not a token, not measurable).
 > **Status: Proposed, not approved.** Amends DAB-003 (§4.4), replaces the
 > DAB-006 values with ramp references, and supersedes DAB-015 (§4.9) if
 > ratified. Does not gate 1.0.0.
+>
+> **Revision note.** The first draft used a 30° hue grid and a single 600
+> anchor for every hue. Warm hues came out muddy — 60° read as brown and 90°
+> as olive. This revision keeps the thirteen steps and the shared L ladder,
+> but gives every hue a fixed H and a fixed anchor step chosen for vividness.
 
 **What changes.**
 
 - The accent ramp becomes **13 steps**, matching the gray step names:
-  `accent-0`, `accent-50`, `accent-100`, `accent-200`, `accent-300`,
-  `accent-400`, `accent-500`, `accent-600`, `accent-700`, `accent-800`,
-  `accent-900`, `accent-950`, `accent-1000`. `accent-0` is white and
-  `accent-1000` is black in every ramp.
-- The core gains a **12-hue library**, evenly spaced every 30°: rose 0, red 30,
-  orange 60, amber 90, lime 120, green 150, teal 180, cyan 210, blue 240,
-  indigo 270, violet 300, magenta 330. A site theme selects one hue; that ramp
+  `accent-0` … `accent-1000`. `accent-0` is white and `accent-1000` is black
+  in every ramp.
+- The core gains a **12-hue library** with fixed hues: red 25, orange 50,
+  amber 75, yellow 100, lime 125, green 150, teal 180, cyan 205, blue 250,
+  indigo 275, violet 300, magenta 330. A site theme selects one hue; that ramp
   is exposed as its `accent-*` steps.
-- Functional colors become **ramp references**: success → green, warning →
-  amber, danger → red, at fixed steps.
-- Gray is unchanged. `gray-150` stays removed; the ladder's 150 entry is
-  skipped. The canonical neutral values are not regenerated.
+- Every hue has a fixed **anchor step** where the chroma curve peaks: red
+  500, orange 400, amber 300, yellow 200, lime 400, green 500, teal 500, cyan
+  500, blue 500, indigo 500, violet 500, magenta 500.
+- Functional colors are **ramp references**: success → green, warning → amber,
+  danger → red.
+- Gray is unchanged. `gray-150` stays removed.
 
-**Method.** Fixed L ladder and chroma curve:
+**Method.** The L ladder is shared by every hue; only the chroma curve moves.
+`d = step index − anchor index`; `C = baseChroma × offset(d)`, with
+`baseChroma = 85%` of the maximum in-gamut chroma at the anchor's L. Steps 0
+and 1000 are pure white and black. Gamut mapping reduces C only; L and H never
+change.
 
 | Step | 0 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 | 1000 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | L | 1.00 | 0.97 | 0.94 | 0.88 | 0.81 | 0.73 | 0.64 | 0.56 | 0.48 | 0.40 | 0.32 | 0.22 | 0.00 |
-| C curve | 0 | 0.10 | 0.18 | 0.32 | 0.52 | 0.74 | 0.92 | 1.00 | 0.96 | 0.86 | 0.70 | 0.45 | 0 |
 
-Base chroma is 85% of the maximum in-gamut chroma at step 600 for that hue.
-Gamut mapping lowers C only; L and H never change. The formula is the one in
-`scripts/hue-catalog.mjs`.
+| d | −6 | −5 | −4 | −3 | −2 | −1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| C× | 0.10 | 0.18 | 0.32 | 0.52 | 0.74 | 0.92 | 1.00 | 0.96 | 0.86 | 0.70 | 0.58 | 0.48 | 0.40 | 0.32 | 0.24 | 0.16 |
 
-**Alias mapping.**
+**Hues and anchors.**
 
-| Theme | primary | hover | pressed | subtle | on |
-|---|---|---|---|---|---|
-| Light | 600 | 700 | 800 | 100 | 0 |
-| Dark | 500 | 400 | 300 | 900 | 1000 |
+| Hue | H | Anchor | Anchor L | Base C |
+|---|---:|---:|---:|---:|
+| red | 25 | 500 | 0.64 | 0.2087 |
+| orange | 50 | 400 | 0.73 | 0.1554 |
+| amber | 75 | 300 | 0.81 | 0.1428 |
+| yellow | 100 | 200 | 0.88 | 0.1555 |
+| lime | 125 | 400 | 0.73 | 0.1560 |
+| green | 150 | 500 | 0.64 | 0.1499 |
+| teal | 180 | 500 | 0.64 | 0.0987 |
+| cyan | 205 | 500 | 0.64 | 0.0929 |
+| blue | 250 | 500 | 0.64 | 0.1541 |
+| indigo | 275 | 500 | 0.64 | 0.1647 |
+| violet | 300 | 500 | 0.64 | 0.1944 |
+| magenta | 330 | 500 | 0.64 | 0.2480 |
 
-Exception: green and teal use light `700 / 800 / 900` because `on-primary` at
-600 measures 4.08:1 and 4.03:1 — below 4.5. Every other hue keeps 600 / 700 /
-800. `color-on-primary` is white in light and black in dark for all twelve
-hues; the catalog records the chosen value per hue.
+The same L at every step means `red-600` and `blue-600` have the same
+perceived lightness; only hue and chroma differ. That is the harmony rule: one
+lightness skeleton, one curve shape, a per-hue chroma peak.
 
-**Functional mapping.** Step references, not separate hex values:
+**Action aliases.** The action range is chosen by contrast, not by the vivid
+anchor: three adjacent steps starting at or near the anchor, all clearing 3:1
+against the theme surfaces, with one on-color clearing 4.5:1 against all three.
+
+| Hue | Light primary / hover / pressed / on | Dark primary / hover / pressed / on |
+|---|---|---|
+| red | 600 / 700 / 800 / white | 500 / 400 / 300 / black |
+| orange | 600 / 700 / 800 / white | 400 / 300 / 200 / black |
+| amber | 600 / 700 / 800 / white | 300 / 200 / 100 / black |
+| yellow | 600 / 700 / 800 / white | 200 / 100 / 50 / black |
+| lime | 700 / 800 / 900 / white | 400 / 300 / 200 / black |
+| green | 700 / 800 / 900 / white | 500 / 400 / 300 / black |
+| teal | 700 / 800 / 900 / white | 500 / 400 / 300 / black |
+| cyan | 700 / 800 / 900 / white | 500 / 400 / 300 / black |
+| blue | 600 / 700 / 800 / white | 500 / 400 / 300 / black |
+| indigo | 600 / 700 / 800 / white | 500 / 400 / 300 / black |
+| violet | 600 / 700 / 800 / white | 500 / 400 / 300 / black |
+| magenta | 600 / 700 / 800 / white | 500 / 400 / 300 / black |
+
+`subtle` is 100 in light and 900 in dark for every hue; it is omitted from the
+table for width.
+
+The vivid anchor remains available for brand surfaces, charts, illustration,
+and large display. It is **not** automatically link-safe on a light background;
+a bright anchor used as a light-theme link or button fill needs a separate
+decision (see the open question below).
+
+**Functional mapping.** Solid fills use the action range; `strong` is picked
+separately as text on neutral surfaces; `subtle` is 100 in light and 900 in
+dark; `on` is white in light and black in dark.
 
 | Role | Ramp | Light base / hover / pressed / strong / subtle / on | Dark base / hover / pressed / strong / subtle / on |
 |---|---|---|---|
-| success | green | 700 / 800 / 900 / 800 / 100 / 0 | 400 / 300 / 200 / 300 / 900 / 1000 |
-| warning | amber | 700 / 800 / 900 / 800 / 100 / 0 | 400 / 300 / 200 / 300 / 900 / 1000 |
-| danger | red | 700 / 800 / 900 / 800 / 100 / 0 | 400 / 300 / 200 / 300 / 900 / 1000 |
+| success | green | 700 / 800 / 900 / 700 / 100 / 0 | 500 / 400 / 300 / 400 / 900 / 1000 |
+| warning | amber | 600 / 700 / 800 / 700 / 100 / 0 | 300 / 200 / 100 / 400 / 900 / 1000 |
+| danger | red | 600 / 700 / 800 / 700 / 100 / 0 | 500 / 400 / 300 / 400 / 900 / 1000 |
 
-In light, base and strong are distinct (700 / 800); hover shares the strong
-step (800). In dark, strong shares the hover step (300). Both are documented
-dual uses.
+**Validation.** `node scripts/hue-catalog.mjs` generates 12 ramps × 13 steps
+and checks 216 pairs — on-color on every fill state, strong and base on all
+three surfaces, text on subtle, and the action primary on all three surfaces.
+Current run: **216 checked, 0 failures, exit 0**.
 
-**Validation.** `node scripts/hue-catalog.mjs` generates 12 hues × 13 steps and
-checks 144 pairs — on-color on base/hover/pressed, strong and base on all three
-surfaces, text on subtle, primary on backgrounds, and on-primary on primary.
-Current run: **144 checked, 0 failures, exit 0**.
-
-**Catalog.** `palettes/catalog.md` holds the human-readable ramps, alias
-mapping, functional mapping, and the contrast summary; `palettes/ramps.json` is
-the machine-readable source.
+**Catalog.** `palettes/catalog.md` holds the human-readable ramps, anchors,
+action aliases, functional mapping, and the contrast summary;
+`palettes/ramps.json` is the machine-readable source.
 
 **On approval.**
 
@@ -975,27 +1018,33 @@ the machine-readable source.
 - `scripts/hue-catalog.mjs` supersedes `scripts/oklch-ramp.mjs`;
   `scripts/functional-palette.mjs` is superseded because functional colors are
   now ramp references.
-- `oklch-brand-color.md` is updated to the 13-step method.
-- Site theme documents select one hue, record the five alias steps, and cite
-  the catalog instead of copying 13 hexes.
-- Frontmatter records the step list, anchor, alias mapping, and functional step
-  references; the 156 raw values stay in `palettes/ramps.json` rather than
+- `oklch-brand-color.md` is updated to the fixed-H, fixed-anchor method.
+- Site theme documents select one hue, record the action alias steps, and cite
+  the catalog instead of copying thirteen hexes.
+- Frontmatter records the step list, anchors, alias mapping, and functional
+  step references; the raw values stay in `palettes/ramps.json` rather than
   being duplicated in the specification body (§3.3).
 
-**Rationale.** One ladder for every hue makes ramps directly comparable and
-lets a site change hue without changing its step skeleton. Twelve evenly spaced
-hues give predictable names and cover cold, warm, tool, and creative
-directions. Functional colors as ramp references remove the separate functional
-generator and guarantee that status and accent share the same lightness
-geometry. Keeping gray adopted means no existing contrast result is
-invalidated.
+**Open question — bright light-theme actions.** If a project wants
+`orange-400` or `yellow-200` as a button fill, `color-primary` cannot serve
+both that fill and link text on white: the fill needs black text and a
+contrast border, while link text needs 4.5:1. Options: keep actions on the
+darker action range and use the anchor for display; add a `color-primary-fill`
+role with a contrast border; or split link and fill aliases. Not decided here.
 
-**Alternatives considered.** 14 steps with 150 (requires re-adding `gray-150`
-and re-measuring every neutral pair); regenerating gray with C = 0 (invalidates
-DAB-004 and all measured ratios); 10-step accents (inconsistent with the gray
-step names); an arbitrary hue list (less predictable); keeping functional
-colors as separate generated values (two lightness systems, the current
-state).
+**Rationale.** Fixed hues make the names accurate. Per-hue anchors put the
+chroma peak at each hue's vivid lightness. The shared L ladder and shifted
+curve keep the ramps harmonious: equal lightness at equal steps, one saturation
+shape, a different peak per hue. Action aliases stay contrast-safe by moving
+away from the vivid anchor when the anchor cannot carry text. Keeping gray
+adopted means no existing neutral contrast result is invalidated.
+
+**Alternatives considered.** A strict 30° grid (rejected — 60° is not orange
+and 90° is olive); one global 600 anchor (rejected — warm hues turn muddy);
+per-hue L offsets (rejected — breaks the shared lightness skeleton);
+regenerating gray with C = 0 (invalidates DAB-004 and every measured ratio);
+bright action primaries with white text (rejected — yellow and amber fail
+4.5:1).
 
 ---
 
@@ -1790,7 +1839,7 @@ frontmatter if a token is involved, and adding a changelog row.
 | `DAB-013` | Component scope | Shared-layer pilot set and order | most | **Approved (2026-11-07)** — ADR-013 |
 | `DAB-014` | Iconography | Icon set, grid, stroke, sizes, icon accessibility | DAB-010 | Proposed (2026-11-07) — §6.5 |
 | `DAB-015` | Functional states | Hover and pressed fill roles for status colors | DAB-006 | Proposed — superseded by DAB-016 (§4.10) |
-| `DAB-016` | Hue ramps | 13-step 12-hue catalog; functional colors as ramp references | DAB-003, DAB-004, DAB-006, DAB-015 | Proposed (2026-11-07) — §4.10 |
+| `DAB-016` | Hue ramps | 13-step fixed-H 12-hue catalog with per-hue anchors; functional colors as ramp references | DAB-003, DAB-004, DAB-006, DAB-015 | Proposed (2026-11-07) — §4.10 |
 
 Working agreement: decisions are taken in roadmap order (dependencies may pull
 one forward with the owner's sign-off). `DAB-001`…`DAB-013` are Approved;

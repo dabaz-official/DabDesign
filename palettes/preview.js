@@ -45,7 +45,7 @@
 
       var head = el('div', 'ramp-head');
       head.appendChild(el('h3', 'text-h3', name + ' — H ' + h.hue + '°'));
-      head.appendChild(el('span', '', 'base C ' + h.baseChroma.toFixed(4)));
+      head.appendChild(el('span', '', 'anchor ' + h.anchor + ' · base C ' + h.baseChroma.toFixed(4)));
       block.appendChild(head);
 
       var scroll = el('div', 'ramp-scroll');
@@ -96,8 +96,8 @@
         var chips = el('div', 'alias-chips');
         ['base', 'hover', 'pressed', 'strong', 'subtle', 'on'].forEach(function (key) {
           var hex = f[theme][key];
-          var step = f.steps[theme][key];
-          chips.appendChild(chip(hex, key + ' ' + step, hex));
+          var step = f[theme].steps[key];
+          chips.appendChild(chip(hex, key + (step === null ? '' : ' ' + step), hex));
         });
         set.appendChild(chips);
         row.appendChild(set);
