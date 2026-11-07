@@ -44,8 +44,8 @@
       var block = el('div', 'ramp-block');
 
       var head = el('div', 'ramp-head');
-      head.appendChild(el('h3', 'text-h3', name + ' — H ' + h.hue + '°'));
-      head.appendChild(el('span', '', 'anchor ' + h.anchor + ' · base C ' + h.baseChroma.toFixed(4)));
+      head.appendChild(el('h3', 'text-h3', name + ' — display ' + h.display));
+      head.appendChild(el('span', '', 'Tailwind v4'));
       block.appendChild(head);
 
       var scroll = el('div', 'ramp-scroll');
@@ -68,12 +68,15 @@
         var set = el('div', 'alias-set');
         set.appendChild(el('h4', '', theme));
         var chips = el('div', 'alias-chips');
+        var fill = h.fill[theme];
         ['primary', 'hover', 'pressed', 'subtle'].forEach(function (role) {
-          var step = h.aliases[theme][role];
+          var step = fill[role];
           var hex = h.steps[String(step)].hex;
           chips.appendChild(chip(hex, role + ' ' + step, hex));
         });
-        chips.appendChild(chip(h.aliases[theme].onHex, 'on ' + h.aliases[theme].on, h.aliases[theme].onHex));
+        chips.appendChild(chip(fill.onHex, 'on ' + fill.on, fill.onHex));
+        var link = h.text[theme];
+        if (link) chips.appendChild(chip(link.hex, 'text ' + link.step, link.hex));
         set.appendChild(chips);
         aliases.appendChild(set);
       });

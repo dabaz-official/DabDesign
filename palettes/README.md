@@ -6,52 +6,51 @@ deprecated.
 
 ## What this is
 
-Twelve hue ramps, thirteen steps each. The L ladder and the chroma curve shape
-are shared; each hue has a fixed H and a fixed anchor step where its chroma
-peaks, so warm hues stay vivid instead of turning muddy.
+Twelve hue ramps adopted from **Tailwind CSS v4** (MIT), with the same 13 step
+names as gray: `0 / 50 / 100 / 200 / 300 / 400 / 500 / 600 / 700 / 800 / 900 /
+950 / 1000`. Steps 0 and 1000 are white and black; steps 50–950 are Tailwind's
+hand-tuned palette. Gray is already Tailwind Neutral, so both layers now come
+from one source.
 
-| Hue | H | Anchor |
-|---|---:|---:|
-| red | 25 | 500 |
-| orange | 50 | 400 |
-| amber | 75 | 300 |
-| yellow | 100 | 200 |
-| lime | 125 | 400 |
-| green | 150 | 500 |
-| teal | 180 | 500 |
-| cyan | 205 | 500 |
-| blue | 250 | 500 |
-| indigo | 275 | 500 |
-| violet | 300 | 500 |
-| magenta | 330 | 500 |
+| Hue | Display step |
+|---|---:|
+| red | 500 |
+| orange | 500 |
+| amber | 500 |
+| yellow | 500 |
+| lime | 500 |
+| green | 500 |
+| teal | 500 |
+| cyan | 500 |
+| blue | 500 |
+| indigo | 500 |
+| violet | 500 |
+| fuchsia | 500 |
 
-Steps: `0 / 50 / 100 / 200 / 300 / 400 / 500 / 600 / 700 / 800 / 900 / 950 /
-1000`. Step 0 is white; step 1000 is black. `gray-150` is absent (DAB-004).
+The 500 step is the vivid brand color. Tailwind tunes each hue at a different
+lightness — red 500 L 0.637, orange 0.705, amber 0.769, yellow 0.795, lime
+0.768 — which is why the warm ramps read correctly.
 
 ## Pick a hue for a site
 
 1. Choose one hue ramp. One accent per site remains the rule (DAB-001/DAB-003).
 2. Expose it as the site's `accent-0` … `accent-1000` steps.
-3. Map the action aliases from the **Action aliases** table in
-   `catalog.md`. The action range is chosen by contrast, so it may sit a step
-   or two away from the vivid anchor.
-4. Record the hue, the alias steps, and the measured ratios in the site theme
-   document. Cite the catalog; do not copy thirteen hexes into it.
-
-The **vivid anchor** is the most chromatic step (red 500, orange 400, amber
-300, yellow 200, blue 500, and so on). It is for brand surfaces, charts,
-illustration, tags, and large display. On a light background it is not
-automatically link-safe; a bright anchor used as a link or button fill needs a
-separate decision (see the open question in `DabDesign.md` §4.10).
+3. Map the **fill aliases** from `catalog.md`. The fill range is chosen by
+   contrast, so on a light background it may sit at 600/700 rather than 500.
+4. Map links and inline emphasis to the **link-safe text step** in the catalog.
+   `color-primary` is the fill role; `color-primary-text` is the text role.
+5. Record the hue, the fill and text steps, and the measured ratios in the site
+   theme document. Cite the catalog; do not copy thirteen hexes into it.
 
 Functional colors are not a site choice. Success uses `green`, warning uses
 `amber`, and danger uses `red` — at the fixed steps in the catalog.
 
 ## Files
 
-- `catalog.md` — human-readable ramps, anchors, action aliases, functional
-  mapping, contrast results. Generated; do not edit by hand.
-- `ramps.json` — machine-readable catalog, including all 216 checks.
+- `catalog.md` — human-readable ramps, fill aliases, link-safe steps,
+  functional mapping, contrast results. Generated; do not edit by hand.
+- `ramps.json` — machine-readable catalog, including all 288 checks.
+- `tailwind-source.json` — frozen Tailwind v4 source values (OKLCH + hex).
 - `preview.html` — visual catalog; run the repo-root server and open
   `http://127.0.0.1:8001/palettes/preview.html`.
 
@@ -61,8 +60,9 @@ Functional colors are not a site choice. Success uses `green`, warning uses
 node scripts/hue-catalog.mjs
 ```
 
-The script writes both files and exits non-zero if any checked pair misses its
-threshold. Current run: 12 hues, 13 steps, 216 checks, 0 failures.
+The script reads the frozen Tailwind source, selects contrast-safe ranges, and
+exits non-zero if any checked pair misses its threshold. Current run: 12 hues,
+288 checks, 0 failures.
 
 ## What this does not change
 
@@ -70,3 +70,5 @@ threshold. Current run: 12 hues, 13 steps, 216 checks, 0 failures.
 - The neutral-first rule stays: color carries action, state, and emphasis;
   surfaces and text stay neutral.
 - Functional hues stay fixed; a site cannot re-point danger to its accent.
+- A bright 500 fill for a light-theme button is still an open question
+  (`DabDesign.md` §4.10); the current fill range is contrast-safe.
