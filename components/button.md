@@ -55,7 +55,7 @@ target, use a 16 / 20 / 24 icon for `sm` / `md` / `lg`, and require
 map the action aliases onto ink (DAB-003); the Button does not branch on it.
 
 The solid `danger` variant uses the `-hover` and `-pressed` fill roles from
-DAB-016 (§4.10). The Button specification itself is still Draft and must not
+DAB-016 (§4.9). The Button specification itself is still Draft and must not
 be shipped as an Adopted component.
 
 ## State matrix (§9.2)

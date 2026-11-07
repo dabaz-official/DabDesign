@@ -69,4 +69,4 @@ exits non-zero if any checked pair misses its threshold. Current run: 12 hues,
   surfaces and text stay neutral.
 - Functional hues stay fixed; a site cannot re-point danger to its accent.
 - A bright 500 fill for a light-theme button is still an open question
-  (`DabDesign.md` §4.10); the current fill range is contrast-safe.
+  (`DabDesign.md` §4.9); the current fill range is contrast-safe.
