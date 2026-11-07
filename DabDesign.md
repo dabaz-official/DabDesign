@@ -439,6 +439,7 @@ Specification-level changes are listed here; file history lives in git.
 | `0.1.0` | 2026-11-07 | DAB-012 ratified — breakpoint and container tokens added to frontmatter | Draft |
 | `0.1.0` | 2026-11-07 | DAB-013 proposed — eight-component pilot in dependency order, site sequence official → game → music (§9.5); awaiting approval | Draft |
 | `0.1.0` | 2026-11-07 | DAB-013 ratified — all thirteen decisions approved; specification awaits the foundation test page for 1.0.0 | Draft |
+| `0.1.0` | 2026-11-07 | Component layer opened — registry and Button Draft added under `components/` (§9.1) | Draft |
 
 ---
 
@@ -1347,7 +1348,9 @@ Every component entry includes: **name** (identical to its token key),
 **purpose**, **anatomy** (background, text, border, typography, padding, height,
 radius, shadow), **variants**, **sizes**, **state matrix**, **accessibility**
 (role, keyboard, accessible name, focus behavior), and component-specific
-**Do/Don't**.
+**Do/Don't**. Each component has its own file under `components/<name>.md`,
+carrying its lifecycle status; `components/README.md` is the registry and
+template.
 
 ### 9.2 State matrix (standard)
 
