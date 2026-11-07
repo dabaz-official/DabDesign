@@ -203,7 +203,7 @@ containers:
 
 # DabWave Design System — Specification
 
-**Document status:** Draft — DAB-001…DAB-013 ratified; foundation test page built and verified, awaiting Owner acceptance; DAB-014/DAB-015 proposed post-1.0  
+**Document status:** Draft — DAB-001…DAB-013 ratified; foundation test page built and verified, awaiting Owner acceptance; DAB-014…DAB-016 proposed post-1.0  
 **Spec version:** 0.1.0  
 **Owner:** DabAZ  
 **Last updated:** 2026-11-07  
@@ -267,7 +267,7 @@ and ambiguity is treated as a defect (§2.3).
 | Kind | Contents | Where |
 |---|---|---|
 | **Framework** (process law) | Governance, RFC and versioning, token discipline, component lifecycle and states, accessibility checklist, content and i18n rules, quality gates | §2, §3, §9, §10, §11, §12 |
-| **Design decisions** | System architecture, theming model, color, typography, space, motion, layout, component scope, accessibility target | §13 roadmap — DAB-001…DAB-013 Approved; DAB-014/DAB-015 proposed for the component layer |
+| **Design decisions** | System architecture, theming model, color, typography, space, motion, layout, component scope, accessibility target | §13 roadmap — DAB-001…DAB-013 Approved; DAB-014…DAB-016 proposed for the component layer |
 
 Framework sections define *how decisions are made and enforced*. They do not
 presuppose their outcomes.
@@ -442,6 +442,7 @@ Specification-level changes are listed here; file history lives in git.
 | `0.1.0` | 2026-11-07 | Component layer opened — registry and Button Draft added under `components/` (§9.1) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-014 proposed — Tabler outline icon system (post-1.0, §6.5) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-015 proposed — functional hover/pressed fills for solid status buttons (post-1.0, §4.9) | Draft |
+| `0.1.0` | 2026-11-07 | DAB-016 proposed — 13-step 12-hue ramp catalog, functional colors as ramp references; 144/144 checks pass (§4.10) | Draft |
 
 ---
 
@@ -535,6 +536,7 @@ Specification-level changes are listed here; file history lives in git.
 
 > **Status: Approved (Owner, 2026-11-06) — ADR-003.** This section fixes
 > structure and governance only; values are decided in DAB-004…DAB-007.
+> Amended by the DAB-016 proposal (§4.10): the accent ramp becomes 13 steps.
 
 **Family model — three families:**
 
@@ -722,7 +724,8 @@ fails 1.4.11); separate light and dark `border-strong` values (rejected —
 
 > **Status: Approved (Owner, 2026-11-06) — ADR-006.** Values are in the
 > frontmatter (`themes.light.*`, `themes.dark.*`); this section explains
-> derivation and usage.
+> derivation and usage. DAB-016 (§4.10) proposes replacing these values with
+> green / amber / red ramp references.
 
 **Derivation.** Each status is defined by one hue and one chroma; its four role
 values are generated with the OKLCH fixed-lightness method (the same math as
@@ -854,7 +857,7 @@ requirements and conflicts with §9.2).
 ### 4.9 Proposed answer — DAB-015, functional hover and pressed fills (post-1.0)
 
 > **Status: Proposed, not approved.** Component-layer decision; it does not
-> gate 1.0.0.
+> gate 1.0.0. Superseded by the DAB-016 proposal (§4.10) if that is ratified.
 
 **Extension.** Add two fill roles per status — `color-{status}-hover` and
 `color-{status}-pressed` — alongside the ratified base / strong / subtle / on
@@ -898,6 +901,101 @@ possible without another amendment.
 the same amendment later); a Button-only component token (hides a reusable
 status decision inside one component); reusing `strong` as pressed (no distinct
 pressed state); a brightness filter (not a token, not measurable).
+
+### 4.10 Proposed answer — DAB-016, 13-step hue ramps (post-1.0)
+
+> **Status: Proposed, not approved.** Amends DAB-003 (§4.4), replaces the
+> DAB-006 values with ramp references, and supersedes DAB-015 (§4.9) if
+> ratified. Does not gate 1.0.0.
+
+**What changes.**
+
+- The accent ramp becomes **13 steps**, matching the gray step names:
+  `accent-0`, `accent-50`, `accent-100`, `accent-200`, `accent-300`,
+  `accent-400`, `accent-500`, `accent-600`, `accent-700`, `accent-800`,
+  `accent-900`, `accent-950`, `accent-1000`. `accent-0` is white and
+  `accent-1000` is black in every ramp.
+- The core gains a **12-hue library**, evenly spaced every 30°: rose 0, red 30,
+  orange 60, amber 90, lime 120, green 150, teal 180, cyan 210, blue 240,
+  indigo 270, violet 300, magenta 330. A site theme selects one hue; that ramp
+  is exposed as its `accent-*` steps.
+- Functional colors become **ramp references**: success → green, warning →
+  amber, danger → red, at fixed steps.
+- Gray is unchanged. `gray-150` stays removed; the ladder's 150 entry is
+  skipped. The canonical neutral values are not regenerated.
+
+**Method.** Fixed L ladder and chroma curve:
+
+| Step | 0 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 | 1000 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| L | 1.00 | 0.97 | 0.94 | 0.88 | 0.81 | 0.73 | 0.64 | 0.56 | 0.48 | 0.40 | 0.32 | 0.22 | 0.00 |
+| C curve | 0 | 0.10 | 0.18 | 0.32 | 0.52 | 0.74 | 0.92 | 1.00 | 0.96 | 0.86 | 0.70 | 0.45 | 0 |
+
+Base chroma is 85% of the maximum in-gamut chroma at step 600 for that hue.
+Gamut mapping lowers C only; L and H never change. The formula is the one in
+`scripts/hue-catalog.mjs`.
+
+**Alias mapping.**
+
+| Theme | primary | hover | pressed | subtle | on |
+|---|---|---|---|---|---|
+| Light | 600 | 700 | 800 | 100 | 0 |
+| Dark | 500 | 400 | 300 | 900 | 1000 |
+
+Exception: green and teal use light `700 / 800 / 900` because `on-primary` at
+600 measures 4.08:1 and 4.03:1 — below 4.5. Every other hue keeps 600 / 700 /
+800. `color-on-primary` is white in light and black in dark for all twelve
+hues; the catalog records the chosen value per hue.
+
+**Functional mapping.** Step references, not separate hex values:
+
+| Role | Ramp | Light base / hover / pressed / strong / subtle / on | Dark base / hover / pressed / strong / subtle / on |
+|---|---|---|---|
+| success | green | 700 / 800 / 900 / 800 / 100 / 0 | 400 / 300 / 200 / 300 / 900 / 1000 |
+| warning | amber | 700 / 800 / 900 / 800 / 100 / 0 | 400 / 300 / 200 / 300 / 900 / 1000 |
+| danger | red | 700 / 800 / 900 / 800 / 100 / 0 | 400 / 300 / 200 / 300 / 900 / 1000 |
+
+In light, base and strong are distinct (700 / 800); hover shares the strong
+step (800). In dark, strong shares the hover step (300). Both are documented
+dual uses.
+
+**Validation.** `node scripts/hue-catalog.mjs` generates 12 hues × 13 steps and
+checks 144 pairs — on-color on base/hover/pressed, strong and base on all three
+surfaces, text on subtle, primary on backgrounds, and on-primary on primary.
+Current run: **144 checked, 0 failures, exit 0**.
+
+**Catalog.** `palettes/catalog.md` holds the human-readable ramps, alias
+mapping, functional mapping, and the contrast summary; `palettes/ramps.json` is
+the machine-readable source.
+
+**On approval.**
+
+- DAB-003's 10-step `accent-50…900` contract is deprecated in favor of the
+  13-step `accent-0…1000` contract.
+- `scripts/hue-catalog.mjs` supersedes `scripts/oklch-ramp.mjs`;
+  `scripts/functional-palette.mjs` is superseded because functional colors are
+  now ramp references.
+- `oklch-brand-color.md` is updated to the 13-step method.
+- Site theme documents select one hue, record the five alias steps, and cite
+  the catalog instead of copying 13 hexes.
+- Frontmatter records the step list, anchor, alias mapping, and functional step
+  references; the 156 raw values stay in `palettes/ramps.json` rather than
+  being duplicated in the specification body (§3.3).
+
+**Rationale.** One ladder for every hue makes ramps directly comparable and
+lets a site change hue without changing its step skeleton. Twelve evenly spaced
+hues give predictable names and cover cold, warm, tool, and creative
+directions. Functional colors as ramp references remove the separate functional
+generator and guarantee that status and accent share the same lightness
+geometry. Keeping gray adopted means no existing contrast result is
+invalidated.
+
+**Alternatives considered.** 14 steps with 150 (requires re-adding `gray-150`
+and re-measuring every neutral pair); regenerating gray with C = 0 (invalidates
+DAB-004 and all measured ratios); 10-step accents (inconsistent with the gray
+step names); an arbitrary hue list (less predictable); keeping functional
+colors as separate generated values (two lightness systems, the current
+state).
 
 ---
 
@@ -1691,12 +1789,13 @@ frontmatter if a token is involved, and adding a changelog row.
 | `DAB-012` | Layout | Breakpoints, containers, gutters, grid | DAB-001 | **Approved (2026-11-07)** — ADR-012 |
 | `DAB-013` | Component scope | Shared-layer pilot set and order | most | **Approved (2026-11-07)** — ADR-013 |
 | `DAB-014` | Iconography | Icon set, grid, stroke, sizes, icon accessibility | DAB-010 | Proposed (2026-11-07) — §6.5 |
-| `DAB-015` | Functional states | Hover and pressed fill roles for status colors | DAB-006 | Proposed (2026-11-07) — §4.9 |
+| `DAB-015` | Functional states | Hover and pressed fill roles for status colors | DAB-006 | Proposed — superseded by DAB-016 (§4.10) |
+| `DAB-016` | Hue ramps | 13-step 12-hue catalog; functional colors as ramp references | DAB-003, DAB-004, DAB-006, DAB-015 | Proposed (2026-11-07) — §4.10 |
 
 Working agreement: decisions are taken in roadmap order (dependencies may pull
 one forward with the owner's sign-off). `DAB-001`…`DAB-013` are Approved;
-`DAB-014` and `DAB-015` are post-1.0 component-layer proposals. `1.0.0` ships
-when the foundation test page (§12.1) passes.
+`DAB-014`…`DAB-016` are post-1.0 proposals. `1.0.0` ships when the foundation
+test page (§12.1) passes.
 
 ---
 
