@@ -1,22 +1,21 @@
 /* Preview-only values.
-   Accent: the smoke-test ramp from oklch-brand-color.md
-   (hue 262.9, anchor 600, C 0.18). Not a site decision.
-   Danger hover/pressed: DAB-015 (Proposed), section 4.9. */
+   Primary: neutral ink mapping for a neutral site (DAB-003 option).
+   Danger hover/pressed: DAB-016 Tailwind red ramp references. */
 
 :root {
-  --color-primary: #386DDC;
-  --color-primary-hover: #2455BD;
-  --color-primary-pressed: #163F99;
+  --color-primary: #171717;
+  --color-primary-hover: #0A0A0A;
+  --color-primary-pressed: #000000;
   --color-on-primary: #FFFFFF;
   --color-danger-hover: #C10007;
   --color-danger-pressed: #9F0712;
 }
 
 [data-theme="dark"] {
-  --color-primary: #5487F0;
-  --color-primary-hover: #7BA6FB;
-  --color-primary-pressed: #A1C1FE;
-  --color-on-primary: #000000;
+  --color-primary: #FAFAFA;
+  --color-primary-hover: #FFFFFF;
+  --color-primary-pressed: #E5E5E5;
+  --color-on-primary: #171717;
   --color-danger-hover: #FF6467;
   --color-danger-pressed: #FFA2A2;
 }
