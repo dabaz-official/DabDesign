@@ -203,7 +203,7 @@ containers:
 
 # DabWave Design System — Specification
 
-**Document status:** Draft — DAB-001…DAB-013 ratified; no Open decisions; awaiting the foundation test page (§12.1)  
+**Document status:** Draft — DAB-001…DAB-013 ratified; foundation test page built and verified, awaiting Owner acceptance; DAB-014/DAB-015 proposed post-1.0  
 **Spec version:** 0.1.0  
 **Owner:** DabAZ  
 **Last updated:** 2026-11-07  
@@ -267,7 +267,7 @@ and ambiguity is treated as a defect (§2.3).
 | Kind | Contents | Where |
 |---|---|---|
 | **Framework** (process law) | Governance, RFC and versioning, token discipline, component lifecycle and states, accessibility checklist, content and i18n rules, quality gates | §2, §3, §9, §10, §11, §12 |
-| **Design decisions** | System architecture, theming model, color, typography, space, motion, layout, component scope, accessibility target | §13 roadmap — all DAB-001…DAB-013 Approved; they bind every site |
+| **Design decisions** | System architecture, theming model, color, typography, space, motion, layout, component scope, accessibility target | §13 roadmap — DAB-001…DAB-013 Approved; DAB-014/DAB-015 proposed for the component layer |
 
 Framework sections define *how decisions are made and enforced*. They do not
 presuppose their outcomes.
@@ -440,6 +440,8 @@ Specification-level changes are listed here; file history lives in git.
 | `0.1.0` | 2026-11-07 | DAB-013 proposed — eight-component pilot in dependency order, site sequence official → game → music (§9.5); awaiting approval | Draft |
 | `0.1.0` | 2026-11-07 | DAB-013 ratified — all thirteen decisions approved; specification awaits the foundation test page for 1.0.0 | Draft |
 | `0.1.0` | 2026-11-07 | Component layer opened — registry and Button Draft added under `components/` (§9.1) | Draft |
+| `0.1.0` | 2026-11-07 | DAB-014 proposed — Tabler outline icon system (post-1.0, §6.5) | Draft |
+| `0.1.0` | 2026-11-07 | DAB-015 proposed — functional hover/pressed fills for solid status buttons (post-1.0, §4.9) | Draft |
 
 ---
 
@@ -758,6 +760,9 @@ re-measuring every pair below.
   `strong`, or `base` (all measured).
 - **on** — text or icon on its own base fill only; ≥ 4.5:1.
 
+See §4.9 for the proposed `-hover` and `-pressed` fill roles (DAB-015), which
+extend this set for solid status fills once approved.
+
 **Measured results** — worst case across all three ratified surfaces:
 
 | Pair | Light | Dark | Requirement |
@@ -845,6 +850,54 @@ separation unchanged); a second `color-overlay-strong` (rejected — no nested
 modal scenario yet); splitting color and opacity into two tokens (rejected —
 easy to consume only one); allowing media or state use (rejected — different
 requirements and conflicts with §9.2).
+
+### 4.9 Proposed answer — DAB-015, functional hover and pressed fills (post-1.0)
+
+> **Status: Proposed, not approved.** Component-layer decision; it does not
+> gate 1.0.0.
+
+**Extension.** Add two fill roles per status — `color-{status}-hover` and
+`color-{status}-pressed` — alongside the ratified base / strong / subtle / on
+roles. The existing four roles are unchanged.
+
+**Values.**
+
+| Status | Theme | hover | pressed |
+|---|---|---|---|
+| success | light | `#007131` | `#005724` |
+| success | dark | `#64D281` | `#86F4A0` |
+| warning | light | `#775800` | `#5C4300` |
+| warning | dark | `#D9B25B` | `#FAD27B` |
+| danger | light | `#B00A1E` | `#8B0013` |
+| danger | dark | `#FF958E` | `#FFC8C3` |
+
+**Generation.** Same hue and chroma as DAB-006 (success 150.0/0.154, warning
+85.2/0.115, danger 24.9/0.190). Light uses L 0.48 (hover) and 0.40 (pressed);
+dark uses L 0.78 and 0.88. Gamut mapping reduces C only. `on-*` is unchanged:
+white in light, `gray-1000` in dark.
+
+**Use.** These roles are for solid status fills only — destructive buttons and
+status badges. `strong` remains the text role on neutral surfaces; `base`
+remains the default icon, border, and fill role. `-hover` and `-pressed` are not
+text colors.
+
+**Measured.** On-color contrast: light hover 6.16–7.22:1, light pressed
+8.79–9.97:1; dark hover 9.94–11.08:1, dark pressed 14.30–15.46:1. All above the
+4.5:1 text threshold; the fills also clear 3:1 against all three neutral
+surfaces.
+
+**Frontmatter on approval.** Six roles per theme join `themes.light` and
+`themes.dark`.
+
+**Rationale.** A solid destructive button needs three distinct fills; reusing
+base and strong for all three states collapses hover and pressed into the same
+color. Adding the pair symmetrically keeps solid success and warning fills
+possible without another amendment.
+
+**Alternatives considered.** A danger-only pressed role (asymmetric and invites
+the same amendment later); a Button-only component token (hides a reusable
+status decision inside one component); reusing `strong` as pressed (no distinct
+pressed state); a brightness filter (not a token, not measurable).
 
 ---
 
@@ -1134,6 +1187,51 @@ controls need); 36/44/52 control heights (rejected — desktop controls read
 loose); 16/24/32 icons (rejected — 24 crowds a 32px control and has no 20px
 default); the canonical `design.md` radius scale (overridden — the Owner asked
 for Apple); 0.5px borders (rejected — inconsistent rendering).
+
+### 6.5 Proposed answer — DAB-014, icon system (post-1.0)
+
+> **Status: Proposed, not approved.** Component-layer decision; it does not
+> gate 1.0.0.
+
+**Set.** Tabler Icons, outline only, MIT licensed. No filled or duotone
+variants, no emoji as icons, no hand-drawn paths.
+
+**Geometry.** 24×24 viewBox, stroke 2, round caps and joins, `fill: none`,
+`stroke: currentColor`. Icons render at 16 / 20 / 24 / 32 (DAB-010); grid and
+stroke scale together, so `stroke-width` is never overridden per size.
+
+**Delivery.** Inline SVG or a self-hosted sprite. No icon webfont and no
+third-party CDN (DAB-008). Bundled icons carry the Tabler MIT notice.
+
+**Color.** Icons inherit `currentColor`. There is no separate icon color token;
+an icon inside a button uses the button's text color.
+
+**Accessibility.**
+
+- Decorative icons: `aria-hidden="true"`, no accessible name.
+- An icon that carries meaning gets a text alternative, visible or
+  visually hidden.
+- Icon-only controls require `aria-label` and a 44×44 effective target.
+- An icon never replaces a visible primary-action label unless the meaning is
+  universally unambiguous and an accessible name exists.
+
+**Do / Don't.**
+
+- Do use the set's own geometry.
+- Don't redraw, combine, or recolor icons.
+- Don't mix in a second icon family.
+
+**Frontmatter on approval.** No token change; the icon set is a component
+asset, not a token scale. The dependency is recorded in the component registry.
+
+**Rationale.** Tabler covers UI, media, and game glyphs in one consistent
+outline family at 24px / 2px; outline-only matches the flat, border-first
+character. Inline or self-hosted delivery follows the no-CDN rule.
+
+**Alternatives considered.** Lucide (cleaner and smaller, but fewer game and
+media glyphs); SF Symbols (platform-bound, not licensable for web); an icon
+webfont (blocking, no per-icon tree-shaking, extra origin); hand-drawn icons
+(drift and inconsistent geometry).
 
 ---
 
@@ -1592,10 +1690,13 @@ frontmatter if a token is involved, and adding a changelog row.
 | `DAB-011` | Elevation & motion | Levels, values; durations, easing, reduced motion | DAB-001 | **Approved (2026-11-07)** — ADR-011 |
 | `DAB-012` | Layout | Breakpoints, containers, gutters, grid | DAB-001 | **Approved (2026-11-07)** — ADR-012 |
 | `DAB-013` | Component scope | Shared-layer pilot set and order | most | **Approved (2026-11-07)** — ADR-013 |
+| `DAB-014` | Iconography | Icon set, grid, stroke, sizes, icon accessibility | DAB-010 | Proposed (2026-11-07) — §6.5 |
+| `DAB-015` | Functional states | Hover and pressed fill roles for status colors | DAB-006 | Proposed (2026-11-07) — §4.9 |
 
 Working agreement: decisions are taken in roadmap order (dependencies may pull
-one forward with the owner's sign-off). All thirteen decisions are now
-Approved; `1.0.0` ships when the foundation test page (§12.1) passes.
+one forward with the owner's sign-off). `DAB-001`…`DAB-013` are Approved;
+`DAB-014` and `DAB-015` are post-1.0 component-layer proposals. `1.0.0` ships
+when the foundation test page (§12.1) passes.
 
 ---
 
