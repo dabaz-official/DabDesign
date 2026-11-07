@@ -203,7 +203,7 @@ containers:
 
 # DabWave Design System — Specification
 
-**Document status:** Draft — DAB-001…DAB-013, DAB-016, DAB-017 ratified; foundation test page built and verified, awaiting Owner acceptance; DAB-014 and DAB-015 not ratified  
+**Document status:** Draft — DAB-001…DAB-014, DAB-016, DAB-017 ratified; foundation test page built and verified, awaiting Owner acceptance; DAB-015 not ratified  
 **Spec version:** 0.1.0  
 **Owner:** DabAZ  
 **Last updated:** 2026-11-07  
@@ -267,7 +267,7 @@ and ambiguity is treated as a defect (§2.3).
 | Kind | Contents | Where |
 |---|---|---|
 | **Framework** (process law) | Governance, RFC and versioning, token discipline, component lifecycle and states, accessibility checklist, content and i18n rules, quality gates | §2, §3, §9, §10, §11, §12 |
-| **Design decisions** | System architecture, theming model, color, typography, space, motion, layout, component scope, accessibility target | §13 roadmap — DAB-001…DAB-013, DAB-016, DAB-017 Approved; DAB-014/DAB-015 not ratified |
+| **Design decisions** | System architecture, theming model, color, typography, space, motion, layout, component scope, accessibility target | §13 roadmap — DAB-001…DAB-014, DAB-016, DAB-017 Approved; DAB-015 not ratified |
 
 Framework sections define *how decisions are made and enforced*. They do not
 presuppose their outcomes.
@@ -400,6 +400,7 @@ from retired documents carry no status and are not inherited.
 | ADR-011 | 2026-11-07 | Elevation and motion: flat at rest with one `shadow-floating` token `2px 4px 16px rgba(0, 0, 0, 0.16)`, used only for the hover lift of interactive cards and floating layers; hover lift is `scale(1.01)` plus the shadow, with geometry, 300ms duration, and `cubic-bezier(0, 0, 0.5, 1)` easing measured from the Apple Store card CSS; durations 100/200/300ms, `linear` for color-only transitions; only transform, opacity, color, background, border, and shadow animate; press is a color change, not a scale; reduced motion disables transform/scale/parallax/auto-play while keeping color and opacity | One shadow keeps the system flat without losing functional depth for floating layers; the Apple Store hover is measured and restrained (1% scale, 16% shadow, 300ms); animating layout or radius would fight the fixed scales; disabling only movement under reduced motion preserves state feedback. Alternatives rejected: no shadows at all (floating layers lose their only depth cue in light theme), three elevation levels (invisible in dark and contrary to the flat character), animating radius or layout (thrash, fixed scale), Apple's `scale(0.95)` press (too loud for every control), disabling all animation under reduced motion (loses non-motion state feedback) | Accepted (Owner) |
 | ADR-012 | 2026-11-07 | Layout: mobile-first breakpoints 640/768/1024/1280/1536 as minimum widths; containers 640/768/1024/1200/1280/fluid with `container-xl` (1200) as default; gutters `space-4`/`space-6`/`space-8` (16/24/32) by viewport band; a 12-column grid available for wide compositions with 24/16 gaps and cards reflowing by minimum usable width; all values carried unchanged from canonical `design.md` §8.2–8.4 | Mobile-first is already approved in canonical `design.md` §8.1, matches the min-width breakpoint definitions, keeps overrides additive, and forces content priority at the 375px validation width; the canonical values already match this spec's validation set and 4px spacing scale, so reusing them avoids a second layout vocabulary. Alternatives rejected: three breakpoints only (drops the 640 and 1536 review widths), a single 1200px container (reading and dashboard layouts need different caps), a 1440px maximum (conflicts with the canonical 1280 cap), an 8-column grid (12 supports both 3- and 4-up), fixed desktop columns on mobile (cards must reflow) | Accepted (Owner) |
 | ADR-013 | 2026-11-07 | Component scope: an eight-component shared-layer pilot in dependency order — Button, Text input, Checkbox/radio/switch, Select, Card, Dialog, Toast/alert, Empty state; pilot sites in order DabAZ official site → a game (DabSudoku or DabMinesweeper) → DabMusic; hero/marketing composition, player controls, game board/HUD, and illustration stay in the site theme layer; navigation, footer, tabs, table, pagination, tooltip, badge, avatar, and skeleton are deferred to a follow-up scope decision; no frontmatter change because scope is not a token decision | Dependency order minimizes rework; the eight cover forms, containers, feedback, and empty states — the four patterns every site needs — without taking on navigation and footer variance; running restrained → dense → complex surfaces surfaces failures early, before DabMusic's player. Alternatives rejected: six components (leaves checkbox/radio and empty states unvalidated), ten including navigation and footer (premature abstraction), usage-frequency order (feedback designed before button states settle), parallel pilots (same component churns in two densities), game-first (marketing typography and forms validated last) | Accepted (Owner) |
+| ADR-014 | 2026-11-08 | Icon system: Tabler Icons, outline only, MIT; 24×24 viewBox, stroke 2, round caps and joins, `currentColor`; sizes 16/20/24/32 with 20 as default; inline SVG or a self-hosted sprite, no icon font or CDN; decorative icons `aria-hidden`, semantic icons need a text alternative, icon-only controls require `aria-label` and a 44×44 target; no filled or duotone variants, hand-drawn paths, emoji, or a second family | One outline family covers UI, media, and game glyphs at consistent 24px/2px geometry; outline-only matches the flat, border-first character; inline or self-hosted delivery follows the no-CDN rule; the accessibility rules keep icon-only controls operable. Alternatives rejected: Lucide (cleaner but fewer game and media glyphs), SF Symbols (platform-bound, not licensable for web), an icon webfont (blocking, no per-icon tree-shaking, extra origin), hand-drawn icons (drift) | Accepted (Owner) |
 | ADR-016 | 2026-11-07 | Hue ramps: adopt Tailwind CSS v4 palettes (MIT) for twelve hues — red, orange, amber, yellow, lime, green, teal, cyan, blue, indigo, violet, fuchsia; ramps run 50–950 (eleven steps), with `white` and `black` as separate primitives; `color-primary` is the fill role and `color-primary-text` is the link-safe step; functional colors are green/amber/red ramp references; values are frozen in `palettes/tailwind-source.json` and selected/verified by `scripts/hue-catalog.mjs` | Tailwind's palettes are hand-tuned per hue; their varying lightness is what keeps warm hues vivid where the fixed-L and fixed-H algorithms produced muddy results. Gray is already Tailwind Neutral, so one source governs both. Adopting values and verifying 288 pairs preserves single-source discipline without pretending they were generated. The fill/text split is required because a bright fill cannot also clear 4.5:1 as link text on white. Alternatives rejected: fixed-L algorithm, fixed-H anchors, a 30° grid, a single `color-primary` for fill and link | Accepted (Owner) |
 | ADR-017 | 2026-11-07 | Ramp endpoints: remove steps 0 and 1000 from every ramp, including gray. Ramps run `50`–`950`; `white` and `black` are separate primitives. Semantic roles reference them directly where an absolute color is meant — surface, inverse text, on-colors. Values are unchanged; only token names and ramp length change | The Owner directed one endpoint vocabulary: repeating white and black inside twelve ramps duplicated the same two colors and made the endpoints look like color stops. Separate primitives make them explicit and keep every hue at eleven meaningful steps. Alternatives rejected: keep 0/1000 (duplicates white/black across every ramp), name them `gray-white`/`gray-black` (less direct), regenerate values (unnecessary churn) | Accepted (Owner) |
 
@@ -443,6 +444,7 @@ Specification-level changes are listed here; file history lives in git.
 | `0.1.0` | 2026-11-07 | DAB-013 ratified — all thirteen decisions approved; specification awaits the foundation test page for 1.0.0 | Draft |
 | `0.1.0` | 2026-11-07 | Component layer opened — registry and Button Draft added under `components/` (§9.1) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-014 proposed — Tabler outline icon system (post-1.0, §6.5) | Draft |
+| `0.1.0` | 2026-11-08 | DAB-014 ratified — Tabler outline icon system (ADR-014) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-015 proposed — functional hover/pressed fills for solid status buttons (post-1.0, §4.9) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-016 proposed — 13-step 12-hue ramp catalog, functional colors as ramp references; 144/144 checks pass (§4.10) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-016 revised — fixed H per hue, per-hue anchors, shifted chroma curve; 216/216 checks pass; the 30° single-anchor draft is superseded within the proposal | Draft |
@@ -1342,10 +1344,10 @@ loose); 16/24/32 icons (rejected — 24 crowds a 32px control and has no 20px
 default); the canonical `design.md` radius scale (overridden — the Owner asked
 for Apple); 0.5px borders (rejected — inconsistent rendering).
 
-### 6.5 Proposed answer — DAB-014, icon system (post-1.0)
+### 6.5 DAB-014 — Icon system (approved 2026-11-08)
 
-> **Status: Proposed, not approved.** Component-layer decision; it does not
-> gate 1.0.0.
+> **Status: Approved (Owner, 2026-11-08) — ADR-014.** Component-layer
+> decision; it does not gate 1.0.0.
 
 **Set.** Tabler Icons, outline only, MIT licensed. No filled or duotone
 variants, no emoji as icons, no hand-drawn paths.
@@ -1375,8 +1377,8 @@ an icon inside a button uses the button's text color.
 - Don't redraw, combine, or recolor icons.
 - Don't mix in a second icon family.
 
-**Frontmatter on approval.** No token change; the icon set is a component
-asset, not a token scale. The dependency is recorded in the component registry.
+**Frontmatter.** No token change; the icon set is a component asset, not a
+token scale. The dependency is recorded in the component registry.
 
 **Rationale.** Tabler covers UI, media, and game glyphs in one consistent
 outline family at 24px / 2px; outline-only matches the flat, border-first
@@ -1844,15 +1846,15 @@ frontmatter if a token is involved, and adding a changelog row.
 | `DAB-011` | Elevation & motion | Levels, values; durations, easing, reduced motion | DAB-001 | **Approved (2026-11-07)** — ADR-011 |
 | `DAB-012` | Layout | Breakpoints, containers, gutters, grid | DAB-001 | **Approved (2026-11-07)** — ADR-012 |
 | `DAB-013` | Component scope | Shared-layer pilot set and order | most | **Approved (2026-11-07)** — ADR-013 |
-| `DAB-014` | Iconography | Icon set, grid, stroke, sizes, icon accessibility | DAB-010 | Proposed (2026-11-07) — §6.5 |
+| `DAB-014` | Iconography | Icon set, grid, stroke, sizes, icon accessibility | DAB-010 | **Approved (2026-11-08)** — ADR-014 |
 | `DAB-015` | Functional states | Hover and pressed fill roles for status colors | DAB-006 | Superseded by DAB-016 — not ratified |
 | `DAB-016` | Hue ramps | Tailwind v4 12-hue ramps, 11 steps + white/black, fill and link-safe steps; functional colors as ramp references | DAB-003, DAB-004, DAB-006, DAB-015 | **Approved (2026-11-07)** — ADR-016 |
 | `DAB-017` | Ramp endpoints | Ramps run 50–950; `white` and `black` are separate primitives | DAB-004 | **Approved (2026-11-07)** — ADR-017 |
 
 Working agreement: decisions are taken in roadmap order (dependencies may pull
-one forward with the owner's sign-off). `DAB-001`…`DAB-013`, `DAB-016`, and
-`DAB-017` are Approved; `DAB-014` and the superseded `DAB-015` are not.
-`1.0.0` ships when the foundation test page (§12.1) passes.
+one forward with the owner's sign-off). `DAB-001`…`DAB-014`, `DAB-016`, and
+`DAB-017` are Approved; the superseded `DAB-015` is not. `1.0.0` ships when
+the foundation test page (§12.1) passes.
 
 ---
 

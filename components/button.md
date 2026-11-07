@@ -6,8 +6,8 @@ DAB-016 Tailwind ramp values).
 **Pilot site:** none yet.
 **Depends on:** DAB-002 (focus, contrast), DAB-003 (action aliases), DAB-006
 (functional shape), DAB-009 (label type), DAB-010 (sizes, radius, borders),
-DAB-011 (motion), DAB-014 (icons, proposed), DAB-016 (Tailwind ramp values and
-fill aliases).
+DAB-011 (motion), DAB-014 (icons, approved 2026-11-08), DAB-016 (Tailwind ramp
+values and fill aliases).
 
 ## Purpose
 
@@ -38,7 +38,8 @@ role; do not compose one locally. If large buttons need a larger label, that is
 a type-scale decision, not a component override.
 
 Icon-only buttons are square at the size's height, keep the 44px minimum
-target, and require `aria-label`.
+target, use a 16 / 20 / 24 icon for `sm` / `md` / `lg`, and require
+`aria-label` (DAB-014).
 
 ## Variants
 
@@ -147,17 +148,15 @@ through §2.2 before use.
 
 ## Open questions
 
-1. **Approval dependency.** Icons need DAB-014 (§6.5) approved. Functional
-   colors are settled by DAB-016.
-2. **Focus on tinted surroundings.** `color-focus` was measured against the
+1. **Focus on tinted surroundings.** `color-focus` was measured against the
    three neutral surfaces only. A focused button placed directly on an
    accent-subtle or functional-subtle surface is not yet verified; do not do it
    until measured.
-3. **Pill modifier.** DAB-010 allows `radius-pill` for primary CTAs. Whether
+2. **Pill modifier.** DAB-010 allows `radius-pill` for primary CTAs. Whether
    the pill shape is a Button modifier or a site-composition concern is not
    decided. The base Button stays at `radius-sm`.
-4. **Toggle button.** An `aria-pressed` toggle variant is not specified.
-5. **Spinner token.** The 1000ms spinner loop is a component-level functional
+3. **Toggle button.** An `aria-pressed` toggle variant is not specified.
+4. **Spinner token.** The 1000ms spinner loop is a component-level functional
    value; whether to add a motion token for indeterminate progress is open.
 
 ## Definition of Done (§9.4)

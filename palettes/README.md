@@ -1,8 +1,7 @@
 # DabWave Hue Ramps
 
-**Status: Proposed (DAB-016).** Not approved. Do not consume these values in a
-site until DAB-016 is ratified and the old 10-step accent contract is
-deprecated.
+**Status: Approved (DAB-016, 2026-11-07).** Values are ratified; the old
+10-step accent contract is deprecated.
 
 ## What this is
 

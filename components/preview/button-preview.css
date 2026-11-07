@@ -60,6 +60,9 @@
 
 .btn .icon { width: 16px; height: 16px; flex: none; }
 .btn--lg .icon { width: 20px; height: 20px; }
+.btn--icon .icon { width: 20px; height: 20px; }
+.btn--icon.btn--sm .icon { width: 16px; height: 16px; }
+.btn--icon.btn--lg .icon { width: 24px; height: 24px; }
 
 .btn:focus-visible,
 .btn.is-focus {
