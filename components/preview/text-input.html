@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Text input — Draft specimen</title>
+<link rel="stylesheet" href="../../foundation/foundation.css">
+<link rel="stylesheet" href="./text-input-preview.css">
+<script src="./text-input-preview.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <div>
+      <p class="text-caption masthead__eyebrow">DabWave components · Draft</p>
+      <h1 class="text-h2">Text input</h1>
+      <p class="text-body-sm masthead__sub">Top-aligned labels, field-level errors, asterisk plus a single required legend. DAB-014 icons and DAB-016 danger values. Not for production.</p>
+    </div>
+    <div class="masthead__tools">
+      <div class="segmented" role="group" aria-label="Theme">
+        <button type="button" class="segmented__btn" data-theme-value="system" aria-pressed="true">System</button>
+        <button type="button" class="segmented__btn" data-theme-value="light" aria-pressed="false">Light</button>
+        <button type="button" class="segmented__btn" data-theme-value="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section">
+    <h2 class="text-h2">States</h2>
+    <p class="text-body">Hover and focus are forced for inspection. Errors always pair a border with a message and an icon.</p>
+    <p class="text-caption legend">* Required</p>
+    <div class="field-grid">
+      <div class="field field--md">
+        <label class="field__label" for="ti-default">Project name</label>
+        <input class="field__control" id="ti-default" type="text" placeholder="e.g. DabWave">
+        <p class="field__help">Shown on the project card.</p>
+      </div>
+
+      <div class="field field--md">
+        <label class="field__label" for="ti-filled">Project name</label>
+        <input class="field__control" id="ti-filled" type="text" value="DabWave">
+        <p class="field__help">Filled state uses the default colors.</p>
+      </div>
+
+      <div class="field field--md field--hover">
+        <label class="field__label" for="ti-hover">Hover (forced)</label>
+        <input class="field__control" id="ti-hover" type="text" value="Hovered">
+        <p class="field__help">Border moves to the tertiary text role.</p>
+      </div>
+
+      <div class="field field--md field--focus">
+        <label class="field__label" for="ti-focus">Focus (forced)</label>
+        <input class="field__control" id="ti-focus" type="text" value="Focused">
+        <p class="field__help">2px focus ring, 2px offset.</p>
+      </div>
+
+      <div class="field field--md">
+        <label class="field__label" for="ti-disabled">Disabled</label>
+        <input class="field__control" id="ti-disabled" type="text" value="Unavailable" disabled>
+        <p class="field__help">Removed from the tab order.</p>
+      </div>
+
+      <div class="field field--md">
+        <label class="field__label" for="ti-readonly">Readonly</label>
+        <input class="field__control" id="ti-readonly" type="text" value="DabWave 2026" readonly>
+        <p class="field__help">Focusable and copyable.</p>
+      </div>
+
+      <div class="field field--md field--error">
+        <label class="field__label" for="ti-error">Email</label>
+        <input class="field__control" id="ti-error" type="email" value="not-an-email" aria-invalid="true" aria-describedby="ti-error-msg">
+        <p class="field__error" id="ti-error-msg">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/></svg>
+          Enter a valid email address.
+        </p>
+      </div>
+
+      <div class="field field--md">
+        <label class="field__label" for="ti-required">Name <span class="field__required" aria-hidden="true">*</span></label>
+        <input class="field__control" id="ti-required" type="text" required placeholder="Required field">
+        <p class="field__help">The asterisk is visual; native required carries the semantics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Sizes</h2>
+    <p class="text-body">32 / 40 / 48. Input text scales 14 / 16 / 18; label stays 14 / 600.</p>
+    <div class="field-grid">
+      <div class="field field--sm">
+        <label class="field__label" for="ti-sm">Small</label>
+        <input class="field__control" id="ti-sm" type="text" value="Small input">
+      </div>
+      <div class="field field--md">
+        <label class="field__label" for="ti-md">Medium</label>
+        <input class="field__control" id="ti-md" type="text" value="Medium input">
+      </div>
+      <div class="field field--lg">
+        <label class="field__label" for="ti-lg">Large</label>
+        <input class="field__control" id="ti-lg" type="text" value="Large input">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Types and icons</h2>
+    <p class="text-body">Native types and input modes; icons are decorative and hidden from assistive technology.</p>
+    <div class="field-grid">
+      <div class="field field--md">
+        <label class="field__label" for="ti-email">Email</label>
+        <div class="field__wrap">
+          <svg class="field__icon field__icon--lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10"/><path d="M3 7l9 6l9 -6"/></svg>
+          <input class="field__control field__control--lead" id="ti-email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com">
+        </div>
+      </div>
+      <div class="field field--md">
+        <label class="field__label" for="ti-search">Search</label>
+        <div class="field__wrap">
+          <svg class="field__icon field__icon--lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg>
+          <input class="field__control field__control--lead" id="ti-search" type="search" placeholder="Search projects">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Contrast</h2>
+    <p class="text-body">Computed from the rendered variables. Disabled text is recorded but exempt.</p>
+    <p class="text-body-sm" id="contrast-summary" aria-live="polite">Calculating…</p>
+    <div class="table-scroll">
+      <table class="data-table text-body-sm">
+        <thead><tr><th scope="col">Pair</th><th scope="col">Ratio</th><th scope="col">Minimum</th><th scope="col">Verdict</th></tr></thead>
+        <tbody id="contrast-body"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p class="text-caption">Text input Draft specimen · <code>components/text-input.md</code> · 2026-11-08</p></div>
+</footer>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # Text input
 
 **Status:** Draft (2026-11-08) — awaiting Owner review; not Adopted.
-**Preview:** none yet.
+**Preview:** `preview/text-input.html` (Draft specimen).
 **Pilot site:** none yet.
 **Depends on:** DAB-002 (focus, contrast), DAB-005 (semantic roles), DAB-009
 (type), DAB-010 (sizes, radius, borders), DAB-011 (motion), DAB-014 (icons),
