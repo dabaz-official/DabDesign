@@ -1429,18 +1429,18 @@
         }
       },
       "dark": {
-        "base": "#FFA2A2",
+        "base": "#FB2C36",
         "hover": "#FF6467",
-        "pressed": "#FB2C36",
+        "pressed": "#FFA2A2",
         "strong": "#FFA2A2",
-        "subtle": "#82181A",
+        "subtle": "#460809",
         "on": "#000000",
         "steps": {
-          "base": 300,
+          "base": 500,
           "hover": 400,
-          "pressed": 500,
+          "pressed": 300,
           "strong": 300,
-          "subtle": 900,
+          "subtle": 950,
           "on": "black"
         }
       }
@@ -1810,7 +1810,7 @@
     {
       "theme": "dark",
       "label": "danger: on on base",
-      "ratio": 10.94,
+      "ratio": 5.52,
       "min": 4.5
     },
     {
@@ -1822,7 +1822,7 @@
     {
       "theme": "dark",
       "label": "danger: on on pressed",
-      "ratio": 5.52,
+      "ratio": 10.94,
       "min": 4.5
     },
     {
@@ -1834,7 +1834,7 @@
     {
       "theme": "dark",
       "label": "danger: base on gray-950",
-      "ratio": 10.32,
+      "ratio": 5.2,
       "min": 3
     },
     {
@@ -1846,7 +1846,7 @@
     {
       "theme": "dark",
       "label": "danger: base on gray-900",
-      "ratio": 9.34,
+      "ratio": 4.71,
       "min": 3
     },
     {
@@ -1858,25 +1858,25 @@
     {
       "theme": "dark",
       "label": "danger: base on gray-800",
-      "ratio": 7.89,
+      "ratio": 3.97,
       "min": 3
     },
     {
       "theme": "dark",
       "label": "danger: text-primary on subtle",
-      "ratio": 9.6,
+      "ratio": 15.49,
       "min": 4.5
     },
     {
       "theme": "dark",
       "label": "danger: base on subtle",
-      "ratio": 5.22,
+      "ratio": 4.25,
       "min": 3
     },
     {
       "theme": "dark",
       "label": "danger: strong on subtle",
-      "ratio": 5.22,
+      "ratio": 8.42,
       "min": 4.5
     },
     {

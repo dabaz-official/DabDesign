@@ -146,6 +146,11 @@ const FUNCTIONAL = [
   { role: 'warning', ramp: 'amber' },
   { role: 'danger', ramp: 'red' },
 ];
+// Owner direction 2026-11-07: in dark mode, functional danger defaults to the
+// vivid red-500; hover and pressed step lighter. Black text passes all three.
+const FUNCTIONAL_OVERRIDES = {
+  danger: { dark: { base: 500, hover: 400, pressed: 300, subtle: 950 } },
+};
 const functional = {};
 const checks = [];
 
@@ -154,18 +159,22 @@ for (const { role, ramp } of FUNCTIONAL) {
   for (const theme of ['light', 'dark']) {
     const range = hues[ramp].fill[theme];
     const strong = findStrong(ramps[ramp], theme);
-    const subtle = theme === 'light' ? 100 : 900;
+    const override = (FUNCTIONAL_OVERRIDES[role] || {})[theme];
+    const subtle = override && override.subtle ? override.subtle : theme === 'light' ? 100 : 900;
+    const baseStep = override ? override.base : range ? range.primary : null;
+    const hoverStep = override ? override.hover : range ? range.hover : null;
+    const pressedStep = override ? override.pressed : range ? range.pressed : null;
     out[theme] = {
-      base: range ? ramps[ramp][range.primary].hex : null,
-      hover: range ? ramps[ramp][range.hover].hex : null,
-      pressed: range ? ramps[ramp][range.pressed].hex : null,
+      base: baseStep === null ? null : ramps[ramp][baseStep].hex,
+      hover: hoverStep === null ? null : ramps[ramp][hoverStep].hex,
+      pressed: pressedStep === null ? null : ramps[ramp][pressedStep].hex,
       strong: strong === null ? null : ramps[ramp][strong].hex,
       subtle: ramps[ramp][subtle].hex,
       on: range ? range.onHex : null,
       steps: {
-        base: range ? range.primary : null,
-        hover: range ? range.hover : null,
-        pressed: range ? range.pressed : null,
+        base: baseStep,
+        hover: hoverStep,
+        pressed: pressedStep,
         strong, subtle,
         on: range ? range.on : null,
       },

@@ -74,9 +74,9 @@ themes:
     color-warning-strong: "#FFB900"
     color-warning-subtle: "#7B3306"
     color-on-warning: "#000000"
-    color-danger: "#FFA2A2"
+    color-danger: "#FB2C36"
     color-danger-strong: "#FFA2A2"
-    color-danger-subtle: "#82181A"
+    color-danger-subtle: "#460809"
     color-on-danger: "#000000"
     color-focus: "#4C89EF"
     color-selection-bg: "#FAFAFA"
@@ -449,6 +449,7 @@ Specification-level changes are listed here; file history lives in git.
 | `0.1.0` | 2026-11-07 | DAB-016 revised again — Tailwind CSS v4 palettes adopted (12 hues, 11 steps + white/black, display 500, fill and link-safe text steps); 288/288 checks pass | Draft |
 | `0.1.0` | 2026-11-07 | DAB-017 accepted — every ramp drops steps 0/1000; `white` and `black` become separate primitives (ADR-017) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-016 ratified — Tailwind v4 palettes adopted; 11 steps + white/black; fill and link-safe text steps; functional values replaced; 288/288 checks pass | Draft |
+| `0.1.0` | 2026-11-07 | Danger dark default moved to red-500 `#FB2C36`; hover/pressed 400/300; subtle 950 so the base keeps 3:1 | Draft |
 
 ---
 
@@ -1000,14 +1001,14 @@ and a link on white cannot share one token.
 
 **Functional mapping.** Solid fills use the contrast-safe fill range; `strong`
 is picked separately as text on neutral surfaces and on the subtle tint;
-`subtle` is 100 in light and 900 in dark; `on` is white in light and black in
-dark.
+`subtle` is 100 in light and 900 in dark, except danger dark at 950 so the
+red-500 base keeps 3:1; `on` is white in light and black in dark.
 
 | Role | Ramp | Light base / hover / pressed / strong / subtle / on | Dark base / hover / pressed / strong / subtle / on |
 |---|---|---|---|
 | success | green | 700 / 800 / 900 / 700 / 100 / white | 400 / 500 / 600 / 400 / 900 / black |
 | warning | amber | 700 / 800 / 900 / 700 / 100 / white | 400 / 500 / 600 / 400 / 900 / black |
-| danger | red | 600 / 700 / 800 / 700 / 100 / white | 300 / 400 / 500 / 300 / 900 / black |
+| danger | red | 600 / 700 / 800 / 700 / 100 / white | 500 / 400 / 300 / 300 / 950 / black |
 
 **Validation.** `node scripts/hue-catalog.mjs` reads the frozen Tailwind
 source and checks 288 pairs — fill states, on-colors, link text, functional

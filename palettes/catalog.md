@@ -251,7 +251,7 @@ Separate primitives, not ramp steps:
 |---|---|---|---|
 | success | green | 700 / 800 / 900 / 700 / 100 / white | 400 / 500 / 600 / 400 / 900 / black |
 | warning | amber | 700 / 800 / 900 / 700 / 100 / white | 400 / 500 / 600 / 400 / 900 / black |
-| danger | red | 600 / 700 / 800 / 700 / 100 / white | 300 / 400 / 500 / 300 / 900 / black |
+| danger | red | 600 / 700 / 800 / 700 / 100 / white | 500 / 400 / 300 / 300 / 950 / black |
 
 ## Contrast results
 
