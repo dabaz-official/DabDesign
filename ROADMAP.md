@@ -33,10 +33,10 @@ approved, an ADR in §2.5.
 |---|---|---|---|
 | DAB-001 | Two-layer architecture (core + site themes) | Approved 2026-11-01 | ADR-001 |
 | DAB-002 | Accessibility: WCAG 2.2 AA, contrast thresholds, 2px + 2px focus | Approved 2026-11-06 | ADR-002 |
-| DAB-003 | Color model: neutral / accent / functional families | Approved 2026-11-06 | ADR-003, amended by DAB-016 |
-| DAB-004 | Neutral palette | Approved 2026-11-06 | ADR-004, amended by DAB-017 |
+| DAB-003 | Color model: neutral / accent / functional families | Approved 2026-11-06 | ADR-003; current values in DAB-016 |
+| DAB-004 | Neutral palette | Approved 2026-11-06 | ADR-004, DAB-017 |
 | DAB-005 | Semantic roles and light/dark mappings | Approved 2026-11-06 | ADR-005 |
-| DAB-006 | Functional colors, focus, selection | Approved 2026-11-06 | ADR-006; functional values replaced by DAB-016, focus/selection remain |
+| DAB-006 | Functional colors, focus, selection | Approved 2026-11-06 | ADR-006; functional values from DAB-016, focus/selection remain |
 | DAB-007 | Overlay | Approved 2026-11-07 | ADR-007 |
 | DAB-008 | Typefaces and loading | Approved 2026-11-07 | ADR-008 |
 | DAB-009 | Type scale, weights, tracking, casing | Approved 2026-11-07 | ADR-009 |
@@ -45,12 +45,10 @@ approved, an ADR in §2.5.
 | DAB-012 | Layout | Approved 2026-11-07 | ADR-012 |
 | DAB-013 | Component pilot scope and order | Approved 2026-11-07 | ADR-013 |
 | DAB-014 | Icons: Tabler outline | Approved 2026-11-08 | ADR-014 |
-| DAB-015 | Functional hover/pressed fills | **Not ratified** | Superseded by DAB-016 |
 | DAB-016 | Tailwind v4 hue ramps, fill/text split | Approved 2026-11-07 | ADR-016 |
 | DAB-017 | Ramps run 50–950; `white`/`black` separate | Approved 2026-11-07 | ADR-017 |
 
 All decisions from DAB-001 to DAB-014, DAB-016, and DAB-017 are Approved.
-DAB-015 is dead; do not revive it.
 
 ---
 
@@ -61,7 +59,7 @@ DAB-015 is dead; do not revive it.
 - `DabDesign.md` — the single source of truth. Frontmatter holds the ratified
   tokens (colors, themes, typography, spacing, sizing, radius, border,
   elevation, motion, breakpoints, containers). Body sections explain usage.
-- `DabDesign.md` §4.10 — the color model: Tailwind v4 palettes, 12 hues,
+- `DabDesign.md` §4.9 — the color model: Tailwind v4 palettes, 12 hues,
   11 steps, white/black separate, fill and link-safe text steps.
 - `DabDesign.md` §6.5 — icons: Tabler outline, 24×24, stroke 2, sizes
   16/20/24/32, inline or self-hosted.
@@ -81,9 +79,9 @@ DAB-015 is dead; do not revive it.
 - `palettes/preview.html` — visual catalog.
 - `scripts/hue-catalog.mjs` — builds the catalog and checks every pair:
   **288/288 pass**.
-- Legacy and superseded: `scripts/oklch-ramp.mjs`,
-  `scripts/functional-palette.mjs`, `oklch-brand-color.md`. Do not add new work
-  to them.
+- Tooling: `scripts/hue-catalog.mjs` is the catalog builder. Do not add new
+  work to `scripts/oklch-ramp.mjs`, `scripts/functional-palette.mjs`, or
+  `oklch-brand-color.md`; they are not part of the current path.
 
 ### Components
 
@@ -228,7 +226,7 @@ measured.
 ## 8. Handoff facts
 
 - Branch: `dabdesign-v0.1.0`; remote: `origin`.
-- Last pushed content before this file: `d12dff1`.
+- Latest commit: see `git log -1`; the branch is pushed.
 - The spec is at `0.1.0`; the foundation page is the only 1.0.0 gate.
 - Live agent memory for this project exists in the ZCode project memory
   directory, but it is not in the repository. This ROADMAP is the portable
