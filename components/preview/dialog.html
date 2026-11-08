@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dialog — Draft specimen</title>
+<link rel="stylesheet" href="../../foundation/foundation.css">
+<link rel="stylesheet" href="./dialog-preview.css">
+<script src="./dialog-preview.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <div>
+      <p class="text-caption masthead__eyebrow">DabWave components · Draft</p>
+      <h1 class="text-h2">Dialog</h1>
+      <p class="text-body-sm masthead__sub">Native modal dialog, 50% overlay, color-border-strong edge, shadow-floating, focus containment and focus return. Not for production.</p>
+    </div>
+    <div class="masthead__tools">
+      <div class="segmented" role="group" aria-label="Theme">
+        <button type="button" class="segmented__btn" data-theme-value="system" aria-pressed="true">System</button>
+        <button type="button" class="segmented__btn" data-theme-value="light" aria-pressed="false">Light</button>
+        <button type="button" class="segmented__btn" data-theme-value="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section">
+    <h2 class="text-h2">Open a dialog</h2>
+    <p class="text-body">The native <code>&lt;dialog&gt;</code> element opens with <code>showModal()</code>. The page behind it is inert, scroll is locked, and Escape closes it. Focus returns to the trigger.</p>
+    <div class="trigger-row">
+      <button type="button" class="dlg-btn dlg-btn--secondary" data-dialog-open="dialog-default">Open dialog</button>
+      <button type="button" class="dlg-btn dlg-btn--danger" data-dialog-open="dialog-danger">Delete project</button>
+    </div>
+    <p class="text-body-sm" id="focus-status" aria-live="polite">No dialog open.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Behavior</h2>
+    <ul class="text-body">
+      <li>Initial focus: first focusable element; the destructive dialog focuses Cancel.</li>
+      <li>Tab and Shift+Tab stay inside the dialog.</li>
+      <li>Escape, Close, and Cancel all return focus to the trigger.</li>
+      <li>Backdrop click does not close the dialog.</li>
+      <li>Dialog is fluid below 640px and keeps 24px viewport margins.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Contrast</h2>
+    <p class="text-body">Computed from the rendered variables. The overlay itself is governed by DAB-007; the scrim is not a text pair.</p>
+    <p class="text-body-sm" id="contrast-summary" aria-live="polite">Calculating…</p>
+    <div class="table-scroll">
+      <table class="data-table text-body-sm">
+        <thead><tr><th scope="col">Pair</th><th scope="col">Ratio</th><th scope="col">Minimum</th><th scope="col">Verdict</th></tr></thead>
+        <tbody id="contrast-body"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<dialog class="dialog" id="dialog-default" aria-labelledby="dialog-default-title" aria-describedby="dialog-default-desc">
+  <div class="dialog__header">
+    <h2 class="text-h3 dialog__title" id="dialog-default-title">Edit project</h2>
+    <p class="text-body-sm dialog__desc" id="dialog-default-desc">Changes apply to everyone in this workspace.</p>
+  </div>
+  <div class="dialog__body">
+    <p class="text-body">Rename the project or archive it when the work is finished. Nothing is deleted from the dialog itself.</p>
+  </div>
+  <div class="dialog__footer">
+    <button type="button" class="dlg-btn dlg-btn--secondary" data-close>Cancel</button>
+    <button type="button" class="dlg-btn dlg-btn--primary" data-close>Save changes</button>
+  </div>
+  <button type="button" class="dialog__close" data-close aria-label="Close">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg>
+  </button>
+</dialog>
+
+<dialog class="dialog" id="dialog-danger" aria-labelledby="dialog-danger-title" aria-describedby="dialog-danger-desc">
+  <div class="dialog__header">
+    <h2 class="text-h3 dialog__title" id="dialog-danger-title">Delete project?</h2>
+    <p class="text-body-sm dialog__desc" id="dialog-danger-desc">This cannot be undone.</p>
+  </div>
+  <div class="dialog__body">
+    <p class="text-body">DabWave 0.1.0 and its 12 files will be permanently removed. Cancel keeps the project and returns focus to the trigger.</p>
+  </div>
+  <div class="dialog__footer">
+    <button type="button" class="dlg-btn dlg-btn--secondary" data-close autofocus>Cancel</button>
+    <button type="button" class="dlg-btn dlg-btn--danger" data-close>Delete project</button>
+  </div>
+  <button type="button" class="dialog__close" data-close aria-label="Close">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg>
+  </button>
+</dialog>
+
+<footer class="site-footer">
+  <div class="wrap"><p class="text-caption">Dialog Draft specimen · <code>components/dialog.md</code> · 2026-11-08</p></div>
+</footer>
+</body>
+</html>
