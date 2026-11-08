@@ -2,11 +2,11 @@
 
 **Status:** Draft (2026-11-07) — awaiting Owner review; not Adopted.
 **Preview:** `preview/button.html` (Draft specimen; solid danger uses the
-DAB-016 Tailwind ramp values).
+DAB-015 Tailwind ramp values).
 **Pilot site:** none yet.
 **Depends on:** DAB-002 (focus, contrast), DAB-003 (action aliases), DAB-006
 (functional shape), DAB-009 (label type), DAB-010 (sizes, radius, borders),
-DAB-011 (motion), DAB-014 (icons, approved 2026-11-08), DAB-016 (Tailwind ramp
+DAB-011 (motion), DAB-014 (icons, approved 2026-11-08), DAB-015 (Tailwind ramp
 values and fill aliases).
 
 ## Purpose
@@ -55,7 +55,7 @@ target, use a 16 / 20 / 24 icon for `sm` / `md` / `lg`, and require
 map the action aliases onto ink (DAB-003); the Button does not branch on it.
 
 The solid `danger` variant uses the `-hover` and `-pressed` fill roles from
-DAB-016 (§4.9). The Button specification itself is still Draft and must not
+DAB-015 (§4.9). The Button specification itself is still Draft and must not
 be shipped as an Adopted component.
 
 ## State matrix (§9.2)
@@ -77,7 +77,7 @@ sticky hover state. Pressed is a color and border change, never a scale
 definition site, as §4.2 permits: `secondary` uses the text role
 `color-text-primary` as an emphasized border, `danger-outline` uses
 `color-danger-strong`, and the solid `danger` hover/pressed fills use the
-DAB-016 roles whose primary purpose is a fill. No raw value is introduced.
+DAB-015 roles whose primary purpose is a fill. No raw value is introduced.
 
 **Disabled is not opacity.** All variants collapse to the same disabled
 treatment: `color-surface-secondary` fill, `color-text-disabled` label,

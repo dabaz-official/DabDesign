@@ -5,7 +5,7 @@
 **Pilot site:** none yet.
 **Depends on:** DAB-002 (focus, contrast), DAB-005 (semantic roles), DAB-009
 (type), DAB-010 (sizes, radius, borders), DAB-011 (motion), DAB-014 (icons),
-DAB-016 (danger values).
+DAB-015 (danger values).
 
 ## Purpose
 

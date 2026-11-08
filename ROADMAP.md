@@ -33,10 +33,10 @@ approved, an ADR in §2.5.
 |---|---|---|---|
 | DAB-001 | Two-layer architecture (core + site themes) | Approved 2026-11-01 | ADR-001 |
 | DAB-002 | Accessibility: WCAG 2.2 AA, contrast thresholds, 2px + 2px focus | Approved 2026-11-06 | ADR-002 |
-| DAB-003 | Color model: neutral / accent / functional families | Approved 2026-11-06 | ADR-003; current values in DAB-016 |
-| DAB-004 | Neutral palette | Approved 2026-11-06 | ADR-004, DAB-017 |
+| DAB-003 | Color model: neutral / accent / functional families | Approved 2026-11-06 | ADR-003; current values in DAB-015 |
+| DAB-004 | Neutral palette | Approved 2026-11-06 | ADR-004, DAB-016 |
 | DAB-005 | Semantic roles and light/dark mappings | Approved 2026-11-06 | ADR-005 |
-| DAB-006 | Functional colors, focus, selection | Approved 2026-11-06 | ADR-006; functional values from DAB-016, focus/selection remain |
+| DAB-006 | Functional colors, focus, selection | Approved 2026-11-06 | ADR-006; functional values from DAB-015, focus/selection remain |
 | DAB-007 | Overlay | Approved 2026-11-07 | ADR-007 |
 | DAB-008 | Typefaces and loading | Approved 2026-11-07 | ADR-008 |
 | DAB-009 | Type scale, weights, tracking, casing | Approved 2026-11-07 | ADR-009 |
@@ -45,10 +45,10 @@ approved, an ADR in §2.5.
 | DAB-012 | Layout | Approved 2026-11-07 | ADR-012 |
 | DAB-013 | Component pilot scope and order | Approved 2026-11-07 | ADR-013 |
 | DAB-014 | Icons: Tabler outline | Approved 2026-11-08 | ADR-014 |
-| DAB-016 | Tailwind v4 hue ramps, fill/text split | Approved 2026-11-07 | ADR-016 |
-| DAB-017 | Ramps run 50–950; `white`/`black` separate | Approved 2026-11-07 | ADR-017 |
+| DAB-015 | Tailwind v4 hue ramps, fill/text split | Approved 2026-11-07 | ADR-015 |
+| DAB-016 | Ramps run 50–950; `white`/`black` separate | Approved 2026-11-07 | ADR-016 |
 
-All decisions from DAB-001 to DAB-014, DAB-016, and DAB-017 are Approved.
+All decisions from DAB-001 to DAB-014, DAB-015, and DAB-016 are Approved.
 
 ---
 
@@ -102,7 +102,7 @@ needs implementation, visual verification, a pilot, and the §9.4 checklist.
 Button: five variants (`primary`, `secondary`, `ghost`, solid `danger`,
 `danger-outline`), sizes 32/40/48, full state matrix, icon-only sizes
 16/20/24. Its preview uses the **neutral ink** primary for a neutral site
-(DAB-003 option) and the DAB-016 danger values.
+(DAB-003 option) and the DAB-015 danger values.
 
 Text input: top-aligned label, field-level error with text + icon, asterisk +
 one required legend, sizes 32/40/48, native types, leading icons. Its preview
@@ -152,7 +152,7 @@ passes 11/11 contrast pairs plus one recorded disabled exemption.
 1. **Owner reviews the Text input Draft and preview.** Adjust if needed; only
    the Owner can move it from Draft.
 2. **Checkbox / radio / switch** — spec then preview. Reuse Text input's
-   label/help/error patterns and the DAB-016 danger values.
+   label/help/error patterns and the DAB-015 danger values.
 3. **Select** — depends on Text input and the popup layer.
 4. **Card** — surface, border, radius-lg, the single hover lift.
 5. **Dialog** — overlay, focus trap, shadow-floating, slow motion.

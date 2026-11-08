@@ -31,7 +31,7 @@ draft, measure, and report — they never approve.
 | 8 | Empty state | `empty-state.md` | Not started |
 
 Draft specimens live under `preview/`. The Button specimen is
-`preview/button.html`; it uses the ratified DAB-014 icons and DAB-016 colors
+`preview/button.html`; it uses the ratified DAB-014 icons and DAB-015 colors
 and is never a production asset.
 
 Wave 2 (navigation, footer, tabs, table, pagination, tooltip, badge, avatar,
