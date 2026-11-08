@@ -446,8 +446,8 @@ Specification-level changes are listed here; file history lives in git.
 | `0.1.0` | 2026-11-07 | Component layer opened — registry and Button Draft added under `components/` (§9.1) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-014 proposed — Tabler outline icon system (post-1.0, §6.5) | Draft |
 | `0.1.0` | 2026-11-08 | DAB-014 ratified — Tabler outline icon system (ADR-014) | Draft |
-| `0.1.0` | 2026-11-07 | DAB-016 accepted — every ramp drops steps 0/1000; `white` and `black` become separate primitives (ADR-016) | Draft |
 | `0.1.0` | 2026-11-07 | DAB-015 ratified — Tailwind v4 palettes adopted; 11 steps + white/black; fill and link-safe text steps; functional values replaced; 288/288 checks pass | Draft |
+| `0.1.0` | 2026-11-07 | DAB-016 accepted — every ramp drops steps 0/1000; `white` and `black` become separate primitives (ADR-016) | Draft |
 | `0.1.0` | 2026-11-07 | Danger dark default moved to red-500 `#FB2C36`; hover/pressed 400/300; subtle 950 so the base keeps 3:1 | Draft |
 | `0.1.0` | 2026-11-08 | Spec hygiene — §4.4 accent contract aligned to DAB-015 (11 steps, adopted Tailwind values); frontmatter version aligned to 0.1.0; description and Last updated corrected | Draft |
 
@@ -542,7 +542,8 @@ Specification-level changes are listed here; file history lives in git.
 ### 4.4 DAB-003 — Color system model (approved 2026-11-06)
 
 > **Status: Approved (Owner, 2026-11-06) — ADR-003.** This section fixes
-> structure and governance; values are decided in DAB-004…DAB-007 and DAB-015.
+> structure and governance; values are decided in DAB-004…DAB-007 and
+> DAB-015…DAB-016.
 
 **Family model — three families:**
 
