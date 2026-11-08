@@ -25,7 +25,7 @@ draft, measure, and report — they never approve.
 | 2 | Text input | `text-input.md` | Draft (2026-11-08) |
 | 3 | Checkbox / radio / switch | `checkbox-radio-switch.md` | Draft (2026-11-08) |
 | 4 | Select | `select.md` | Draft (2026-11-08) |
-| 5 | Card | `card.md` | Not started |
+| 5 | Card | `card.md` | Draft (2026-11-08) |
 | 6 | Dialog | `dialog.md` | Not started |
 | 7 | Toast / alert | `toast-alert.md` | Not started |
 | 8 | Empty state | `empty-state.md` | Not started |

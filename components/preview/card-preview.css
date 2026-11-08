@@ -1,0 +1,132 @@
+/* Card Draft specimen.
+   Surface, border, radius, spacing, and the DAB-011 hover lift only.
+   No raw colors or dimensions outside ratified tokens. */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__media {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface-secondary);
+  border-bottom: var(--border-width) solid var(--color-border);
+  color: var(--color-text-tertiary);
+}
+.card__media .icon { width: 32px; height: 32px; }
+
+/* Media card: body fills the remaining height and centers its text. */
+.card--media .card__body {
+  flex: 1;
+  justify-content: center;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-6);
+}
+
+.card--compact .card__body { padding: var(--space-4); }
+
+.card__eyebrow {
+  margin: 0 0 var(--space-1);
+  color: var(--color-text-tertiary);
+}
+
+.card .card__title {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-primary);
+}
+
+.card__text {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.card__meta {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-tertiary);
+}
+
+.card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.card__link {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+.card__link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Interactive card: one link, whole surface, no nested targets. */
+.card--interactive {
+  cursor: pointer;
+  transition:
+    transform var(--duration-slow) var(--easing-standard),
+    box-shadow var(--duration-slow) var(--easing-standard),
+    background-color var(--duration-fast) var(--easing-linear),
+    border-color var(--duration-fast) var(--easing-linear);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card--interactive:hover,
+  .card--hover {
+    transform: scale(1.01);
+    box-shadow: var(--shadow-floating);
+  }
+}
+
+.card--interactive:active,
+.card--interactive.card--pressed {
+  transform: none;
+  background: var(--color-surface-secondary);
+  border-color: var(--color-border-strong);
+}
+
+.card--interactive:focus-visible,
+.card--focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card--interactive {
+    transition:
+      background-color var(--duration-fast) var(--easing-linear),
+      border-color var(--duration-fast) var(--easing-linear);
+  }
+  .card--interactive:hover,
+  .card--hover {
+    transform: none;
+    box-shadow: var(--shadow-floating);
+  }
+}

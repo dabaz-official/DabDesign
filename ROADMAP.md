@@ -91,7 +91,7 @@ All decisions from DAB-001 to DAB-014, DAB-015, and DAB-016 are Approved.
 | 2 | Text input | `components/text-input.md` | `components/preview/text-input.html` | Draft |
 | 3 | Checkbox / radio / switch | `components/checkbox-radio-switch.md` | `components/preview/checkbox-radio-switch.html` | Draft |
 | 4 | Select | `components/select.md` | `components/preview/select.html` | Draft |
-| 5 | Card | — | — | Not started |
+| 5 | Card | `components/card.md` | `components/preview/card.html` | Draft |
 | 6 | Dialog | — | — | Not started |
 | 7 | Toast / alert | — | — | Not started |
 | 8 | Empty state | — | — | Not started |
@@ -115,6 +115,12 @@ groups, and an indeterminate checkbox. Preview: 11/11 plus one exemption.
 Select: native `<select>` baseline, top-aligned label, Tabler chevron,
 disabled placeholder option, sizes 32/40/48, native `<optgroup>`. Preview:
 11/11 plus one exemption.
+
+Card: static and whole-surface interactive patterns, surface + 1px border +
+`radius-lg`, no shadow at rest, the DAB-011 hover lift only on interactive
+cards, comfortable/compact padding. Preview: 7/7 contrast pairs plus one
+recorded decorative-border exemption in both themes; no overflow at all seven
+validation widths (375/390/640/768/1024/1280/1536).
 
 ### Fonts
 
@@ -144,34 +150,35 @@ disabled placeholder option, sizes 32/40/48, native `<optgroup>`. Preview:
    search clear button.
 5. **Select open items:** custom listbox/search, multi-select, combobox,
    native popup theming, long option text.
-6. **Site themes do not exist yet.** No document for DabAZ official site,
+6. **Card open items:** grid composition and media treatment are site-owned;
+   selectable and horizontal/side-media variants are not specified; loading
+   skeletons are deferred to wave 2.
+7. **Site themes do not exist yet.** No document for DabAZ official site,
    DabMusic, DabSudoku, or DabMinesweeper. The official site should use the
    neutral ink action mapping; the others pick a Tailwind hue.
-7. **Token export is manual.** The foundation page and previews transcribe
+8. **Token export is manual.** The foundation page and previews transcribe
    token values from the spec. A generator from frontmatter →
    CSS/JSON/Tailwind would remove drift; not built.
-8. **No CI.** Contrast checks are scripts run by hand; no axe, visual
+9. **No CI.** Contrast checks are scripts run by hand; no axe, visual
    regression, or token linter.
-9. **1.0.0 is blocked only by Owner acceptance** of the foundation test page.
-   Do not bump it yourself.
+10. **1.0.0 is blocked only by Owner acceptance** of the foundation test page.
+    Do not bump it yourself.
 
 ---
 
 ## 5. Next steps (in order)
 
-1. **Owner reviews the four Drafts and previews** — Button, Text input,
-   Checkbox / radio / switch, Select. Adjust if needed; only the Owner can
-   move a component from Draft.
-2. **Card** — spec then preview; surface, border, radius-lg, the single hover
-   lift.
-3. **Dialog** — overlay, focus trap, shadow-floating, slow motion.
-4. **Toast / alert** — functional roles, non-color cues, live region.
-5. **Empty state** — text hierarchy + Button + illustration slot.
-6. **Site theme documents** — official site first (neutral primary), then a
+1. **Owner reviews the five Drafts and previews** — Button, Text input,
+   Checkbox / radio / switch, Select, Card. Adjust if needed; only the Owner
+   can move a component from Draft.
+2. **Dialog** — overlay, focus trap, shadow-floating, slow motion.
+3. **Toast / alert** — functional roles, non-color cues, live region.
+4. **Empty state** — text hierarchy + Button + illustration slot.
+5. **Site theme documents** — official site first (neutral primary), then a
    game, then DabMusic (DAB-013 sequence).
-7. **Token export generator + CI** — frontmatter as the only source; contrast
+6. **Token export generator + CI** — frontmatter as the only source; contrast
    and visual regression checks.
-8. **Foundation test page acceptance → 1.0.0**, Owner only.
+7. **Foundation test page acceptance → 1.0.0**, Owner only.
 
 ---
 
@@ -258,5 +265,10 @@ measured.
 - Color decisions renumbered: **DAB-015** is the Tailwind hue catalog;
   **DAB-016** is the ramp endpoints (50–950, white/black separate).
 - Component Drafts with previews: Button, Text input, Checkbox / radio /
-  switch, Select.
-- Next: Card — spec plus preview in one commit.
+  switch, Select, Card.
+- Card verified in the browser: 7/7 contrast pairs plus one recorded
+  decorative-border exemption in both themes; no overflow at 375, 390, 640,
+  768, 1024, 1280, or 1536.
+- Fixed two stale DAB-016 comments (functional colors and danger ramps are
+  DAB-015) and the catalog JSON `status` field (`approved`).
+- Next: Owner review of the five Drafts, then Dialog.
