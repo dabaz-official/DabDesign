@@ -1,6 +1,6 @@
 /* Preview-only values.
    Primary: neutral ink mapping for a neutral site (DAB-003 option).
-   Danger hover/pressed: DAB-016 Tailwind red ramp references. */
+   Danger hover/pressed: DAB-015 Tailwind red ramp references. */
 
 :root {
   --color-primary: #171717;

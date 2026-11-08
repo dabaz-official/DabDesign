@@ -227,7 +227,7 @@ const outDir = path.join(process.cwd(), 'palettes');
 fs.mkdirSync(outDir, { recursive: true });
 
 const data = {
-  status: 'proposed',
+  status: 'approved',
   decision: 'DAB-015',
   generated: '2026-11-07',
   source: source.source,
