@@ -29,9 +29,16 @@ button.
 
 | Size | Height | Padding inline | Gap | Radius | Min width | Label type | Icon |
 |---|---:|---:|---:|---:|---:|---|---:|
-| `sm` | `control-height-sm` 32 | `space-3` 12 | `space-2` 8 | `radius-sm` 8 | 44 | `text-label` | 16 |
-| `md` (default) | `control-height-md` 40 | `space-4` 16 | `space-2` 8 | `radius-sm` 8 | 44 | `text-label` | 16 |
-| `lg` | `control-height-lg` 48 | `space-5` 20 | `space-2` 8 | `radius-sm` 8 | 44 | `text-label` | 20 |
+| `sm` | `control-height-sm` 32 | `space-3` 12 | `space-2` 8 | `radius-lg` 18 | 44 | `text-label` | 16 |
+| `md` (default) | `control-height-md` 40 | `space-4` 16 | `space-2` 8 | `radius-lg` 18 | 44 | `text-label` | 16 |
+| `lg` | `control-height-lg` 48 | `space-5` 20 | `space-2` 8 | `radius-lg` 18 | 44 | `text-label` | 20 |
+
+**Radius (Owner trial, 2026-11-09).** Every size currently uses `radius-lg`
+18 — two steps above the control default (`radius-sm` 8) and the card step in
+ADR-010. At the 32px `sm` height the 18px radius is clamped to 16px, so `sm`
+renders as a pill; `md` and `lg` are near-pill. This is a component-level trial
+using a ratified step; inputs and other controls keep `radius-sm`. Record the
+Owner's final choice before Pilot.
 
 All sizes use `text-label` (14 / 1.4 / 600). The scale has no 16px semibold
 role; do not compose one locally. If large buttons need a larger label, that is
@@ -100,7 +107,7 @@ Semantic only; no primitive step and no site accent step appears here.
 - Functional: `color-danger`, `color-danger-hover`, `color-danger-pressed`,
   `color-danger-strong`, `color-danger-subtle`, `color-on-danger`
 - Focus: `color-focus`
-- Shape and size: `radius-sm`, `border-width`, `control-height-sm|md|lg`
+- Shape and size: `radius-lg`, `border-width`, `control-height-sm|md|lg`
 - Space: `space-2`, `space-3`, `space-4`, `space-5`
 - Type: `text-label`
 - Motion: `duration-fast`, `easing-linear`
@@ -154,7 +161,7 @@ through §2.2 before use.
    until measured.
 2. **Pill modifier.** DAB-010 allows `radius-pill` for primary CTAs. Whether
    the pill shape is a Button modifier or a site-composition concern is not
-   decided. The base Button stays at `radius-sm`.
+   decided. The base Button stays at `radius-lg`.
 3. **Toggle button.** An `aria-pressed` toggle variant is not specified.
 4. **Spinner token.** The 1000ms spinner loop is a component-level functional
    value; whether to add a motion token for indeterminate progress is open.

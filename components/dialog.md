@@ -26,11 +26,17 @@ overlay token but have different geometry and are separate components.
 | Header | `space-6` padding; title `text-h3` 20 / 600 / 1.3, `color-text-primary`; optional description `text-body-sm` 14 / 1.6, `color-text-secondary`, `space-2` below the title |
 | Close | Icon-only Tabler `x`, `size-icon-md` 20, `color-text-secondary`, 44×44 target, `aria-label="Close"`; inline end of the header |
 | Body | `space-6` inline and bottom padding; `text-body` 16 / 1.7, `color-text-primary`; `overflow: auto` |
-| Footer | `space-4` top padding, `space-6` inline/bottom; 1px `color-border` divider above; actions end-aligned with `space-3` gap |
+| Footer | `space-4` top and bottom padding, `space-6` inline; 1px `color-border` divider above; actions end-aligned with `space-3` gap |
 
 The title's heading level comes from the page outline (usually `h2`);
 `text-h3` is the visual role. The close control is a Button icon-only
 specimen until the Button component is Adopted.
+
+**Spacing rhythm.** The header and body use `space-6` 24; the footer uses
+`space-4` 16 top and bottom. The action height already supplies internal
+space, and a tighter band keeps the actions attached to the dialog edge
+instead of making the footer read as a second content section. Inline padding
+stays `space-6` so buttons align with the body.
 
 **Dark-theme separation.** The container always carries
 `color-border-strong` in both themes. DAB-007 measured that a 50% black scrim

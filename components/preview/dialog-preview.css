@@ -36,7 +36,7 @@
   height: var(--control-height-md);
   padding-inline: var(--space-4);
   border: var(--border-width) solid transparent;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-lg);
   font-family: inherit;
   font-size: 0.875rem;
   line-height: 1.4;
@@ -148,7 +148,7 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--space-3);
-  padding: var(--space-4) var(--space-6) var(--space-6);
+  padding: var(--space-4) var(--space-6);
   border-top: var(--border-width) solid var(--color-border);
 }
 
@@ -162,7 +162,7 @@
   height: 44px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-lg);
   background: transparent;
   color: var(--color-text-secondary);
   cursor: pointer;

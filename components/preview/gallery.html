@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draft components — one-page gallery</title>
+<link rel="stylesheet" href="../../foundation/foundation.css">
+<style>
+  .gallery-intro { padding-block: var(--space-8); border-bottom: var(--border-width) solid var(--color-border); }
+  .gallery-intro p { max-width: 70ch; }
+  .gallery-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--color-background);
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+  .gallery-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: var(--space-3) 0;
+  }
+  .gallery-nav a {
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .gallery-nav a:hover { text-decoration: underline; text-underline-offset: 2px; }
+  .gallery-item { padding-block: var(--space-10); border-bottom: var(--border-width) solid var(--color-border); scroll-margin-top: var(--space-16); }
+  .gallery-item__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+  .gallery-item__head h2 { margin: 0; }
+  .gallery-item__head a { color: var(--color-text-primary); }
+  .gallery-frame {
+    display: block;
+    width: 100%;
+    height: 900px;
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <div>
+      <p class="text-caption masthead__eyebrow">DabWave components · Draft gallery</p>
+      <h1 class="text-h2">All Draft components on one page</h1>
+      <p class="text-body-sm masthead__sub">Six Draft contracts embedded as live previews. Theme changes apply to every panel. Component markup and CSS are unchanged; open a full preview for isolated inspection.</p>
+    </div>
+    <div class="masthead__tools">
+      <div class="segmented" role="group" aria-label="Theme">
+        <button type="button" class="segmented__btn" data-theme-value="system" aria-pressed="true">System</button>
+        <button type="button" class="segmented__btn" data-theme-value="light" aria-pressed="false">Light</button>
+        <button type="button" class="segmented__btn" data-theme-value="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="gallery-intro">
+    <p class="text-body">Pilot order from DAB-013. All six are Draft: the token contract and a preview exist; implementation, pilot, and the §9.4 Definition of Done do not.</p>
+  </section>
+
+  <nav class="gallery-nav" aria-label="Components">
+    <ul>
+      <li><a href="#button">1 · Button</a></li>
+      <li><a href="#text-input">2 · Text input</a></li>
+      <li><a href="#checkbox-radio-switch">3 · Checkbox / radio / switch</a></li>
+      <li><a href="#select">4 · Select</a></li>
+      <li><a href="#card">5 · Card</a></li>
+      <li><a href="#dialog">6 · Dialog</a></li>
+    </ul>
+  </nav>
+
+  <section class="gallery-item" id="button">
+    <div class="gallery-item__head">
+      <div>
+        <p class="text-caption">01 · Draft</p>
+        <h2 class="text-h2">Button</h2>
+      </div>
+      <a class="text-label" href="./button.html">Open full preview</a>
+    </div>
+    <iframe class="gallery-frame" src="./button.html" title="Button Draft preview" loading="eager"></iframe>
+  </section>
+
+  <section class="gallery-item" id="text-input">
+    <div class="gallery-item__head">
+      <div>
+        <p class="text-caption">02 · Draft</p>
+        <h2 class="text-h2">Text input</h2>
+      </div>
+      <a class="text-label" href="./text-input.html">Open full preview</a>
+    </div>
+    <iframe class="gallery-frame" src="./text-input.html" title="Text input Draft preview" loading="eager"></iframe>
+  </section>
+
+  <section class="gallery-item" id="checkbox-radio-switch">
+    <div class="gallery-item__head">
+      <div>
+        <p class="text-caption">03 · Draft</p>
+        <h2 class="text-h2">Checkbox / radio / switch</h2>
+      </div>
+      <a class="text-label" href="./checkbox-radio-switch.html">Open full preview</a>
+    </div>
+    <iframe class="gallery-frame" src="./checkbox-radio-switch.html" title="Checkbox, radio, and switch Draft preview" loading="eager"></iframe>
+  </section>
+
+  <section class="gallery-item" id="select">
+    <div class="gallery-item__head">
+      <div>
+        <p class="text-caption">04 · Draft</p>
+        <h2 class="text-h2">Select</h2>
+      </div>
+      <a class="text-label" href="./select.html">Open full preview</a>
+    </div>
+    <iframe class="gallery-frame" src="./select.html" title="Select Draft preview" loading="eager"></iframe>
+  </section>
+
+  <section class="gallery-item" id="card">
+    <div class="gallery-item__head">
+      <div>
+        <p class="text-caption">05 · Draft</p>
+        <h2 class="text-h2">Card</h2>
+      </div>
+      <a class="text-label" href="./card.html">Open full preview</a>
+    </div>
+    <iframe class="gallery-frame" src="./card.html" title="Card Draft preview" loading="eager"></iframe>
+  </section>
+
+  <section class="gallery-item" id="dialog">
+    <div class="gallery-item__head">
+      <div>
+        <p class="text-caption">06 · Draft</p>
+        <h2 class="text-h2">Dialog</h2>
+      </div>
+      <a class="text-label" href="./dialog.html">Open full preview</a>
+    </div>
+    <iframe class="gallery-frame" src="./dialog.html" title="Dialog Draft preview" loading="eager"></iframe>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p class="text-caption">Draft gallery · six components · 2026-11-08</p></div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var root = document.documentElement;
+  var KEY = 'dabwave-gallery-theme';
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  var frames = Array.prototype.slice.call(document.querySelectorAll('iframe.gallery-frame'));
+
+  function stored() {
+    try { return localStorage.getItem(KEY) || 'system'; } catch (e) { return 'system'; }
+  }
+  function resolved(pref) {
+    return pref === 'system' ? (mq.matches ? 'dark' : 'light') : pref;
+  }
+
+  function syncTheme(frame, pref) {
+    var doc;
+    try { doc = frame.contentDocument; } catch (e) { return; }
+    if (!doc) return;
+    var button = doc.querySelector('[data-theme-value="' + pref + '"]');
+    if (button) button.click();
+  }
+
+  function fit(frame) {
+    var doc;
+    try { doc = frame.contentDocument; } catch (e) { return; }
+    if (!doc || !doc.body) return;
+    var height = doc.body.scrollHeight;
+    if (height > 0) frame.style.height = height + 'px';
+  }
+
+  function prepare(frame) {
+    var doc;
+    try { doc = frame.contentDocument; } catch (e) { return; }
+    if (!doc || !doc.head) return;
+    if (!doc.getElementById('gallery-embed-style')) {
+      var style = doc.createElement('style');
+      style.id = 'gallery-embed-style';
+      style.textContent = '.masthead,.site-footer{display:none!important}';
+      doc.head.appendChild(style);
+    }
+    syncTheme(frame, stored());
+    setTimeout(function () { fit(frame); }, 80);
+    if (doc.fonts && doc.fonts.ready) {
+      doc.fonts.ready.then(function () { fit(frame); });
+    }
+  }
+
+  function apply(pref) {
+    root.dataset.theme = resolved(pref);
+    var buttons = document.querySelectorAll('[data-theme-value]');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute('aria-pressed', String(buttons[i].dataset.themeValue === pref));
+    }
+    frames.forEach(function (frame) {
+      syncTheme(frame, pref);
+      setTimeout(function () { fit(frame); }, 80);
+    });
+  }
+
+  frames.forEach(function (frame) {
+    frame.addEventListener('load', function () { prepare(frame); });
+    if (frame.contentDocument && frame.contentDocument.readyState === 'complete') prepare(frame);
+  });
+
+  var buttons = document.querySelectorAll('[data-theme-value]');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function () {
+      var pref = this.dataset.themeValue;
+      try { localStorage.setItem(KEY, pref); } catch (e) {}
+      apply(pref);
+    });
+  }
+
+  mq.addEventListener('change', function () {
+    if (stored() === 'system') apply('system');
+  });
+
+  window.addEventListener('resize', function () {
+    setTimeout(function () { frames.forEach(fit); }, 100);
+  });
+
+  apply(stored());
+})();
+</script>
+</body>
+</html>

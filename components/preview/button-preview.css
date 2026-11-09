@@ -41,7 +41,7 @@
   height: var(--control-height-md);
   padding-inline: var(--space-4);
   border: var(--border-width) solid transparent;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-lg);
   font-family: inherit;
   font-size: 0.875rem;
   line-height: 1.4;
