@@ -1,26 +1,27 @@
 # DabWave Design System — Roadmap & Handoff
 
-**Status:** living document · **Updated:** 2026-11-08 · **Branch:** `dabdesign-v0.1.0`
+**Status:** living document · **Updated:** 2026-11-09 · **Branch:** `dabdesign-v0.1.0`
 **Current spec version:** `0.1.0` — **do not bump to 1.0.0** without the Owner's
 explicit acceptance of the foundation test page.
 
 This file is the portable handoff for a new agent. It summarizes what is
 ratified, what exists, what is open, and the order of work. When this file and
-`DabDesign.md` disagree, **`DabDesign.md` wins**.
+`core.md` disagree on core values or rules, **`core.md` wins**; when this file
+and `DabDesign.md` disagree on decisions or process, **`DabDesign.md` wins**.
 
 ---
 
 ## 1. Read first
 
-1. `DabDesign.md` §0 (how to use), §1–§3 (definition, governance, tokens).
-2. `components/README.md` (component lifecycle, registry, spec template).
-3. `palettes/README.md` (how a site picks a hue; Tailwind source).
-4. `foundation/README.md` (foundation page and self-hosted fonts).
-5. `memory-export.md` **only** for phase-1 history. It is an export of retired
-   work, not authority.
+1. `core.md` (the normative core contract: tokens and operative rules).
+2. `DabDesign.md` §0 (how to use), §1–§3 (definition, governance, decisions).
+3. `components/README.md` (component lifecycle, registry, spec template).
+4. `palettes/README.md` (how a site picks a hue; Tailwind source).
+5. `foundation/README.md` (foundation page and self-hosted fonts).
 
-Retired files: `core-template.md`, `template.md`, and the old DabAZ `design.md`
-content. They are prior art only; do not cite them as standards.
+Retired and removed from the tree: `core-template.md`, `template.md`,
+`memory-export.md`, `oklch-brand-color.md`, and the six company style analyses.
+They remain in git history as prior art only; do not cite them as standards.
 
 ---
 
@@ -56,11 +57,14 @@ All decisions from DAB-001 to DAB-014, DAB-015, and DAB-016 are Approved.
 
 ### Specification
 
-- `DabDesign.md` — the single source of truth. Frontmatter holds the ratified
+- `core.md` — the normative core contract. Its frontmatter holds the ratified
   tokens (colors, themes, typography, spacing, sizing, radius, border,
-  elevation, motion, breakpoints, containers). Body sections explain usage.
-- `DabDesign.md` §4.9 — the color model: Tailwind v4 palettes, 12 hues,
-  11 steps, white/black separate, fill and link-safe text steps.
+  elevation, motion, breakpoints, containers); its body states the operative
+  core rules. This is what a site or agent consumes.
+- `DabDesign.md` — governance and decision record: process, ADRs, changelog,
+  decision roadmap, and the rationale behind each value.
+- `DabDesign.md` §4.9 — the color decision record: Tailwind v4 palettes,
+  12 hues, 11 steps, white/black separate, fill and link-safe text steps.
 - `DabDesign.md` §6.5 — icons: Tabler outline, 24×24, stroke 2, sizes
   16/20/24/32, inline or self-hosted.
 
@@ -80,8 +84,9 @@ All decisions from DAB-001 to DAB-014, DAB-015, and DAB-016 are Approved.
 - `scripts/hue-catalog.mjs` — builds the catalog and checks every pair:
   **288/288 pass**.
 - Tooling: `scripts/hue-catalog.mjs` is the catalog builder. Do not add new
-  work to `scripts/oklch-ramp.mjs`, `scripts/functional-palette.mjs`, or
-  `oklch-brand-color.md`; they are not part of the current path.
+  work to `scripts/oklch-ramp.mjs` or `scripts/functional-palette.mjs`; they are
+  not part of the current path. The retired `oklch-brand-color.md` notes are in
+  git history only.
 
 ### Components
 
@@ -98,6 +103,8 @@ All decisions from DAB-001 to DAB-014, DAB-015, and DAB-016 are Approved.
 
 No component is Adopted. Draft means the token contract is written; it still
 needs implementation, visual verification, a pilot, and the §9.4 checklist.
+Single-page review gallery: `components/preview/gallery.html` embeds all six
+Drafts and syncs the theme across every panel.
 
 Button: five variants (`primary`, `secondary`, `ghost`, solid `danger`,
 `danger-outline`), sizes 32/40/48, full state matrix, icon-only sizes
@@ -160,14 +167,14 @@ return verified in the browser.
    selectable and horizontal/side-media variants are not specified; loading
    skeletons are deferred to wave 2.
 7. **Dialog open items:** exit animation, backdrop-click policy, compact
-   confirmation width, drawer/command-palette split, focus-trap fallback,
-   scroll-lock details, and whether a loading destructive action is
+   confirmation width, drawer/command-palette split, focus-containment browser
+   matrix, scroll-lock details, and whether a loading destructive action is
    cancellable.
 8. **Site themes do not exist yet.** No document for DabAZ official site,
    DabMusic, DabSudoku, or DabMinesweeper. The official site should use the
    neutral ink action mapping; the others pick a Tailwind hue.
 9. **Token export is manual.** The foundation page and previews transcribe
-   token values from the spec. A generator from frontmatter →
+   token values from `core.md`. A generator from its frontmatter →
    CSS/JSON/Tailwind would remove drift; not built.
 10. **No CI.** Contrast checks are scripts run by hand; no axe, visual
     regression, or token linter.
@@ -178,14 +185,14 @@ return verified in the browser.
 
 ## 5. Next steps (in order)
 
-1. **Owner reviews the six Drafts and previews** — Button, Text input,
-   Checkbox / radio / switch, Select, Card, Dialog. Adjust if needed; only the
-   Owner can move a component from Draft.
+1. **Owner reviews `core.md` and the six Drafts** — Button, Text input,
+   Checkbox / radio / switch, Select, Card, Dialog, with their previews. Adjust
+   if needed; only the Owner can move a component from Draft.
 2. **Toast / alert** — functional roles, non-color cues, live region.
 3. **Empty state** — text hierarchy + Button + illustration slot.
 4. **Site theme documents** — official site first (neutral primary), then a
    game, then DabMusic (DAB-013 sequence).
-5. **Token export generator + CI** — frontmatter as the only source; contrast
+5. **Token export generator + CI** — `core.md` as the only source; contrast
    and visual regression checks.
 6. **Foundation test page acceptance → 1.0.0**, Owner only.
 
@@ -231,8 +238,9 @@ measured.
   turn, with the result presented for review.
 - **One commit per component.** Spec, preview, and registry update go in one
   commit; squash follow-up fixes before handing off.
-- **DabDesign.md is the source of truth.** New decisions get a DAB ID, an ADR
-  row, a changelog row, and frontmatter tokens only when approved.
+- **`core.md` is the core contract; `DabDesign.md` is the decision record.**
+  New decisions get a DAB ID, an ADR row, a changelog row, and a core token only
+  when approved.
 - **Contrast is measured, never estimated.** Use the WCAG 2.2 formula; record
   failures honestly.
 - **Do not recompute the color ramps.** The Owner chose to adopt Tailwind v4
@@ -267,6 +275,16 @@ measured.
 ---
 
 ## 9. Progress log
+
+### 2026-11-09
+
+- **Core extracted:** `core.md` is now the normative core contract (token block
+  + operative rules). `DabDesign.md` is the governance and decision record.
+- Single-page review gallery added at `components/preview/gallery.html`.
+- Button radius is on trial at `radius-lg` 18 (Owner request); pending final
+  choice before Pilot. At 32px `sm` it clamps to 16px and reads as a pill.
+- Dialog footer uses its own tighter vertical padding (`space-4` 16) while
+  header/body stay at `space-6` 24.
 
 ### 2026-11-08
 

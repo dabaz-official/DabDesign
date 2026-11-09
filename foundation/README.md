@@ -1,7 +1,7 @@
 # DabWave Foundation Test Page
 
 A validation artifact, not a production component library. Every value on this
-page comes from `../DabDesign.md`; nothing here invents a token.
+page comes from `../core.md`; nothing here invents a token.
 
 ## Run
 

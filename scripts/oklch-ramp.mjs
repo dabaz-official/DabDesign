@@ -6,12 +6,13 @@
  *   node scripts/oklch-ramp.mjs --read "#2563EB"
  *   node scripts/oklch-ramp.mjs --hue 260 --chroma 0.16 --anchor 600
  *
- * Rules implemented (see oklch-brand-color.md and DabDesign.md §4.4, ADR-003):
+ * Retired tool — kept for history. Rules implemented (see core.md §3.3 and
+ * DabDesign.md §4.4, ADR-003):
  * - The 10-step L ladder and the C curve are fixed by the core; per site you
  *   only choose H (hue), the anchor step, and the base chroma C.
  * - Gamut mapping reduces C, never L or H.
  * - Contrast is WCAG 2.2, checked against the neutral palette ratified in
- *   DabDesign.md §4.5 (shared by all sites — never regenerated per site).
+ *   core.md §3.2 (shared by all sites — never regenerated per site).
  * - If a contrast pair fails, remap the five semantic aliases (this script
  *   suggests the remap); never edit the L ladder.
  *

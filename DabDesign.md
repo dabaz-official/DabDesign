@@ -1,205 +1,9 @@
 ---
 version: "0.1.0"
-name: "DabWave Design System"
+name: "DabWave Design System — Governance & Decision Record"
 description: >
-  The enterprise specification for the DabWave design system: governance and
-  versioning, token discipline, component lifecycle standards, accessibility,
-  content and internationalization rules, and quality gates. Every design
-  decision — architectural or numeric — is an explicit record in the decision
-  roadmap; approved decisions are binding, and nothing becomes a standard
-  before it is recorded as Approved.
-colors:
-  # Neutral primitives — DAB-004 and DAB-016.
-  # Eleven steps 50–950; white and black are separate primitives.
-  white: "#FFFFFF"
-  gray-50: "#FAFAFA"
-  gray-100: "#F5F5F5"
-  gray-200: "#E5E5E5"
-  gray-300: "#D4D4D4"
-  gray-400: "#A3A3A3"
-  gray-500: "#737373"
-  gray-600: "#525252"
-  gray-700: "#404040"
-  gray-800: "#262626"
-  gray-900: "#171717"
-  gray-950: "#0A0A0A"
-  black: "#000000"
-themes:
-  # Semantic mappings — DAB-005 and DAB-006 (approved 2026-11-06). Action roles
-  # (color-primary*) are per-site by DAB-003 and are not defined here.
-  light:
-    color-background: "#FAFAFA"
-    color-surface: "#FFFFFF"
-    color-surface-secondary: "#F5F5F5"
-    color-text-primary: "#171717"
-    color-text-secondary: "#404040"
-    color-text-tertiary: "#525252"
-    color-text-inverse: "#FFFFFF"
-    color-text-disabled: "#A3A3A3"
-    color-border: "#E5E5E5"
-    color-border-strong: "#737373"
-    # Functional roles — DAB-015 (Tailwind green/amber/red references)
-    color-success: "#008236"
-    color-success-strong: "#008236"
-    color-success-subtle: "#DCFCE7"
-    color-on-success: "#FFFFFF"
-    color-warning: "#BB4D00"
-    color-warning-strong: "#BB4D00"
-    color-warning-subtle: "#FEF3C6"
-    color-on-warning: "#FFFFFF"
-    color-danger: "#E7000B"
-    color-danger-strong: "#C10007"
-    color-danger-subtle: "#FFE2E2"
-    color-on-danger: "#FFFFFF"
-    color-focus: "#4C89EF"
-    color-selection-bg: "#171717"
-    color-selection-fg: "#FFFFFF"
-    color-overlay: "rgba(0, 0, 0, 0.50)"
-  dark:
-    color-background: "#0A0A0A"
-    color-surface: "#171717"
-    color-surface-secondary: "#262626"
-    color-text-primary: "#FAFAFA"
-    color-text-secondary: "#D4D4D4"
-    color-text-tertiary: "#A3A3A3"
-    color-text-inverse: "#171717"
-    color-text-disabled: "#525252"
-    color-border: "#262626"
-    color-border-strong: "#737373"
-    # Functional roles — DAB-015 (Tailwind green/amber/red references)
-    color-success: "#05DF72"
-    color-success-strong: "#05DF72"
-    color-success-subtle: "#0D542B"
-    color-on-success: "#000000"
-    color-warning: "#FFB900"
-    color-warning-strong: "#FFB900"
-    color-warning-subtle: "#7B3306"
-    color-on-warning: "#000000"
-    color-danger: "#FB2C36"
-    color-danger-strong: "#FFA2A2"
-    color-danger-subtle: "#460809"
-    color-on-danger: "#000000"
-    color-focus: "#4C89EF"
-    color-selection-bg: "#FAFAFA"
-    color-selection-fg: "#171717"
-    color-overlay: "rgba(0, 0, 0, 0.50)"
-typography:
-  # Families — DAB-008 (approved 2026-11-07).
-  text-family-sans: 'Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif'
-  text-family-mono: 'ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace'
-  # Scale — DAB-009 (approved 2026-11-07). Zero tracking on every role.
-  text-display:
-    fontSize: "clamp(2.25rem, 1.5rem + 3vw, 3rem)"
-    fontWeight: 600
-    lineHeight: 1.1
-    letterSpacing: 0
-  text-h1:
-    fontSize: "clamp(1.875rem, 1.5rem + 1.5vw, 2.25rem)"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: 0
-  text-h2:
-    fontSize: "1.5rem"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: 0
-  text-h3:
-    fontSize: "1.25rem"
-    fontWeight: 600
-    lineHeight: 1.3
-    letterSpacing: 0
-  text-h4:
-    fontSize: "1.125rem"
-    fontWeight: 600
-    lineHeight: 1.4
-    letterSpacing: 0
-  text-body-lg:
-    fontSize: "1.125rem"
-    fontWeight: 400
-    lineHeight: 1.7
-    letterSpacing: 0
-  text-body:
-    fontSize: "1rem"
-    fontWeight: 400
-    lineHeight: 1.7
-    letterSpacing: 0
-  text-body-sm:
-    fontSize: "0.875rem"
-    fontWeight: 400
-    lineHeight: 1.6
-    letterSpacing: 0
-  text-label:
-    fontSize: "0.875rem"
-    fontWeight: 600
-    lineHeight: 1.4
-    letterSpacing: 0
-  text-caption:
-    fontSize: "0.75rem"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: 0
-spacing:
-  # Spacing — DAB-010 (approved 2026-11-07). 4px grid with a 2px half-step.
-  space-0: 0px
-  space-0-5: 2px
-  space-1: 4px
-  space-2: 8px
-  space-3: 12px
-  space-4: 16px
-  space-5: 20px
-  space-6: 24px
-  space-8: 32px
-  space-10: 40px
-  space-12: 48px
-  space-16: 64px
-  space-20: 80px
-  space-24: 96px
-sizing:
-  # Sizing — DAB-010 (approved 2026-11-07).
-  size-icon-sm: 16px
-  size-icon-md: 20px
-  size-icon-lg: 24px
-  size-icon-xl: 32px
-  control-height-sm: 32px
-  control-height-md: 40px
-  control-height-lg: 48px
-radius:
-  # Radius — DAB-010 (approved 2026-11-07). Apple ladder, Owner request.
-  radius-none: 0px
-  radius-xs: 5px
-  radius-sm: 8px
-  radius-md: 11px
-  radius-lg: 18px
-  radius-pill: 9999px
-  radius-full: 50%
-border:
-  # Borders — DAB-010 (approved 2026-11-07).
-  border-width: 1px
-elevation:
-  # Elevation — DAB-011 (approved 2026-11-07). Flat at rest; one floating level.
-  shadow-floating: "2px 4px 16px rgba(0, 0, 0, 0.16)"
-motion:
-  # Motion — DAB-011 (approved 2026-11-07).
-  duration-fast: 100ms
-  duration-base: 200ms
-  duration-slow: 300ms
-  easing-standard: "cubic-bezier(0, 0, 0.5, 1)"
-  easing-linear: "linear"
-breakpoints:
-  # Breakpoints — DAB-012 (approved 2026-11-07). Minimum widths, mobile-first.
-  breakpoint-sm: 640px
-  breakpoint-md: 768px
-  breakpoint-lg: 1024px
-  breakpoint-xl: 1280px
-  breakpoint-2xl: 1536px
-containers:
-  # Containers — DAB-012 (approved 2026-11-07). container-xl is the default.
-  container-sm: 640px
-  container-md: 768px
-  container-lg: 1024px
-  container-xl: 1200px
-  container-2xl: 1280px
-  container-fluid: 100%
+  Governance, decision records, and changelog for the DabWave design system.
+  The normative core token contract lives in core.md.
 ---
 
 # DabWave Design System — Specification
@@ -207,14 +11,16 @@ containers:
 **Document status:** Draft — DAB-001…DAB-014, DAB-015, DAB-016 ratified; foundation test page built and verified, awaiting Owner acceptance  
 **Spec version:** 0.1.0  
 **Owner:** DabAZ  
-**Last updated:** 2026-11-08  
+**Last updated:** 2026-11-09  
 **Applies to:** all DabWave websites — DabAZ (official site), DabMusic, DabSudoku, DabMinesweeper, and future sites  
 **Consumers:** the maintainer (solo developer) and coding agents
 
-> **Authority rule.** This document is the single source of truth for the
-> DabWave design system. All earlier documents — the former DabAZ `design.md`,
-> `core-template.md`, and `template.md` — are retired. None of their content
-> carries status here; their history lives only in git.
+> **Authority rule.** `core.md` is the normative core contract: token values
+> and operative rules. This document is the governance and decision record —
+> it owns the process, ADRs, changelog, and the reasoning behind each value.
+> Component contracts live in `components/`; site themes live in their own
+> documents. If `core.md` and a decision record disagree, stop and reconcile
+> before implementing.
 >
 > **Decision-record rule.** Every design decision — architectural or numeric —
 > is an explicit record in §13. Only entries marked Approved through §2.2 are
@@ -226,16 +32,18 @@ containers:
 
 ## 0. How to use this document
 
-1. **Coding agents:** read §1–3 before generating any UI; read §9 before
+1. **Coding agents:** read `core.md` before generating any UI; read §9 before
    building or modifying a component; §10 gates every release; §11 applies to
    all user-facing copy.
 2. **Never invent a decision.** Propose through §2.2; if an open decision
    blocks work, state the assumption and its impact explicitly instead of
    treating it as settled.
-3. The YAML frontmatter gains token groups only when their decisions reach
+3. `core.md`'s token block gains groups only when their decisions reach
    Approved. Until then it intentionally carries none.
 4. Retired documents may be consulted in git history as prior art. They carry
    no status and must not be cited as standards.
+5. Historical ADR and changelog rows say “frontmatter”. Before 2026-11-09 the
+   token block lived in this document; it now lives in `core.md`.
 
 ---
 
@@ -355,8 +163,8 @@ hat approved it. Agents may *prepare* decisions (drafting, measuring, checking)
    Never present an unverified ratio as passing.
 3. **Review** — against §2.3, by the required roles (§2.1).
 4. **Decision** — recorded in the decision log (§2.5) with date and rationale.
-5. **Publication** — update this document, the frontmatter (if a token reached
-   Approved), and the changelog; deprecate replaced values (§2.6).
+5. **Publication** — update this document, `core.md`'s token block (if a token
+   reached Approved), and the changelog; deprecate replaced values (§2.6).
 
 Small, non-design corrections (typos, clarifications) may skip the RFC and go
 straight to a changelogged commit.
@@ -450,6 +258,7 @@ Specification-level changes are listed here; file history lives in git.
 | `0.1.0` | 2026-11-07 | DAB-016 accepted — every ramp drops steps 0/1000; `white` and `black` become separate primitives (ADR-016) | Draft |
 | `0.1.0` | 2026-11-07 | Danger dark default moved to red-500 `#FB2C36`; hover/pressed 400/300; subtle 950 so the base keeps 3:1 | Draft |
 | `0.1.0` | 2026-11-08 | Spec hygiene — §4.4 accent contract aligned to DAB-015 (11 steps, adopted Tailwind values); frontmatter version aligned to 0.1.0; description and Last updated corrected | Draft |
+| `0.1.0` | 2026-11-09 | Core extraction — normative token block and operative core rules moved to `core.md`; this document retained as the governance and decision record | Draft |
 
 ---
 
@@ -472,10 +281,14 @@ Specification-level changes are listed here; file history lives in git.
 
 ### 3.3 Source of truth
 
-- This document is the single source of truth. The YAML frontmatter carries the
-  machine-readable contract; the body explains intent and usage.
-- Frontmatter gains token groups **only as decisions reach Approved** (§13).
-  Body tables reference token names; they do not duplicate raw values.
+- `core.md` is the normative core contract. Its YAML frontmatter carries the
+  machine-readable token values; its body states the operative core rules.
+- This document is the single source of truth for **governance and decisions**:
+  what was decided, why, when, and by whom. It does not carry a second token
+  block.
+- `core.md` gains token groups **only as decisions reach Approved** (§13).
+  Decision sections may restate values for readability; `core.md` is the
+  canonical machine-readable source.
 - No site or component may fork a ratified scale into a second scale.
 
 ### 3.4 Export & implementation independence
@@ -485,7 +298,7 @@ Specification-level changes are listed here; file history lives in git.
   or design-tool variables. The export format is chosen per project and
   documented at integration.
 - Generated artifacts (CSS variables, JSON dictionaries, Tailwind configs) are
-  produced from this single source — never hand-edited.
+  produced from `core.md` — never hand-edited.
 
 ### 3.5 Theming (ratified by DAB-001)
 
@@ -500,9 +313,11 @@ Specification-level changes are listed here; file history lives in git.
 
 ## 4. Color — decision area
 
+> **Decision record.** Operative color rules are in `core.md` §3; this section
+> records the decisions, rationale, and alternatives.
+>
 > **Color domain complete — DAB-003…DAB-007 approved (§4.4…§4.8).** No color
-> value is a standard unless it appears in the frontmatter or in one of these
-> ratified sections.
+> value is a standard unless it appears in `core.md`'s token block or body.
 
 ### 4.1 Questions this area must answer
 
@@ -614,7 +429,7 @@ a single shared-curve generator (rejected — warm hues drift).
 ### 4.5 DAB-004 — Neutral palette (approved 2026-11-06)
 
 > **Status: Approved (Owner, 2026-11-06) — ADR-004; endpoint structure amended
-> by ADR-016 (2026-11-07).** Values live in the frontmatter (§3.3); this section
+> by ADR-016 (2026-11-07).** Values live in `core.md` (§3.3); this section
 > defines the ramp's structure and rules.
 
 **Ramp.** Eleven steps with fixed names: `gray-50`, `gray-100`, `gray-200`,
@@ -650,8 +465,8 @@ and measure the pair (§10.1); do not interpolate.
 
 ### 4.6 DAB-005 — Semantic roles and light/dark mappings (approved 2026-11-06)
 
-> **Status: Approved (Owner, 2026-11-06) — ADR-005.** Values are in the
-> frontmatter (`colors.white`, `colors.gray-*`, `colors.black`,
+> **Status: Approved (Owner, 2026-11-06) — ADR-005.** Values are in
+> `core.md` (`colors.white`, `colors.gray-*`, `colors.black`,
 > `themes.light.*`, `themes.dark.*`); this section explains intent and usage.
 
 **Role set.**
@@ -779,8 +594,8 @@ affordances cannot drift per site.
 
 ### 4.8 DAB-007 — Overlay token (approved 2026-11-07)
 
-> **Status: Approved (Owner, 2026-11-07) — ADR-007.** The value is in the
-> frontmatter (`themes.light.color-overlay`, `themes.dark.color-overlay`).
+> **Status: Approved (Owner, 2026-11-07) — ADR-007.** The value is in
+> `core.md` (`themes.light.color-overlay`, `themes.dark.color-overlay`).
 
 **Token.** One token, `color-overlay`, with the value `rgba(0, 0, 0, 0.50)` in
 both themes. There is no per-theme variant.
@@ -929,8 +744,11 @@ every measured ratio); a single `color-primary` for both fill and link
 
 ## 5. Typography — decision area
 
+> **Decision record.** Operative typography rules are in `core.md` §4; this
+> section records the decisions and rationale.
+>
 > **Typography domain complete — DAB-008 and DAB-009 approved (§5.4, §5.5).**
-> No typography value is a standard unless it appears in the frontmatter or in
+> No typography value is a standard unless it appears in `core.md`'s token block or body.
 > these ratified sections.
 
 ### 5.1 Questions
@@ -958,8 +776,8 @@ every measured ratio); a single `color-primary` for both fill and link
 
 ### 5.4 DAB-008 — Typefaces and loading (approved 2026-11-07)
 
-> **Status: Approved (Owner, 2026-11-07) — ADR-008.** Family values are in the
-> frontmatter (`typography.text-family-sans`, `typography.text-family-mono`).
+> **Status: Approved (Owner, 2026-11-07) — ADR-008.** Family values are in
+> `core.md` (`typography.text-family-sans`, `typography.text-family-mono`).
 
 **Families.**
 
@@ -1036,8 +854,8 @@ CJK coverage forces the size problem into every page).
 
 ### 5.5 DAB-009 — Type scale, weights, tracking, casing (approved 2026-11-07)
 
-> **Status: Approved (Owner, 2026-11-07) — ADR-009.** Token values are in the
-> frontmatter (`typography.text-*`); this section explains intent and usage.
+> **Status: Approved (Owner, 2026-11-07) — ADR-009.** Token values are in
+> `core.md` (`typography.text-*`); this section explains intent and usage.
 
 **Scale.** 16px base, integer sizes 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 48.
 Body and below are fixed; `display` and `h1` scale fluidly with the viewport.
@@ -1108,9 +926,12 @@ fluid sizes (rejected — small text can shrink below readable sizes).
 
 ## 6. Spacing, Sizing, Radius & Borders — decision area
 
+> **Decision record.** Operative space and shape rules are in `core.md` §5;
+> this section records the decisions and rationale.
+>
 > **Space and shape domain complete — DAB-010 approved (§6.4).** No spacing,
-> sizing, radius, or border value is a standard unless it appears in the
-> frontmatter or in that section.
+> sizing, radius, or border value is a standard unless it appears in `core.md`'s
+> token block or body.
 
 ### 6.1 Questions
 
@@ -1134,8 +955,8 @@ fluid sizes (rejected — small text can shrink below readable sizes).
 
 ### 6.4 DAB-010 — Spacing, sizing, radius, borders (approved 2026-11-07)
 
-> **Status: Approved (Owner, 2026-11-07) — ADR-010.** Values are in the
-> frontmatter (`spacing`, `sizing`, `radius`, `border` groups); this section
+> **Status: Approved (Owner, 2026-11-07) — ADR-010.** Values are in
+> `core.md` (`spacing`, `sizing`, `radius`, `border` groups); this section
 > explains intent and usage.
 
 **Spacing — 4px grid.** Fourteen steps; the scale is carried from the canonical
@@ -1263,8 +1084,11 @@ webfont (blocking, no per-icon tree-shaking, extra origin); hand-drawn icons
 
 ## 7. Elevation & Motion — decision area
 
+> **Decision record.** Operative elevation and motion rules are in `core.md`
+> §6; this section records the decisions and rationale.
+>
 > **Elevation and motion domain complete — DAB-011 approved (§7.4).** Values
-> live in the frontmatter (`elevation`, `motion` groups).
+> live in `core.md` (`elevation`, `motion` groups).
 
 ### 7.1 Questions
 
@@ -1287,8 +1111,8 @@ webfont (blocking, no per-icon tree-shaking, extra origin); hand-drawn icons
 
 ### 7.4 DAB-011 — Elevation and motion (approved 2026-11-07)
 
-> **Status: Approved (Owner, 2026-11-07) — ADR-011.** Values are in the
-> frontmatter (`elevation`, `motion` groups); this section explains intent and
+> **Status: Approved (Owner, 2026-11-07) — ADR-011.** Values are in
+> `core.md` (`elevation`, `motion` groups); this section explains intent and
 > usage.
 
 **Elevation — flat at rest, one floating level.** Cards, buttons, navigation,
@@ -1348,7 +1172,7 @@ changes remain at `duration-fast`; `shadow-floating` appears instantly on hover
 and floating layers. Focus visibility is never reduced.
 
 **Frontmatter on approval.** `elevation.shadow-floating`, `motion.duration-*`,
-and `motion.easing-*` join the frontmatter.
+and `motion.easing-*` join `core.md`.
 
 **Rationale.** One shadow token keeps the system flat without losing the
 functional separation a floating layer needs. The Apple Store hover is a
@@ -1368,8 +1192,11 @@ animation under reduced motion (rejected — loses non-motion state feedback).
 
 ## 8. Layout & Responsive Behavior — decision area
 
-> **Layout domain complete — DAB-012 approved (§8.5).** Values live in the
-> frontmatter (`breakpoints`, `containers` groups).
+> **Decision record.** Operative layout rules are in `core.md` §7; this section
+> records the decisions and rationale.
+>
+> **Layout domain complete — DAB-012 approved (§8.5).** Values live in
+> `core.md` (`breakpoints`, `containers` groups).
 
 ### 8.1 Questions
 
@@ -1399,8 +1226,8 @@ every width.
 
 > **Status: Approved (Owner, 2026-11-07) — ADR-012.** These values are carried
 > from the canonical `design.md` §8, where they were already approved defaults;
-> this section gives DabWave its own binding record. Values are in the
-> frontmatter (`breakpoints`, `containers`).
+> this section gives DabWave its own binding record. Values are in
+> `core.md` (`breakpoints`, `containers`).
 
 **Breakpoints** — minimum viewport widths, mobile-first:
 
@@ -1465,6 +1292,9 @@ that mobile-first was the intended authoring direction.
 ---
 
 ## 9. Components — Standards & Lifecycle
+
+> **Contract:** the operative component standard is in `core.md` §10; the
+> registry and per-component contracts live in `components/`.
 
 ### 9.1 Component specification standard
 
@@ -1552,8 +1382,8 @@ excluded from the pilot. Navigation and footer differ most across sites and
 would be premature abstraction. Adopting any of them requires a follow-up scope
 decision, not an exception.
 
-**No frontmatter change.** DAB-013 ratifies scope, not token values; component
-entries join the frontmatter only as each component reaches Adopted (§9.3).
+**No core token change.** DAB-013 ratifies scope, not token values; component
+entries join `core.md` only as each component reaches Adopted (§9.3).
 
 **Rationale.** Dependency order minimizes rework: every later component reuses
 the visual and interaction decisions settled by earlier ones. Eight components
@@ -1573,6 +1403,9 @@ last).
 ---
 
 ## 10. Accessibility & Interaction
+
+> **Contract:** the operative accessibility baseline is in `core.md` §9; this
+> section records the decision and the detailed checklist.
 
 **Conformance target: WCAG 2.2 Level AA — ratified by DAB-002 (2026-11-06).**
 The checklist structure below is framework. Named opt-ins above the baseline,
@@ -1684,7 +1517,7 @@ explicit.
 | Visual QA | No unintended horizontal overflow; no clipped text at any validation width; hierarchy readable without color; surfaces and borders distinguishable in every ratified theme |
 | Accessibility QA | §10 checklist; contrast table complete; reduced motion verified |
 | Theme QA | Every ratified theme verified; site themes within the ratified architecture |
-| Release checklist | Changelog updated; open decisions reviewed; deprecations carry migration notes; documentation and frontmatter agree; no unapproved token introduced |
+| Release checklist | Changelog updated; open decisions reviewed; deprecations carry migration notes; documentation and `core.md` agree; no unapproved token introduced |
 
 ### 12.3 Reporting (agents and contributors)
 
@@ -1698,8 +1531,8 @@ passed unless it was actually performed.
 ## 13. Decision Roadmap
 
 Every design decision — architectural or numeric — is recorded here, in
-dependency order. A record closes by becoming an ADR entry (§2.5), updating the
-frontmatter if a token is involved, and adding a changelog row.
+dependency order. A record closes by becoming an ADR entry (§2.5), updating
+`core.md` if a token is involved, and adding a changelog row.
 
 | ID | Area | Question (abridged) | Depends on | Status |
 |---|---|---|---|---|

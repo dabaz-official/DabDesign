@@ -1,8 +1,9 @@
 # DabWave Component Specifications
 
-The standards live in `../DabDesign.md` §9. This directory holds one
-specification per component, in the DAB-013 pilot order. A component is not
-part of the shared layer until it reaches **Adopted**.
+The standards live in `../DabDesign.md` §9; the core token contract is
+`../core.md`. This directory holds one specification per component, in the
+DAB-013 pilot order. A component is not part of the shared layer until it
+reaches **Adopted**.
 
 ## Status model (§9.3)
 
@@ -30,7 +31,8 @@ draft, measure, and report — they never approve.
 | 7 | Toast / alert | `toast-alert.md` | Not started |
 | 8 | Empty state | `empty-state.md` | Not started |
 
-Draft specimens live under `preview/`. The Button specimen is
+Draft specimens live under `preview/`. `preview/gallery.html` embeds every
+Draft on one page and syncs the theme across all panels. The Button specimen is
 `preview/button.html`; it uses the ratified DAB-014 icons and DAB-015 colors
 and is never a production asset.
 
