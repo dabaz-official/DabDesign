@@ -37,10 +37,13 @@ per-component catalog before the pilot.
    products.
 4. `components/README.md` and `foundation/README.md` — pre-reset implementation
    references.
+5. `references/third-party/` — unofficial company analyses, kept as design
+   prior art only. They are not standards.
 
 Retired and removed from the tree: `core-template.md`, `template.md`,
-`memory-export.md`, `oklch-brand-color.md`, and the six company style analyses.
-They remain in git history as prior art only; do not cite them as standards.
+`memory-export.md`, `oklch-brand-color.md`. They remain in git history as prior
+art only; do not cite them as standards. The six company analyses are retained
+under `references/third-party/` with a README marking them unofficial.
 
 ---
 

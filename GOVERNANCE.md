@@ -42,6 +42,7 @@ contract. It does not carry token values.
 | `ROADMAP.md` | Handoff: current state, open questions, next steps | No |
 | `components/` | Registry and per-component specs, written only when a site consumes them | Only documented component tokens |
 | `themes/` | Future site themes | Theme-level values only |
+| `references/third-party/` | Unofficial company analyses, design prior art only | No — never standards |
 
 The previous documents are archived at `backup/2026-11-10/`. The old
 `DAB-001…DAB-016` records are **historical**; this rewrite starts a new `DEC-`
