@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Button — Draft specimen</title>
+<link rel="stylesheet" href="../../foundation/foundation.css">
+<link rel="stylesheet" href="./button-preview.css">
+<script src="./button-preview.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <div>
+      <p class="text-caption masthead__eyebrow">DabWave components · Draft</p>
+      <h1 class="text-h2">Button</h1>
+      <p class="text-body-sm masthead__sub">Token-level Draft specimen. Primary uses the neutral ink mapping (DAB-003 neutral-site option); icons use DAB-014 (approved 2026-11-08); functional colors use DAB-015 (approved). Not for production.</p>
+    </div>
+    <div class="masthead__tools">
+      <div class="segmented" role="group" aria-label="Theme">
+        <button type="button" class="segmented__btn" data-theme-value="system" aria-pressed="true">System</button>
+        <button type="button" class="segmented__btn" data-theme-value="light" aria-pressed="false">Light</button>
+        <button type="button" class="segmented__btn" data-theme-value="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section">
+    <h2 class="text-h2">Variants</h2>
+    <p class="text-body">One primary per view. Solid danger is the destructive primary action; the outline variant is the quiet one.</p>
+    <div class="button-row">
+      <button type="button" class="btn btn--md btn--primary">Primary</button>
+      <button type="button" class="btn btn--md btn--secondary">Secondary</button>
+      <button type="button" class="btn btn--md btn--ghost">Ghost</button>
+      <button type="button" class="btn btn--md btn--danger">Delete</button>
+      <button type="button" class="btn btn--md btn--danger-outline">Delete quietly</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Sizes</h2>
+    <p class="text-body">32 / 40 / 48. The label stays <code>text-label</code> at every size; only height and inline padding change.</p>
+    <div class="button-row button-row--baseline">
+      <div class="size-cell"><button type="button" class="btn btn--sm btn--primary">Small</button><code>sm · 32</code></div>
+      <div class="size-cell"><button type="button" class="btn btn--md btn--primary">Medium</button><code>md · 40</code></div>
+      <div class="size-cell"><button type="button" class="btn btn--lg btn--primary">Large</button><code>lg · 48</code></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">States</h2>
+    <p class="text-body">Forced states for inspection. Hover is pointer-only in production; pressed is a color change, never a scale.</p>
+    <div id="state-matrix"></div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Icons</h2>
+    <p class="text-body">Tabler outline, 24×24 grid, stroke 2, <code>currentColor</code>. Decorative icons are hidden from assistive technology; icon-only buttons carry an <code>aria-label</code>.</p>
+    <div class="button-row">
+      <button type="button" class="btn btn--md btn--primary">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5l0 14"/><path d="M5 12l14 0"/></svg>
+        New item
+      </button>
+      <button type="button" class="btn btn--md btn--secondary">
+        Continue
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></svg>
+      </button>
+      <button type="button" class="btn btn--md btn--danger">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l16 0"/><path d="M10 11l0 6"/><path d="M14 11l0 6"/><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"/><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"/></svg>
+        Delete
+      </button>
+      <button type="button" class="btn btn--md btn--secondary btn--icon" aria-label="Add item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5l0 14"/><path d="M5 12l14 0"/></svg>
+      </button>
+      <button type="button" class="btn btn--sm btn--secondary btn--icon" aria-label="Add item, small">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5l0 14"/><path d="M5 12l14 0"/></svg>
+      </button>
+      <button type="button" class="btn btn--lg btn--secondary btn--icon" aria-label="Add item, large">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5l0 14"/><path d="M5 12l14 0"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Contrast</h2>
+    <p class="text-body">Computed from the rendered variables. Primary uses the neutral ink mapping; solid danger uses the DAB-015 Tailwind red ramp.</p>
+    <p class="text-body-sm" id="contrast-summary" aria-live="polite">Calculating…</p>
+    <div class="table-scroll">
+      <table class="data-table text-body-sm">
+        <thead><tr><th scope="col">Pair</th><th scope="col">Ratio</th><th scope="col">Minimum</th><th scope="col">Verdict</th></tr></thead>
+        <tbody id="contrast-body"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p class="text-caption">Button Draft specimen · <code>components/button.md</code> · 2026-11-07</p></div>
+</footer>
+</body>
+</html>

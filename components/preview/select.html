@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Select — Draft specimen</title>
+<link rel="stylesheet" href="../../foundation/foundation.css">
+<link rel="stylesheet" href="./select-preview.css">
+<script src="./select-preview.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <div>
+      <p class="text-caption masthead__eyebrow">DabWave components · Draft</p>
+      <h1 class="text-h2">Select</h1>
+      <p class="text-body-sm masthead__sub">Native select baseline, top-aligned label, Tabler chevron, field-level error. DAB-014 icons and DAB-015 danger values. Not for production.</p>
+    </div>
+    <div class="masthead__tools">
+      <div class="segmented" role="group" aria-label="Theme">
+        <button type="button" class="segmented__btn" data-theme-value="system" aria-pressed="true">System</button>
+        <button type="button" class="segmented__btn" data-theme-value="light" aria-pressed="false">Light</button>
+        <button type="button" class="segmented__btn" data-theme-value="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section">
+    <h2 class="text-h2">States</h2>
+    <p class="text-body">Native select; the option list is rendered by the platform and is not themed. Hover and focus are forced for inspection.</p>
+    <p class="text-caption legend">* Required</p>
+    <div class="field-grid">
+      <div class="field field--md">
+        <label class="field__label" for="sel-placeholder">Plan</label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-placeholder">
+            <option value="" disabled selected>Select a plan</option>
+            <option value="starter">Starter</option>
+            <option value="pro">Pro</option>
+            <option value="enterprise">Enterprise</option>
+          </select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+        <p class="field__help">Placeholder is a disabled option, not the label.</p>
+      </div>
+
+      <div class="field field--md">
+        <label class="field__label" for="sel-selected">Plan</label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-selected">
+            <option value="starter">Starter</option>
+            <option value="pro" selected>Pro</option>
+            <option value="enterprise">Enterprise</option>
+          </select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+        <p class="field__help">Selected value uses the default colors.</p>
+      </div>
+
+      <div class="field field--md field--hover">
+        <label class="field__label" for="sel-hover">Hover (forced)</label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-hover">
+            <option value="pro" selected>Pro</option>
+          </select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+        <p class="field__help">Border moves to the tertiary text role.</p>
+      </div>
+
+      <div class="field field--md field--focus">
+        <label class="field__label" for="sel-focus">Focus (forced)</label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-focus">
+            <option value="pro" selected>Pro</option>
+          </select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+        <p class="field__help">2px focus ring, 2px offset.</p>
+      </div>
+
+      <div class="field field--md">
+        <label class="field__label" for="sel-disabled">Disabled</label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-disabled" disabled>
+            <option value="pro" selected>Pro</option>
+          </select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+        <p class="field__help">Removed from the tab order.</p>
+      </div>
+
+      <div class="field field--md field--error">
+        <label class="field__label" for="sel-error">Region</label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-error" aria-invalid="true" aria-describedby="sel-error-msg">
+            <option value="eu" selected>EU</option>
+            <option value="us">US</option>
+          </select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+        <p class="field__error" id="sel-error-msg">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/></svg>
+          Choose a region that matches your billing address.
+        </p>
+      </div>
+
+      <div class="field field--md">
+        <label class="field__label" for="sel-required">Team <span class="field__required" aria-hidden="true">*</span></label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-required" required>
+            <option value="" disabled selected>Select a team</option>
+            <option value="design">Design</option>
+            <option value="engineering">Engineering</option>
+          </select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+        <p class="field__help">The asterisk is visual; native required carries the semantics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Sizes</h2>
+    <p class="text-body">32 / 40 / 48. Value text scales 14 / 16 / 18; label stays 14 / 600.</p>
+    <div class="field-grid">
+      <div class="field field--sm">
+        <label class="field__label" for="sel-sm">Small</label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-sm"><option selected>Small</option></select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+      </div>
+      <div class="field field--md">
+        <label class="field__label" for="sel-md">Medium</label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-md"><option selected>Medium</option></select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+      </div>
+      <div class="field field--lg">
+        <label class="field__label" for="sel-lg">Large</label>
+        <div class="field__wrap">
+          <select class="field__control" id="sel-lg"><option selected>Large</option></select>
+          <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Option groups</h2>
+    <p class="text-body">Native <code>&lt;optgroup&gt;</code>; the platform renders the group labels.</p>
+    <div class="field field--md">
+      <label class="field__label" for="sel-groups">Team</label>
+      <div class="field__wrap">
+        <select class="field__control" id="sel-groups">
+          <option value="" disabled selected>Select a team</option>
+          <optgroup label="Design">
+            <option value="product-design">Product design</option>
+            <option value="brand">Brand</option>
+          </optgroup>
+          <optgroup label="Engineering">
+            <option value="frontend">Frontend</option>
+            <option value="platform">Platform</option>
+          </optgroup>
+        </select>
+        <svg class="field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-h2">Contrast</h2>
+    <p class="text-body">Computed from the rendered variables. Disabled text is recorded but exempt.</p>
+    <p class="text-body-sm" id="contrast-summary" aria-live="polite">Calculating…</p>
+    <div class="table-scroll">
+      <table class="data-table text-body-sm">
+        <thead><tr><th scope="col">Pair</th><th scope="col">Ratio</th><th scope="col">Minimum</th><th scope="col">Verdict</th></tr></thead>
+        <tbody id="contrast-body"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p class="text-caption">Select Draft specimen · <code>components/select.md</code> · 2026-11-08</p></div>
+</footer>
+</body>
+</html>
