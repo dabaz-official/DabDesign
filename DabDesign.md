@@ -4,8 +4,8 @@
 site** and **DabResume** only.
 **Depends on:** [`core.md`](core.md) v0.1.0. This document supplies site-theme
 values and composition; it does not redefine core tokens.
-**Read first:** `core.md`, then this file; `GOVERNANCE.md` applies to every
-project and is part of the required reading.
+**Read first:** `core.md`, `GOVERNANCE.md`, and `GUIDELINE.md` (all projects),
+then this file. The personal-series theme applies only to the two sites above.
 **Not applicable to:** DabMusic, DabSudoku, DabMinesweeper, or future sites.
 
 ## 1. Character

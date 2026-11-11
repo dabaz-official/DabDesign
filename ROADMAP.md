@@ -1,15 +1,15 @@
 # DabWave Design System — Roadmap & Handoff
 
-**Status:** living document · **Updated:** 2026-11-11 · **Branch:** `dabdesign-v0.1.0`
+**Status:** living document · **Updated:** 2026-11-12 · **Branch:** `dabdesign-v0.1.0`
 **Current spec version:** `0.1.0` — **do not bump to 1.0.0** without the Owner's
 explicit acceptance of a real pilot.
 
 > **2026-11-11 v1 rewrite written and approved.** `core.md` is the normative
 > color-first core contract; `DabDesign.md` is the DabAZ personal-series theme
 > (official site + DabResume); `GOVERNANCE.md` holds principles, decisions,
-> changelog, and the site-theme contract. DEC-008 and DEC-009 are approved. The
-> previous versions are archived at `backup/2026-11-10/`. Everything from §2
-> downward is **pre-reset history**.
+> changelog, and the site-theme contract; `GUIDELINE.md` is the agent workflow.
+> DEC-008 and DEC-009 are approved. The previous versions are archived at
+> `backup/2026-11-10/`. Everything from §2 downward is **pre-reset history**.
 
 ## 0. Current state
 
@@ -18,6 +18,7 @@ explicit acceptance of a real pilot.
 | `core.md` | Approved v1 core: gray + 12 hue ramps, thin mapping, type/space/shape/motion/layout/icons/a11y, lean component contract |
 | `DabDesign.md` | Approved personal-series theme: official site + DabResume; blue links, neutral ink primary |
 | `GOVERNANCE.md` | Principles, `DEC-` decision log, changelog, site-theme contract |
+| `GUIDELINE.md` | Agent workflow: read order, layer routing, token use, quality gates |
 | `ROADMAP.md` | This handoff |
 
 `components/`, `foundation/`, `palettes/`, and the previews are **pre-reset
@@ -32,12 +33,14 @@ per-component catalog before the pilot.
 1. [`core.md`](core.md) — normative core contract. Required for every project.
 2. [`GOVERNANCE.md`](GOVERNANCE.md) — principles, decisions, site-theme
    contract. Required for every project.
-3. [`DabDesign.md`](DabDesign.md) — personal-series theme. Required only for
+3. [`GUIDELINE.md`](GUIDELINE.md) — agent workflow: read order, layer routing,
+   token use, quality gates. Required for every project.
+4. [`DabDesign.md`](DabDesign.md) — personal-series theme. Required only for
    the DabAZ official site (`dabaz.me`) and DabResume; not applicable to other
    products.
-4. `components/README.md` and `foundation/README.md` — pre-reset implementation
+5. `components/README.md` and `foundation/README.md` — pre-reset implementation
    references.
-5. `references/third-party/` — unofficial company analyses, kept as design
+6. `references/third-party/` — unofficial company analyses, kept as design
    prior art only. They are not standards.
 
 Retired and removed from the tree: `core-template.md`, `template.md`,

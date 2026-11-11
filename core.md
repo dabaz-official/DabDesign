@@ -341,9 +341,10 @@ series theme; `ROADMAP.md` is the handoff.
 before any component catalog is multiplied.
 
 > **Reading order.** Before starting any project, read this file first, then
-> `GOVERNANCE.md`. For the DabAZ official site (`dabaz.me`) and DabResume, also
-> read `DabDesign.md`. Those two are the only projects the personal-series
-> theme applies to; every other project uses its own theme document.
+> `GOVERNANCE.md`, then `GUIDELINE.md` for the agent workflow. For the DabAZ
+> official site (`dabaz.me`) and DabResume, also read `DabDesign.md`. Those two
+> are the only projects the personal-series theme applies to; every other
+> project uses its own theme document.
 
 ## 0. How to use this file
 

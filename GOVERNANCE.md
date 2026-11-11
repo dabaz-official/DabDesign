@@ -7,9 +7,10 @@ contract. It does not carry token values.
 **Personal-series theme:** [`DabDesign.md`](DabDesign.md).
 **Handoff:** [`ROADMAP.md`](ROADMAP.md).
 
-> **Reading order for every project:** `core.md` first, then this file. For
-> `dabaz.me` and DabResume only, also read `DabDesign.md`. Every other project
-> uses its own theme document and must not apply the personal-series theme.
+> **Reading order for every project:** `core.md` first, then this file, then
+> `GUIDELINE.md` for the agent workflow. For `dabaz.me` and DabResume only, also
+> read `DabDesign.md`. Every other project uses its own theme document and must
+> not apply the personal-series theme.
 
 ## 1. Principles
 
@@ -40,6 +41,7 @@ contract. It does not carry token values.
 | `DabDesign.md` | DabAZ personal series theme: official site + DabResume | Only theme-level accent mappings allowed by the contract |
 | `GOVERNANCE.md` | Principles, decisions, changelog, site-theme contract | No |
 | `ROADMAP.md` | Handoff: current state, open questions, next steps | No |
+| `GUIDELINE.md` | Agent workflow: read order, layer routing, token use, quality gates | No |
 | `components/` | Registry and per-component specs, written only when a site consumes them | Only documented component tokens |
 | `themes/` | Future site themes | Theme-level values only |
 | `references/third-party/` | Unofficial company analyses, design prior art only | No — never standards |
@@ -75,6 +77,7 @@ Carried forward — inherited from the archived core without re-litigation.
 | 2026-11-11 | v1 core rewrite: color-first taxonomy with the original Tailwind ramps, thin semantic mapping, `type-` naming, lean component contract. Personal-series theme and governance documents written. | Draft |
 | 2026-11-11 | DEC-008 (personal-series blue accent) and DEC-009 (radius assignment) approved by the Owner; v1 core and personal-series theme promoted to approved drafts. | Approved |
 | 2026-11-11 | Version stays `0.1.0`. No 1.0.0 without a real pilot and the Owner's acceptance. | Draft |
+| 2026-11-12 | Added `GUIDELINE.md` — agent workflow for read order, layer routing, token use, decisions, and quality gates. | Approved |
 
 ## 5. Site-theme contract
 
