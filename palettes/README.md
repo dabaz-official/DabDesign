@@ -69,4 +69,4 @@ exits non-zero if any checked pair misses its threshold. Current run: 12 hues,
   surfaces and text stay neutral.
 - Functional hues stay fixed; a site cannot re-point danger to its accent.
 - A bright 500 fill for a light-theme button is still an open question
-  (`core.md` §3.9); the current fill range is contrast-safe.
+  (`core.md` §3.6); the current fill range is contrast-safe.

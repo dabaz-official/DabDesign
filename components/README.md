@@ -1,9 +1,9 @@
 # DabWave Component Specifications
 
-The standards live in `../DabDesign.md` §9; the core token contract is
-`../core.md`. This directory holds one specification per component, in the
-DAB-013 pilot order. A component is not part of the shared layer until it
-reaches **Adopted**.
+The component contract lives in `../core.md` §10; decisions live in
+`../GOVERNANCE.md`. The specs in this directory are **pre-reset artifacts**
+until the official-site pilot writes new ones. A component is not part of the
+shared layer until it reaches **Adopted**.
 
 ## Status model (§9.3)
 

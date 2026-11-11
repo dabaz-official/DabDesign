@@ -1,29 +1,53 @@
 # DabWave Design System — Roadmap & Handoff
 
-**Status:** living document · **Updated:** 2026-11-09 · **Branch:** `dabdesign-v0.1.0`
+**Status:** living document · **Updated:** 2026-11-11 · **Branch:** `dabdesign-v0.1.0`
 **Current spec version:** `0.1.0` — **do not bump to 1.0.0** without the Owner's
-explicit acceptance of the foundation test page.
+explicit acceptance of a real pilot.
 
-This file is the portable handoff for a new agent. It summarizes what is
-ratified, what exists, what is open, and the order of work. When this file and
-`core.md` disagree on core values or rules, **`core.md` wins**; when this file
-and `DabDesign.md` disagree on decisions or process, **`DabDesign.md` wins**.
+> **2026-11-11 v1 rewrite written and approved.** `core.md` is the normative
+> color-first core contract; `DabDesign.md` is the DabAZ personal-series theme
+> (official site + DabResume); `GOVERNANCE.md` holds principles, decisions,
+> changelog, and the site-theme contract. DEC-008 and DEC-009 are approved. The
+> previous versions are archived at `backup/2026-11-10/`. Everything from §2
+> downward is **pre-reset history**.
 
----
+## 0. Current state
+
+| File | State |
+|---|---|
+| `core.md` | Approved v1 core: gray + 12 hue ramps, thin mapping, type/space/shape/motion/layout/icons/a11y, lean component contract |
+| `DabDesign.md` | Approved personal-series theme: official site + DabResume; blue links, neutral ink primary |
+| `GOVERNANCE.md` | Principles, `DEC-` decision log, changelog, site-theme contract |
+| `ROADMAP.md` | This handoff |
+
+`components/`, `foundation/`, `palettes/`, and the previews are **pre-reset
+artifacts**. They are useful as implementation references but do not define the
+current contract.
+
+**Next:** build the official-site pilot with Button, Text input, and Card. No
+per-component catalog before the pilot.
 
 ## 1. Read first
 
-1. `core.md` (the normative core contract: tokens and operative rules).
-2. `DabDesign.md` §0 (how to use), §1–§3 (definition, governance, decisions).
-3. `components/README.md` (component lifecycle, registry, spec template).
-4. `palettes/README.md` (how a site picks a hue; Tailwind source).
-5. `foundation/README.md` (foundation page and self-hosted fonts).
+1. [`core.md`](core.md) — normative core contract. Required for every project.
+2. [`GOVERNANCE.md`](GOVERNANCE.md) — principles, decisions, site-theme
+   contract. Required for every project.
+3. [`DabDesign.md`](DabDesign.md) — personal-series theme. Required only for
+   the DabAZ official site (`dabaz.me`) and DabResume; not applicable to other
+   products.
+4. `components/README.md` and `foundation/README.md` — pre-reset implementation
+   references.
 
 Retired and removed from the tree: `core-template.md`, `template.md`,
 `memory-export.md`, `oklch-brand-color.md`, and the six company style analyses.
 They remain in git history as prior art only; do not cite them as standards.
 
 ---
+
+## Historical (pre-reset)
+
+The sections below describe the 2026-11-01…2026-11-09 system. They are kept for
+traceability only.
 
 ## 2. Decision status
 
