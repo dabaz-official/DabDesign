@@ -257,7 +257,7 @@ typography:
   type-body:
     fontSize: "1rem"
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.8
     letterSpacing: 0
   type-body-sm:
     fontSize: "0.875rem"
@@ -562,11 +562,13 @@ Stack: `"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif`.
 | `type-h3` | 20 | 1.3 | 600 | fixed |
 | `type-h4` | 18 | 1.4 | 600 | fixed |
 | `type-body-lg` | 18 | 1.7 | 400 | fixed |
-| `type-body` | 16 | 1.7 | 400 | fixed |
+| `type-body` | 16 | 1.8 | 400 | fixed |
 | `type-body-sm` | 14 | 1.6 | 400 | fixed |
 | `type-label` | 14 | 1.4 | 600 | fixed |
 | `type-caption` | 12 | 1.5 | 400 | fixed |
 
+- `type-body` uses 1.8, inside the 1.75–1.85 range DabFonts requires for
+  Chinese body copy.
 - Weights: 400 and 600 only. No 700; font synthesis is allowed where 600 is
   unavailable.
 - Tracking: zero everywhere, including headings.

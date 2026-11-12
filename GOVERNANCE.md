@@ -65,6 +65,7 @@ define the current contract.
 | `DEC-008` | 2026-11-11 | Personal series accent: blue for links and inline emphasis; neutral ink for primary actions; no surface tint | Keeps the personal series calm and monochrome at rest while giving links a clear identity | Approved (Owner) |
 | `DEC-009` | 2026-11-11 | Radius assignment: inputs/selects `radius-sm` 8; buttons `radius-md` 11; cards/panels `radius-lg` 18; `radius-pill` only as an explicit action modifier | Fits the restrained Apple-like character without making buttons default pills | Approved (Owner) |
 | `DEC-010` | 2026-11-11 | Carry forward the archived typography, spacing, control sizes, elevation, motion, layout, icon, and accessibility values | These values were already measured and are independent of the color reorganization | Carried forward |
+| `DEC-011` | 2026-11-12 | Body line height: `type-body` moves from 1.7 to 1.8, inside the 1.75–1.85 range DabFonts requires for Chinese body copy | Resolves the cross-repository conflict for CJK body text; 1.8 is the midpoint and remains comfortable for Latin text | Approved (Owner) |
 
 **Status meanings:** Proposed — not yet reviewed; Approved — Owner accepted;
 Carried forward — inherited from the archived core without re-litigation.
@@ -78,6 +79,7 @@ Carried forward — inherited from the archived core without re-litigation.
 | 2026-11-11 | DEC-008 (personal-series blue accent) and DEC-009 (radius assignment) approved by the Owner; v1 core and personal-series theme promoted to approved drafts. | Approved |
 | 2026-11-11 | Version stays `0.1.0`. No 1.0.0 without a real pilot and the Owner's acceptance. | Draft |
 | 2026-11-12 | Added `GUIDELINE.md` — agent workflow for read order, layer routing, token use, decisions, and quality gates. | Approved |
+| 2026-11-12 | DEC-011: `type-body` line height raised from 1.7 to 1.8 to meet the DabFonts CJK body range (1.75–1.85). | Approved |
 
 ## 5. Site-theme contract
 
