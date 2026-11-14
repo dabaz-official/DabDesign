@@ -18,6 +18,6 @@ decisions.
 | `vercel.md` | Vercel |
 
 **How to use:** read for composition, type, color, and interaction ideas;
-translate any borrowed idea into DabWave tokens and decisions. The normative
+translate any borrowed idea into DabDesign tokens and decisions. The normative
 core is [`core.md`](../../core.md); principles and decisions are in
 [`GOVERNANCE.md`](../../GOVERNANCE.md). No page in this folder overrides either.
