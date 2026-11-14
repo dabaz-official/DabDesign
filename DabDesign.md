@@ -96,7 +96,7 @@ headlines; DabResume stays at `type-h2` and below to keep the page scannable.
 
 ### 5.2 DabResume
 
-- Single column, `container-md` 768 maximum, 60–75 character measure.
+- Single column, `container-md` 768 maximum, 34–38em measure.
 - Section headings use `type-h3`; roles and dates use `type-label` and
   `type-caption`.
 - Print/PDF styling is site-owned; screen layout is the source of truth.
