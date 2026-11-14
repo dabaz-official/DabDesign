@@ -44,7 +44,7 @@
       var block = el('div', 'ramp-block');
 
       var head = el('div', 'ramp-head');
-      head.appendChild(el('h3', 'text-h3', name + ' — display ' + h.display));
+      head.appendChild(el('h3', 'type-h3', name + ' — display ' + h.display));
       head.appendChild(el('span', '', 'Tailwind v4'));
       block.appendChild(head);
 
@@ -90,7 +90,7 @@
     Object.keys(data.functional).forEach(function (role) {
       var f = data.functional[role];
       var block = el('div', 'func-block');
-      block.appendChild(el('h3', 'text-h3', role + ' — ' + f.ramp));
+      block.appendChild(el('h3', 'type-h3', role + ' — ' + f.ramp));
       var row = el('div', 'func-row');
 
       ['light', 'dark'].forEach(function (theme) {

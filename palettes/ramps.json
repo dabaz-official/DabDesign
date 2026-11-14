@@ -1,7 +1,8 @@
 {
   "status": "approved",
-  "decision": "DAB-015",
-  "generated": "2026-11-07",
+  "version": "1.0.0",
+  "decision": "DEC-013",
+  "generated": "2026-11-14",
   "source": "https://raw.githubusercontent.com/tailwindlabs/tailwindcss/main/packages/tailwindcss/theme.css",
   "license": "MIT",
   "steps": [
