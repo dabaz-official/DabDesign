@@ -65,10 +65,15 @@ a standard, and neither may override `core.md`.
 | `DEC-010` | 2026-11-11 | Carry forward the archived typography, spacing, control sizes, elevation, motion, layout, icon, and accessibility values | These values were already measured and are independent of the color reorganization | Carried forward |
 | `DEC-011` | 2026-11-12 | Body line height: `type-body` moves from 1.7 to 1.8, inside the 1.75–1.85 range DabFonts requires for Chinese body copy | Resolves the cross-repository conflict for CJK body text; 1.8 is the midpoint and remains comfortable for Latin text | Approved (Owner) |
 | `DEC-012` | 2026-11-14 | 1.0.0 release: adopt the DabAgents 1.0.0 dependency contract, archive the component drafts, foundation page, and earlier documents, move voice to rule 07, and make DabDesign the single system name | The previous release duplicated process rules and font loading, and its artifacts contradicted the revised typography contract | Approved (Owner) |
-| `DEC-013` | 2026-11-14 | Color values: the twelve Tailwind v4 hue ramps, the gray ramp, fill aliases, link-safe text steps, and functional mappings are carried forward from the previous color decision, effective 1.0.0 | The values were already frozen and verified; 1.0.0 changes ownership and naming, not the ramps | Approved (Owner) |
+| `DEC-013` | 2026-11-14 | Color values: the twelve Tailwind v4 hue ramps, the gray ramp, fill aliases, link-safe text steps, and functional mappings are carried forward from the previous color decision, effective 1.0.0 | The values were already frozen and verified; 1.0.0 changes ownership and naming, not the ramps | Superseded by DEC-014 |
+| `DEC-014` | 2026-11-15 | Ramps: replace the Tailwind v4 chromatic values with Tailwind CSS v3.4.17 values; the gray ramp, eleven steps, and white/black primitives are unchanged; regenerate fill aliases, link-safe text steps, and functional mappings | The Owner chose to unify on the v3 palette; 115 of 132 chromatic values differ from v4 | Approved (Owner) |
 
 **Status meanings:** Proposed — not yet reviewed; Approved — Owner accepted;
-Carried forward — inherited from an earlier decision without re-litigation.
+Carried forward — inherited from an earlier decision without re-litigation;
+Superseded — replaced by a later decision.
+
+`DEC-014` replaces the chromatic values in `DEC-006` and `DEC-013`. It does not
+change the gray ramp or the eleven-step shape.
 
 ## 4. Changelog
 

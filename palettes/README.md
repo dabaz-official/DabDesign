@@ -1,15 +1,15 @@
 # DabDesign Hue Ramps
 
-**Status: Approved (DEC-013, effective 1.0.0).** Values are ratified and
-carried forward from the previous color decision. The token source is
-[`core.md`](../core.md) §3; this directory is generated evidence.
+**Status: Approved (DEC-014, effective 1.0.0).** Values are ratified and
+checked. The token source is [`core.md`](../core.md) §3; this directory is
+generated evidence.
 
 ## What this is
 
-Twelve hue ramps adopted from **Tailwind CSS v4** (MIT), with eleven steps:
-`50 / 100 / 200 / 300 / 400 / 500 / 600 / 700 / 800 / 900 / 950`. White and
-black are separate primitives, not ramp steps. Gray is already Tailwind
-Neutral, so both layers come from one source.
+Twelve hue ramps adopted from **Tailwind CSS v3.4.17** (MIT), with eleven
+steps: `50 / 100 / 200 / 300 / 400 / 500 / 600 / 700 / 800 / 900 / 950`. White
+and black are separate primitives, not ramp steps. Gray is Tailwind's neutral
+ramp, so both layers come from one source.
 
 | Hue | Display step |
 |---|---:|
@@ -37,7 +37,10 @@ lightness — red 500 L 0.637, orange 0.705, amber 0.769, yellow 0.795, lime
 3. Map the **fill aliases** from `catalog.md`. The fill range is chosen by
    contrast, so on a light background it may sit at 600/700 rather than 500.
 4. Map links and inline emphasis to the **link-safe text step** in the catalog.
-   `color-primary` is the fill role; `color-primary-text` is the text role.
+   `color-primary` is the fill role; `color-primary-text` is the text role. The
+   catalog's step is the minimum safe step; a theme may choose a darker
+   light-theme step or a lighter dark-theme step if it records the measured
+   ratios.
 5. Record the hue, the fill and text steps, and the measured ratios in the site
    theme document. Cite the catalog; do not copy eleven hexes into it.
 
@@ -49,7 +52,8 @@ Functional colors are not a site choice. Success uses `green`, warning uses
 - `catalog.md` — human-readable ramps, fill aliases, link-safe steps,
   functional mapping, contrast results. Generated; do not edit by hand.
 - `ramps.json` — machine-readable catalog, including all 288 checks.
-- `tailwind-source.json` — frozen Tailwind v4 source values (OKLCH + hex).
+- `tailwind-source.json` — frozen Tailwind v3.4.17 source values (hex; OKLCH
+  computed for the catalog).
 - `preview.html` — visual catalog; serve the repository root and open
   `http://127.0.0.1:8000/palettes/preview.html`.
 

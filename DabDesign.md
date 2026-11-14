@@ -46,7 +46,7 @@ accessible identity.
 
 | Alias | Light | Dark |
 |---|---|---|
-| `color-primary-text` | `blue-700` `#1447E6` | `blue-300` `#8EC5FF` |
+| `color-primary-text` | `blue-700` `#1D4ED8` | `blue-300` `#93C5FD` |
 
 Blue never replaces `color-focus`, `color-selection-bg`, or a functional status
 color. Selection stays the core-fixed neutral inversion.
@@ -65,10 +65,10 @@ Measured with the WCAG 2.2 formula on the real surfaces.
 |---|---:|---:|---|
 | `color-on-primary` on `color-primary` — light | 17.93:1 | 4.5:1 | pass |
 | `color-on-primary` on `color-primary` — dark | 17.18:1 | 4.5:1 | pass |
-| `color-primary-text` on `color-surface` — light (`blue-700` on white) | 6.83:1 | 4.5:1 | pass |
-| `color-primary-text` on `color-background` — light (`blue-700` on `gray-50`) | 6.55:1 | 4.5:1 | pass |
-| `color-primary-text` on `color-surface` — dark (`blue-300` on `gray-900`) | 9.89:1 | 4.5:1 | pass |
-| `color-primary-text` on `color-background` — dark (`blue-300` on `gray-950`) | 10.92:1 | 4.5:1 | pass |
+| `color-primary-text` on `color-surface` — light (`blue-700` on white) | 6.70:1 | 4.5:1 | pass |
+| `color-primary-text` on `color-background` — light (`blue-700` on `gray-50`) | 6.42:1 | 4.5:1 | pass |
+| `color-primary-text` on `color-surface` — dark (`blue-300` on `gray-900`) | 9.94:1 | 4.5:1 | pass |
+| `color-primary-text` on `color-background` — dark (`blue-300` on `gray-950`) | 10.98:1 | 4.5:1 | pass |
 | `color-focus` on `color-surface` — light | 3.42:1 | 3:1 | pass |
 | `color-focus` on `color-background` — light | 3.28:1 | 3:1 | pass |
 | `color-focus` on `color-surface` — dark | 5.23:1 | 3:1 | pass |

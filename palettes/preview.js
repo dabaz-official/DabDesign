@@ -45,7 +45,7 @@
 
       var head = el('div', 'ramp-head');
       head.appendChild(el('h3', 'type-h3', name + ' — display ' + h.display));
-      head.appendChild(el('span', '', 'Tailwind v4'));
+      head.appendChild(el('span', '', 'Tailwind v3.4'));
       block.appendChild(head);
 
       var scroll = el('div', 'ramp-scroll');

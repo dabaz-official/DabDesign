@@ -19,6 +19,9 @@ First stable release, aligned with DabAgents 1.0.0.
 - Layout parameters move into this repository: body measure **34–38em**,
   first-line indent **1.88em**, and the `type-body` line height **1.8** are
   defined in `core.md` §4.2 and §7, inside DabFonts' 1.75–1.85 body range.
+- Chromatic ramps move from Tailwind CSS v4 to **v3.4.17** values. The gray
+  ramp is unchanged; 115 of 132 chromatic steps change. Fill aliases,
+  link-safe text steps, and functional mappings are regenerated.
 - The previous component drafts, foundation page, earlier documents, and
   retired scripts move to `archive/0.1.0/`. `components/` no longer exists at
   the repository root; its files and previews are not the current contract.
@@ -33,8 +36,8 @@ First stable release, aligned with DabAgents 1.0.0.
   DabFonts and exact scale values to `core.md` §4.
 - `core.md` §7 measure and first-line indent, with the 0.94em Han derivation.
 - `archive/README.md`, marking the archived tree as non-normative.
-- `DEC-012` (1.0.0 release scope, archive, voice handover) and `DEC-013`
-  (twelve hue ramps and aliases carried forward, effective 1.0.0).
+- `DEC-012` (1.0.0 release scope, archive, voice handover), `DEC-013` (color
+  ramps carried forward), and `DEC-014` (ramps unified on Tailwind v3.4.17).
 
 ### Changed
 
@@ -48,12 +51,12 @@ First stable release, aligned with DabAgents 1.0.0.
 - `GOVERNANCE.md` is 1.0.0, updates the document-role table, and moves released
   changes to this file.
 - `DabDesign.md` depends on `core.md` v1.0.0. The blue links now cite the
-  Tailwind v4 ramp values (`blue-700` `#1447E6`, `blue-300` `#8EC5FF`) with
+  Tailwind v3.4.17 values (`blue-700` `#1D4ED8`, `blue-300` `#93C5FD`) with
   re-measured ratios.
 - `core.md` and `GOVERNANCE.md` no longer duplicate each other: the theme
   contract points at `core.md` §3.4, the core boundary no longer claims voice,
   and the principles that repeated core rules are removed.
-- `scripts/hue-catalog.mjs` emits `DEC-013` and a DabDesign title; regenerated
+- `scripts/hue-catalog.mjs` emits `DEC-014` and a DabDesign title; regenerated
   `palettes/catalog.md` and `palettes/ramps.json`.
 - `palettes/preview.html` and `palettes/preview.css` are self-contained, so the
   catalog no longer depends on the archived foundation page.
