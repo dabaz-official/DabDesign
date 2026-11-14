@@ -52,6 +52,17 @@ python3 -m http.server 8000         # preview palettes/ at /palettes/preview.htm
       keyboard operation, and measured contrast were verified.
 - [ ] Report actual commands and results, not estimates.
 
+## Versioning
+
+Versions are this repository's own; they do not track DabAgents or DabFonts.
+Consumers pin all three independently.
+
+- **Major** — a token is renamed or removed, a component's API changes, or a
+  `type-*` value moves.
+- **Minor** — a component, token, or pattern is added.
+- **Patch** — documentation, comments, or an internal refactor with no change
+  to a published value.
+
 ## Exceptions
 
 Recorded under DabAgents rule 04 §9. Review date: 2027-11-14.
