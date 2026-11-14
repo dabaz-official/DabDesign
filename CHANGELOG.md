@@ -50,7 +50,7 @@ First stable release, aligned with DabAgents 1.0.0.
 - `DabDesign.md` depends on `core.md` v1.0.0. The blue links now cite the
   Tailwind v4 ramp values (`blue-700` `#1447E6`, `blue-300` `#8EC5FF`) with
   re-measured ratios.
-- `ROADMAP.md` is replaced by a short post-1.0 plan.
+- `ROADMAP.md` is removed; release state lives in this changelog.
 - `scripts/hue-catalog.mjs` emits `DEC-013` and a DabDesign title; regenerated
   `palettes/catalog.md` and `palettes/ramps.json`.
 - `palettes/preview.html` and `palettes/preview.css` are self-contained, so the

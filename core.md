@@ -338,8 +338,7 @@ containers:
 normative component catalog at this version.
 **Authority:** This file is the normative core contract. `GOVERNANCE.md` records
 principles, decisions, and the site-theme contract; `CHANGELOG.md` records
-released changes; `DabDesign.md` is the DabAZ personal-series theme;
-`ROADMAP.md` is the post-1.0 plan.
+released changes; `DabDesign.md` is the DabAZ personal-series theme.
 **Scope:** the shared foundation for DabAZ sites, validated by one real pilot
 before a component is promoted.
 

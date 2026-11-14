@@ -6,7 +6,6 @@ not carry token values.
 **Normative core:** [`core.md`](core.md).
 **Personal-series theme:** [`DabDesign.md`](DabDesign.md).
 **Released changes:** [`CHANGELOG.md`](CHANGELOG.md).
-**Post-1.0 plan:** [`ROADMAP.md`](ROADMAP.md).
 
 > **Reading order.** Start at `GUIDELINE.md`; it routes here for decisions and
 > to `core.md` for values. For `dabaz.me` and DabResume only, also read
@@ -45,7 +44,6 @@ not carry token values.
 | `core.md` | Normative core contract: tokens and operative rules | Yes — the only token block |
 | `GOVERNANCE.md` | Principles, decisions, site-theme contract | No |
 | `CHANGELOG.md` | Released changes, newest first | No |
-| `ROADMAP.md` | Post-1.0 plan and open work | No |
 | `archive/` | Previous release, kept for comparison | Historical only — never normative |
 
 Supporting directories: `palettes/` holds generated color evidence for the

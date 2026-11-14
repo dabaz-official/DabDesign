@@ -26,7 +26,7 @@ Conflict order: the consuming project's `AGENTS.md`, then this repository's
 2. `core.md` — normative token contract.
 3. `GOVERNANCE.md` — principles and decisions.
 4. `DabDesign.md` — only for `dabaz.me` and DabResume.
-5. `CHANGELOG.md` and `ROADMAP.md` — release state and next work.
+5. `CHANGELOG.md` — release state.
 
 `archive/` and `references/third-party/` are not normative.
 
