@@ -50,7 +50,9 @@ First stable release, aligned with DabAgents 1.0.0.
 - `DabDesign.md` depends on `core.md` v1.0.0. The blue links now cite the
   Tailwind v4 ramp values (`blue-700` `#1447E6`, `blue-300` `#8EC5FF`) with
   re-measured ratios.
-- `ROADMAP.md` is removed; release state lives in this changelog.
+- `core.md` and `GOVERNANCE.md` no longer duplicate each other: the theme
+  contract points at `core.md` §3.4, the core boundary no longer claims voice,
+  and the principles that repeated core rules are removed.
 - `scripts/hue-catalog.mjs` emits `DEC-013` and a DabDesign title; regenerated
   `palettes/catalog.md` and `palettes/ramps.json`.
 - `palettes/preview.html` and `palettes/preview.css` are self-contained, so the
@@ -68,6 +70,7 @@ First stable release, aligned with DabAgents 1.0.0.
 - The former decision-ID prefix and the pre-1.0 progress log from the current
   documents. The archived tree and git history remain the record.
 - The retired palette scripts from the live `scripts/` path.
+- `ROADMAP.md`; release state lives in this changelog.
 
 ## Pre-1.0 history
 

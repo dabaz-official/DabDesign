@@ -14,25 +14,24 @@ not carry token values.
 
 ## 1. Principles
 
-1. **Core shares behavior, accessibility, structure, and tokens — not visual
-   sameness.** A site may look different; it may not behave differently.
-2. **Color is organized by color first.** Ramps are the primary structure; the
-   semantic roles are a thin usage mapping.
+1. **Visual sameness is not the goal.** Core shares behavior, accessibility,
+   and tokens; a site may look different but may not behave differently
+   (`core.md` §1.2).
+2. **Color is organized by color first.** Ramps are the structure; the semantic
+   mapping is deliberately thin (`core.md` §3).
 3. **Restrained, flat, Apple-like.** Content first, generous whitespace, one
    floating shadow, no decorative gradients.
 4. **Accessibility is a gate, not a preference.** WCAG 2.2 AA is the baseline.
 5. **One accent per site.** Status colors are never brand colors; focus and
-   selection are core-fixed.
+   selection are core-fixed (`core.md` §3.4).
 6. **Self-hosted assets only.** No font CDN, no icon CDN, no third-party
    runtime dependency.
-7. **Pilot before catalog.** No component spec is written before a real site
-   consumes it.
-8. **One source of truth.** Token values live only in `core.md`; no raw values
+7. **One source of truth.** Token values live only in `core.md`; no raw values
    in components or site themes.
-9. **Decisions are recorded.** A local exception is a defect; propose a
+8. **Decisions are recorded.** A local exception is a defect; propose a
    decision instead.
-10. **The Owner approves decisions and component promotion.** A released
-    contract changes by a recorded decision and a version bump, not by drift.
+9. **The Owner approves decisions and component promotion.** A released
+   contract changes by a recorded decision and a version bump, not by drift.
 
 ## 2. Document roles
 
@@ -85,10 +84,10 @@ a row is not ready.
 | Field | Requirement |
 |---|---|
 | Scope | Which sites/surfaces the theme applies to |
-| Accent hue | One chromatic hue from `core.md`; no second accent |
-| Fill aliases | `color-primary`, `-hover`, `-pressed`, `-subtle`, `color-on-primary` in both themes |
-| Link-safe text | `color-primary-text` step in both themes |
-| Surface tint | None, or a remap of ratified neutral steps; no new values |
+| Accent hue | One chromatic hue from `core.md` §3.1; no second accent |
+| Fill aliases | The six accent aliases defined in `core.md` §3.4, in both themes |
+| Link-safe text | The `color-primary-text` step from `core.md` §3.4, measured in both themes |
+| Surface tint | None, or a remap of ratified neutral steps; re-measured and recorded |
 | Composition | Hero, sections, grid, container, and rhythm choices |
 | Imagery | What is used, alt-text policy, what is forbidden |
 | Copy and voice | Follows DabAgents rule 07; a theme records terminology only, never tone |
@@ -97,15 +96,10 @@ a row is not ready.
 
 **Rules:**
 
-- One accent per site. A second accent is a core decision.
-- No theme may redefine a core token value, scale, focus behavior, or
+- A theme may not redefine a core token value, scale, focus behavior, or
   accessibility target.
-- A theme cites core token names; it does not copy the ramps.
-- Every surface-tint remap is re-measured and recorded.
 - Component behavior comes from `core.md`; a theme may choose documented
   appearance variants but may not fork behavior.
-- If a site needs a new behavior or token, it opens a `DEC-` record — it does
-  not add a local exception.
 
 ## 6. How to make a decision
 

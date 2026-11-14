@@ -389,7 +389,7 @@ sameness. A site may look different; it may not behave differently.
 | Layer | Owns | Examples |
 |---|---|---|
 | **Core fixed** | Semantic names and mappings; neutral, functional, focus, selection, overlay values; type; space, size, radius, borders; elevation and motion; layout; icons; accessibility baseline; component contract | `color-text-primary`, `type-body`, `space-6`, focus ring, Dialog keyboard model |
-| **Site theme** | One accent hue and its aliases; surface tint by remapping ratified neutral steps; composition; imagery; voice; documented appearance variants | Personal-series accent, hero layout, compact variant |
+| **Site theme** | One accent hue and its aliases; surface tint by remapping ratified neutral steps; composition; imagery; documented appearance variants | Personal-series accent, hero layout, compact variant |
 | **Site-owned** | Components with no shared behavior contract | Hero composition, media player, game board/HUD, illustration |
 
 **Locked:** semantic names, neutral and functional values, type/spacing/radius
@@ -753,5 +753,6 @@ treatment, game board/HUD and game-specific feedback, illustration and imagery.
 
 ## 12. Decisions
 
-Decision IDs, principles, rationale, changelog, and the site-theme contract
-live in `GOVERNANCE.md`. The personal-series theme lives in `DabDesign.md`.
+Decision IDs, principles, rationale, and the site-theme contract live in
+`GOVERNANCE.md`. Released changes live in `CHANGELOG.md`. The personal-series
+theme lives in `DabDesign.md`.
