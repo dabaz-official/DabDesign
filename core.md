@@ -1,8 +1,8 @@
 ---
-version: "0.1.0"
-name: "DabWave Core"
+version: "1.0.0"
+name: "DabDesign Core"
 description: >
-  The normative core contract for DabWave sites: color ramps, a thin
+  The normative core contract for DabDesign sites: color ramps, a thin
   semantic mapping, typography, space and shape, elevation and motion,
   layout, icons, accessibility, and the component contract. Decision
   history lives in GOVERNANCE.md.
@@ -222,8 +222,10 @@ themes:
     color-selection-fg: "#171717"
     color-overlay: "rgba(0, 0, 0, 0.50)"
 typography:
-  type-family-sans: 'Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif'
-  type-family-mono: 'ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace'
+  # Family names only. Font files, @font-face, fallback stacks, and loading are
+  # defined by DabFonts (GUIDELINE.md, TYPESETTING.md); do not copy them here.
+  type-family-sans: '"Dab Sans", <fallback stack defined by DabFonts>'
+  type-family-mono: '"Dab Mono", <fallback stack defined by DabFonts>'
   type-display:
     fontSize: "clamp(2.25rem, 1.5rem + 3vw, 3rem)"
     fontWeight: 600
@@ -330,21 +332,22 @@ containers:
   container-fluid: 100%
 ---
 
-# DabWave Core
+# DabDesign Core
 
-**Status:** v1 core, approved by the Owner 2026-11-11. Lean shared core; no
-component catalog yet.
+**Status:** 1.0.0, approved by the Owner 2026-11-14. Lean shared core; no
+normative component catalog at this version.
 **Authority:** This file is the normative core contract. `GOVERNANCE.md` records
-principles, decisions, and the changelog; `DabDesign.md` is the DabAZ personal
-series theme; `ROADMAP.md` is the handoff.
+principles, decisions, and the site-theme contract; `CHANGELOG.md` records
+released changes; `DabDesign.md` is the DabAZ personal-series theme;
+`ROADMAP.md` is the post-1.0 plan.
 **Scope:** the shared foundation for DabAZ sites, validated by one real pilot
-before any component catalog is multiplied.
+before a component is promoted.
 
-> **Reading order.** Before starting any project, read this file first, then
-> `GOVERNANCE.md`, then `GUIDELINE.md` for the agent workflow. For the DabAZ
-> official site (`dabaz.me`) and DabResume, also read `DabDesign.md`. Those two
-> are the only projects the personal-series theme applies to; every other
-> project uses its own theme document.
+> **Reading order.** Start at `GUIDELINE.md`; it routes here for token values
+> and to `GOVERNANCE.md` for decisions. For the DabAZ official site
+> (`dabaz.me`) and DabResume, also read `DabDesign.md`. Those two are the only
+> projects the personal-series theme applies to; every other project uses its
+> own theme document.
 
 ## 0. How to use this file
 
@@ -365,18 +368,19 @@ before any component catalog is multiplied.
 
 ## 1. Scope and boundary
 
-### 1.1 v1 scope
+### 1.1 1.0.0 scope
 
 **In:** boundary; color; typography; space and shape; elevation and motion;
 layout; icons; accessibility baseline; component contract standard; token
 delivery; lightweight decisions.
 
 **Out:** the full eight-component catalog; per-component specs for unused
-components; site themes beyond the personal-series document and one template;
-enterprise governance; framework or implementation code; `1.0.0`.
+components; site themes beyond the personal-series document; enterprise
+governance; framework or implementation code.
 
 **Pilot:** the DabAZ official site, real content, both themes. Start with
-Button, Text input, and Card; add Dialog only if the pilot needs a modal.
+Button, Text input, and Card; add Dialog only if the pilot needs a modal. No
+component is Adopted at 1.0.0.
 
 ### 1.2 Boundary
 
@@ -536,20 +540,21 @@ ratios are documentation defects.
 
 | Role | Family | Notes |
 |---|---|---|
-| Latin | Inter (SIL OFL 1.1) | Variable; self-hosted Latin subset; preloaded |
-| CJK and full-width symbols | Noto Sans SC (SIL OFL 1.1) | Optional per-site subset; never the full font |
-| Monospace | system stack | Code and tabular numerals only |
+| Sans | `Dab Sans` | Text, headings, and UI |
+| Monospace | `Dab Mono` | Code and tabular numerals only |
 
-Stack: `"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif`.
-
-- Self-hosted `woff2` only; no font CDN.
-- `font-display: swap` on every `@font-face`.
-- Inter is the only preloaded font file.
-- A Noto subset is optional, self-hosted, and split with `unicode-range`.
-- Targets: Inter Latin subset ≤ 120 KB; any Noto subset ≤ 500 KB total.
-- One sans stack; a site theme may not substitute another family.
+- Family names are the only family-level values this file owns. Font files,
+  `@font-face`, fallback stacks, `font-synthesis`, `font-display`, preload, and
+  the allowed weight set are defined by
+  [DabFonts](https://github.com/dabaz-official/DabFonts) in `GUIDELINE.md` and
+  `TYPESETTING.md`.
+- One sans family; a site theme may not substitute another family.
 
 ### 4.2 Scale
+
+This table is the **single authority** for exact sizes, line heights, weights,
+and tracking. DabFonts owns the font files and the constraints they impose;
+this file owns the values assigned to roles.
 
 16px base; integer sizes 12/14/16/18/20/24/30/36/48. Body and below fixed;
 `display` and `h1` fluid via `clamp()`.
@@ -567,13 +572,11 @@ Stack: `"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif`.
 | `type-label` | 14 | 1.4 | 600 | fixed |
 | `type-caption` | 12 | 1.5 | 400 | fixed |
 
-- `type-body` uses 1.8, inside the 1.75–1.85 range DabFonts requires for
+- `type-body` uses 1.8, inside the 1.75–1.85 body range DabFonts requires for
   Chinese body copy.
-- Weights: 400 and 600 only. No 700; font synthesis is allowed where 600 is
-  unavailable.
 - Tracking: zero everywhere, including headings.
-- Casing: sentence case for headings, buttons, labels, navigation.
 - Numerals: tabular figures in tables, metrics, and aligned columns.
+- Copy style and casing follow DabAgents rule 07; they are not type tokens.
 
 ## 5. Space and shape
 
@@ -671,8 +674,14 @@ Default gap `space-6` 24 on desktop, `space-4` 16 on narrow screens. Cards
 reflow by minimum usable width, not fixed desktop columns. Full-bleed
 backgrounds may extend past the container; content stays aligned.
 
-**Validation widths** — 375, 390, 640, 768, 1024, 1280, 1536. Text-heavy
-content holds a 60–75 character measure rather than filling the container.
+**Measure and indent** — body copy holds a **34–38em** measure, about 36–40 Han
+characters. One Han is 0.94em, so 38em holds about 40 characters. First-line
+indent is `text-indent: 1.88em`, exactly two Han characters. List items,
+captions, and table cells are not indented; paragraphs are separated with
+`margin`, not `<br>` or empty paragraphs.
+
+**Validation widths** — 375, 390, 640, 768, 1024, 1280, 1536, plus 320 for
+horizontal overflow. No horizontal scrolling at 320 or at 200% zoom.
 
 ## 8. Icons
 
@@ -712,21 +721,22 @@ Blanket AAA is a non-goal.
 A component entry includes name, purpose, anatomy (background, text, border,
 typography, padding, height, radius, shadow), variants, sizes, state matrix,
 accessibility (role, keyboard, accessible name, focus), and component-specific
-Do/Don't. Each component lives in `components/<name>.md`;
-`components/README.md` is the registry and template.
+Do/Don't.
 
 **State matrix:** default, hover (pointer platforms only), pressed (real
 variant), focused (ratified focus treatment, both themes), disabled (not
 opacity-only), selected (non-color cue), loading/error (layout-preserving,
 announced, error pairs with text).
 
+**Status at 1.0.0:** no per-component spec is normative in this repository.
+`components/` and its previews from the previous release are archived under
+`archive/` and are not the current contract. A component contract is written
+only after a real site consumes it. The v1 pilot set is Button, Text input, and
+Card; add Dialog only if the pilot needs a modal.
+
 **Lifecycle:** Proposed → Draft → Pilot → Adopted → Deprecated. A component is
 promoted only after passing the Definition of Done in a real pilot site. Only
 the Owner moves a component from Draft.
-
-**v1 scope:** the core defines this contract, not per-component specs. The pilot
-starts with Button, Text input, and Card; add Dialog only if the pilot needs a
-modal. No Toast/alert or Empty state spec until a site consumes them.
 
 **Site-owned:** hero/marketing composition, media-player controls and cover
 treatment, game board/HUD and game-specific feedback, illustration and imagery.
@@ -735,12 +745,12 @@ treatment, game board/HUD and game-specific feedback, illustration and imagery.
 
 1. Bright light-theme accent fills (§3.6).
 2. Focus on accent/functional subtle surfaces (§3.6).
-3. Token export is manual: previews and the foundation page still transcribe
-   values; a generator from this frontmatter is not built.
-4. No CI: contrast checks are run by hand; no axe, visual regression, or token
-   linter.
-5. No site theme beyond the DabAZ personal series; the pilot is the missing
-   evidence for whether the shared contract survives real content.
+3. No token-export generator: consumers transcribe values from this
+   frontmatter. `palettes/` is generated, but no CSS/JSON exporter exists.
+4. No CI: `scripts/hue-catalog.mjs` is the only automated check; contrast,
+   keyboard, and viewport checks are run by hand.
+5. No pilot evidence yet. The v1 pilot is the next step; no component is
+   Adopted at 1.0.0.
 
 ## 12. Decisions
 
