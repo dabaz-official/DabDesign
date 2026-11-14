@@ -484,7 +484,7 @@ remap only the accent and surface-tint entries allowed by §1.2.
 | `color-text-inverse` | `white` | `gray-900` | Text on inverted surfaces |
 | `color-text-disabled` | `gray-400` | `gray-600` | Disabled text; exempt but recorded |
 | `color-border` | `gray-200` | `gray-800` | Decorative divider |
-| `color-border-strong` | `gray-500` | `gray-500` | Interactive boundary; 3:1 |
+| `color-border-strong` | `gray-500` | `gray-500` | Component boundary; 3:1 |
 | `color-focus` | `#4C89EF` | `#4C89EF` | Focus ring, core-fixed |
 | `color-selection-bg` | `gray-900` | `gray-50` | Selected text background |
 | `color-selection-fg` | `white` | `gray-900` | Selected text |
