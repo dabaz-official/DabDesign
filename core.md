@@ -1,8 +1,8 @@
 ---
-version: "0.1.0"
-name: "DabWave Core"
+version: "1.0.0"
+name: "DabDesign Core"
 description: >
-  The normative core contract for DabWave sites: color ramps, a thin
+  The normative core contract for DabDesign sites: color ramps, a thin
   semantic mapping, typography, space and shape, elevation and motion,
   layout, icons, accessibility, and the component contract. Decision
   history lives in GOVERNANCE.md.
@@ -20,152 +20,152 @@ colors:
   gray-900: "#171717"
   gray-950: "#0A0A0A"
   black: "#000000"
-  # Chromatic ramps — Tailwind CSS v4 (MIT), eleven steps 50–950 each.
+  # Chromatic ramps — Tailwind CSS v3.4.17 (MIT), eleven steps 50–950 each.
   # Primitive only: components consume the semantic mapping, never these steps.
   # red
   red-50: "#FEF2F2"
-  red-100: "#FFE2E2"
-  red-200: "#FFC9C9"
-  red-300: "#FFA2A2"
-  red-400: "#FF6467"
-  red-500: "#FB2C36"
-  red-600: "#E7000B"
-  red-700: "#C10007"
-  red-800: "#9F0712"
-  red-900: "#82181A"
-  red-950: "#460809"
+  red-100: "#FEE2E2"
+  red-200: "#FECACA"
+  red-300: "#FCA5A5"
+  red-400: "#F87171"
+  red-500: "#EF4444"
+  red-600: "#DC2626"
+  red-700: "#B91C1C"
+  red-800: "#991B1B"
+  red-900: "#7F1D1D"
+  red-950: "#450A0A"
   # orange
   orange-50: "#FFF7ED"
-  orange-100: "#FFEDD4"
-  orange-200: "#FFD6A7"
-  orange-300: "#FFB86A"
-  orange-400: "#FF8904"
-  orange-500: "#FF6900"
-  orange-600: "#F54900"
-  orange-700: "#CA3500"
-  orange-800: "#9F2D00"
-  orange-900: "#7E2A0C"
-  orange-950: "#441306"
+  orange-100: "#FFEDD5"
+  orange-200: "#FED7AA"
+  orange-300: "#FDBA74"
+  orange-400: "#FB923C"
+  orange-500: "#F97316"
+  orange-600: "#EA580C"
+  orange-700: "#C2410C"
+  orange-800: "#9A3412"
+  orange-900: "#7C2D12"
+  orange-950: "#431407"
   # amber
   amber-50: "#FFFBEB"
-  amber-100: "#FEF3C6"
-  amber-200: "#FEE685"
-  amber-300: "#FFD230"
-  amber-400: "#FFB900"
-  amber-500: "#FE9A00"
-  amber-600: "#E17100"
-  amber-700: "#BB4D00"
-  amber-800: "#973C00"
-  amber-900: "#7B3306"
-  amber-950: "#461901"
+  amber-100: "#FEF3C7"
+  amber-200: "#FDE68A"
+  amber-300: "#FCD34D"
+  amber-400: "#FBBF24"
+  amber-500: "#F59E0B"
+  amber-600: "#D97706"
+  amber-700: "#B45309"
+  amber-800: "#92400E"
+  amber-900: "#78350F"
+  amber-950: "#451A03"
   # yellow
   yellow-50: "#FEFCE8"
-  yellow-100: "#FEF9C2"
-  yellow-200: "#FFF085"
-  yellow-300: "#FFDF20"
-  yellow-400: "#FDC700"
-  yellow-500: "#F0B100"
-  yellow-600: "#D08700"
-  yellow-700: "#A65F00"
-  yellow-800: "#894B00"
-  yellow-900: "#733E0A"
-  yellow-950: "#432004"
+  yellow-100: "#FEF9C3"
+  yellow-200: "#FEF08A"
+  yellow-300: "#FDE047"
+  yellow-400: "#FACC15"
+  yellow-500: "#EAB308"
+  yellow-600: "#CA8A04"
+  yellow-700: "#A16207"
+  yellow-800: "#854D0E"
+  yellow-900: "#713F12"
+  yellow-950: "#422006"
   # lime
   lime-50: "#F7FEE7"
-  lime-100: "#ECFCCA"
-  lime-200: "#D8F999"
-  lime-300: "#BBF451"
-  lime-400: "#9AE600"
-  lime-500: "#7CCF00"
-  lime-600: "#5EA500"
-  lime-700: "#497D00"
-  lime-800: "#3C6300"
-  lime-900: "#35530E"
-  lime-950: "#192E03"
+  lime-100: "#ECFCCB"
+  lime-200: "#D9F99D"
+  lime-300: "#BEF264"
+  lime-400: "#A3E635"
+  lime-500: "#84CC16"
+  lime-600: "#65A30D"
+  lime-700: "#4D7C0F"
+  lime-800: "#3F6212"
+  lime-900: "#365314"
+  lime-950: "#1A2E05"
   # green
   green-50: "#F0FDF4"
   green-100: "#DCFCE7"
-  green-200: "#B9F8CF"
-  green-300: "#7BF1A8"
-  green-400: "#05DF72"
-  green-500: "#00C950"
-  green-600: "#00A63E"
-  green-700: "#008236"
-  green-800: "#016630"
-  green-900: "#0D542B"
-  green-950: "#032E15"
+  green-200: "#BBF7D0"
+  green-300: "#86EFAC"
+  green-400: "#4ADE80"
+  green-500: "#22C55E"
+  green-600: "#16A34A"
+  green-700: "#15803D"
+  green-800: "#166534"
+  green-900: "#14532D"
+  green-950: "#052E16"
   # teal
   teal-50: "#F0FDFA"
-  teal-100: "#CBFBF1"
-  teal-200: "#96F7E4"
-  teal-300: "#46ECD5"
-  teal-400: "#00D5BE"
-  teal-500: "#00BBA7"
-  teal-600: "#009689"
-  teal-700: "#00786F"
-  teal-800: "#005F5A"
-  teal-900: "#0B4F4A"
-  teal-950: "#022F2E"
+  teal-100: "#CCFBF1"
+  teal-200: "#99F6E4"
+  teal-300: "#5EEAD4"
+  teal-400: "#2DD4BF"
+  teal-500: "#14B8A6"
+  teal-600: "#0D9488"
+  teal-700: "#0F766E"
+  teal-800: "#115E59"
+  teal-900: "#134E4A"
+  teal-950: "#042F2E"
   # cyan
   cyan-50: "#ECFEFF"
-  cyan-100: "#CEFAFE"
-  cyan-200: "#A2F4FD"
-  cyan-300: "#53EAFD"
-  cyan-400: "#00D3F2"
-  cyan-500: "#00B8DB"
-  cyan-600: "#0092B8"
-  cyan-700: "#007595"
-  cyan-800: "#005F78"
-  cyan-900: "#104E64"
-  cyan-950: "#053345"
+  cyan-100: "#CFFAFE"
+  cyan-200: "#A5F3FC"
+  cyan-300: "#67E8F9"
+  cyan-400: "#22D3EE"
+  cyan-500: "#06B6D4"
+  cyan-600: "#0891B2"
+  cyan-700: "#0E7490"
+  cyan-800: "#155E75"
+  cyan-900: "#164E63"
+  cyan-950: "#083344"
   # blue
   blue-50: "#EFF6FF"
   blue-100: "#DBEAFE"
-  blue-200: "#BEDBFF"
-  blue-300: "#8EC5FF"
-  blue-400: "#51A2FF"
-  blue-500: "#2B7FFF"
-  blue-600: "#155DFC"
-  blue-700: "#1447E6"
-  blue-800: "#193CB8"
-  blue-900: "#1C398E"
-  blue-950: "#162456"
+  blue-200: "#BFDBFE"
+  blue-300: "#93C5FD"
+  blue-400: "#60A5FA"
+  blue-500: "#3B82F6"
+  blue-600: "#2563EB"
+  blue-700: "#1D4ED8"
+  blue-800: "#1E40AF"
+  blue-900: "#1E3A8A"
+  blue-950: "#172554"
   # indigo
   indigo-50: "#EEF2FF"
   indigo-100: "#E0E7FF"
-  indigo-200: "#C6D2FF"
-  indigo-300: "#A3B3FF"
-  indigo-400: "#7C86FF"
-  indigo-500: "#615FFF"
-  indigo-600: "#4F39F6"
-  indigo-700: "#432DD7"
-  indigo-800: "#372AAC"
-  indigo-900: "#312C85"
-  indigo-950: "#1E1A4D"
+  indigo-200: "#C7D2FE"
+  indigo-300: "#A5B4FC"
+  indigo-400: "#818CF8"
+  indigo-500: "#6366F1"
+  indigo-600: "#4F46E5"
+  indigo-700: "#4338CA"
+  indigo-800: "#3730A3"
+  indigo-900: "#312E81"
+  indigo-950: "#1E1B4B"
   # violet
   violet-50: "#F5F3FF"
   violet-100: "#EDE9FE"
-  violet-200: "#DDD6FF"
-  violet-300: "#C4B4FF"
-  violet-400: "#A684FF"
-  violet-500: "#8E51FF"
-  violet-600: "#7F22FE"
-  violet-700: "#7008E7"
-  violet-800: "#5D0EC0"
-  violet-900: "#4D179A"
-  violet-950: "#2F0D68"
+  violet-200: "#DDD6FE"
+  violet-300: "#C4B5FD"
+  violet-400: "#A78BFA"
+  violet-500: "#8B5CF6"
+  violet-600: "#7C3AED"
+  violet-700: "#6D28D9"
+  violet-800: "#5B21B6"
+  violet-900: "#4C1D95"
+  violet-950: "#2E1065"
   # fuchsia
   fuchsia-50: "#FDF4FF"
   fuchsia-100: "#FAE8FF"
-  fuchsia-200: "#F6CFFF"
-  fuchsia-300: "#F4A8FF"
-  fuchsia-400: "#ED6AFF"
-  fuchsia-500: "#E12AFB"
-  fuchsia-600: "#C800DE"
-  fuchsia-700: "#A800B7"
-  fuchsia-800: "#8A0194"
-  fuchsia-900: "#721378"
-  fuchsia-950: "#4B004F"
+  fuchsia-200: "#F5D0FE"
+  fuchsia-300: "#F0ABFC"
+  fuchsia-400: "#E879F9"
+  fuchsia-500: "#D946EF"
+  fuchsia-600: "#C026D3"
+  fuchsia-700: "#A21CAF"
+  fuchsia-800: "#86198F"
+  fuchsia-900: "#701A75"
+  fuchsia-950: "#4A044E"
 themes:
   light:
     color-background: "#FAFAFA"
@@ -178,17 +178,17 @@ themes:
     color-text-disabled: "#A3A3A3"
     color-border: "#E5E5E5"
     color-border-strong: "#737373"
-    color-success: "#008236"
-    color-success-strong: "#008236"
+    color-success: "#15803D"
+    color-success-strong: "#15803D"
     color-success-subtle: "#DCFCE7"
     color-on-success: "#FFFFFF"
-    color-warning: "#BB4D00"
-    color-warning-strong: "#BB4D00"
-    color-warning-subtle: "#FEF3C6"
+    color-warning: "#B45309"
+    color-warning-strong: "#B45309"
+    color-warning-subtle: "#FEF3C7"
     color-on-warning: "#FFFFFF"
-    color-danger: "#E7000B"
-    color-danger-strong: "#C10007"
-    color-danger-subtle: "#FFE2E2"
+    color-danger: "#DC2626"
+    color-danger-strong: "#B91C1C"
+    color-danger-subtle: "#FEE2E2"
     color-on-danger: "#FFFFFF"
     color-focus: "#4C89EF"
     color-selection-bg: "#171717"
@@ -205,25 +205,27 @@ themes:
     color-text-disabled: "#525252"
     color-border: "#262626"
     color-border-strong: "#737373"
-    color-success: "#05DF72"
-    color-success-strong: "#05DF72"
-    color-success-subtle: "#0D542B"
+    color-success: "#4ADE80"
+    color-success-strong: "#4ADE80"
+    color-success-subtle: "#14532D"
     color-on-success: "#000000"
-    color-warning: "#FFB900"
-    color-warning-strong: "#FFB900"
-    color-warning-subtle: "#7B3306"
+    color-warning: "#FBBF24"
+    color-warning-strong: "#FBBF24"
+    color-warning-subtle: "#78350F"
     color-on-warning: "#000000"
-    color-danger: "#FB2C36"
-    color-danger-strong: "#FFA2A2"
-    color-danger-subtle: "#460809"
+    color-danger: "#EF4444"
+    color-danger-strong: "#FCA5A5"
+    color-danger-subtle: "#450A0A"
     color-on-danger: "#000000"
     color-focus: "#4C89EF"
     color-selection-bg: "#FAFAFA"
     color-selection-fg: "#171717"
     color-overlay: "rgba(0, 0, 0, 0.50)"
 typography:
-  type-family-sans: 'Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif'
-  type-family-mono: 'ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace'
+  # Family names only. Font files, loading, fallback, and allowed weights are
+  # defined by DabFonts; do not copy them here.
+  type-family-sans: '"Dab Sans", <fallback stack defined by DabFonts>'
+  type-family-mono: '"Dab Mono", <fallback stack defined by DabFonts>'
   type-display:
     fontSize: "clamp(2.25rem, 1.5rem + 3vw, 3rem)"
     fontWeight: 600
@@ -330,21 +332,22 @@ containers:
   container-fluid: 100%
 ---
 
-# DabWave Core
+# DabDesign Core
 
-**Status:** v1 core, approved by the Owner 2026-11-11. Lean shared core; no
-component catalog yet.
+**Status:** 1.0.0, approved by the Owner 2026-11-14. Lean shared core; no
+normative component catalog at this version.
 **Authority:** This file is the normative core contract. `GOVERNANCE.md` records
-principles, decisions, and the changelog; `DabDesign.md` is the DabAZ personal
-series theme; `ROADMAP.md` is the handoff.
+principles, decisions, and the site-theme contract; `CHANGELOG.md` records
+released changes; `ROADMAP.md` is the post-1.0 plan; `DabDesign.md` is the
+DabAZ personal-series theme.
 **Scope:** the shared foundation for DabAZ sites, validated by one real pilot
-before any component catalog is multiplied.
+before a component is promoted.
 
-> **Reading order.** Before starting any project, read this file first, then
-> `GOVERNANCE.md`, then `GUIDELINE.md` for the agent workflow. For the DabAZ
-> official site (`dabaz.me`) and DabResume, also read `DabDesign.md`. Those two
-> are the only projects the personal-series theme applies to; every other
-> project uses its own theme document.
+> **Reading order.** Start at `GUIDELINE.md`; it routes here for token values
+> and to `GOVERNANCE.md` for decisions. For the DabAZ official site
+> (`dabaz.me`) and DabResume, also read `DabDesign.md`. Those two are the only
+> projects the personal-series theme applies to; every other project uses its
+> own theme document.
 
 ## 0. How to use this file
 
@@ -365,18 +368,19 @@ before any component catalog is multiplied.
 
 ## 1. Scope and boundary
 
-### 1.1 v1 scope
+### 1.1 1.0.0 scope
 
 **In:** boundary; color; typography; space and shape; elevation and motion;
 layout; icons; accessibility baseline; component contract standard; token
 delivery; lightweight decisions.
 
 **Out:** the full eight-component catalog; per-component specs for unused
-components; site themes beyond the personal-series document and one template;
-enterprise governance; framework or implementation code; `1.0.0`.
+components; site themes beyond the personal-series document; enterprise
+governance; framework or implementation code.
 
 **Pilot:** the DabAZ official site, real content, both themes. Start with
-Button, Text input, and Card; add Dialog only if the pilot needs a modal.
+Button, Text input, and Card; add Dialog only if the pilot needs a modal. No
+component is Adopted at 1.0.0.
 
 ### 1.2 Boundary
 
@@ -386,7 +390,7 @@ sameness. A site may look different; it may not behave differently.
 | Layer | Owns | Examples |
 |---|---|---|
 | **Core fixed** | Semantic names and mappings; neutral, functional, focus, selection, overlay values; type; space, size, radius, borders; elevation and motion; layout; icons; accessibility baseline; component contract | `color-text-primary`, `type-body`, `space-6`, focus ring, Dialog keyboard model |
-| **Site theme** | One accent hue and its aliases; surface tint by remapping ratified neutral steps; composition; imagery; voice; documented appearance variants | Personal-series accent, hero layout, compact variant |
+| **Site theme** | One accent hue and its aliases; surface tint by remapping ratified neutral steps; composition; imagery; documented appearance variants | Personal-series accent, hero layout, compact variant |
 | **Site-owned** | Components with no shared behavior contract | Hero composition, media player, game board/HUD, illustration |
 
 **Locked:** semantic names, neutral and functional values, type/spacing/radius
@@ -446,9 +450,11 @@ families:
   `cyan`, `blue`, `indigo`, `violet`, `fuchsia`.
 
 Every chromatic ramp has eleven steps: `50 / 100 / 200 / 300 / 400 / 500 / 600 /
-700 / 800 / 900 / 950`. The values are Tailwind CSS v4 (MIT), frozen in the
-frontmatter. The display step is `500`; darker steps carry text on light
-surfaces, lighter steps carry text on dark surfaces.
+700 / 800 / 900 / 950`. The values are Tailwind CSS v3.4.17 (MIT), frozen in the
+frontmatter. The palette values are v3.4.17; the framework used by consuming
+projects remains Tailwind CSS v4 per DabAgents rule 02 §5. The display step is
+`500`; darker steps carry text on light surfaces, lighter steps carry text on
+dark surfaces.
 
 Ramps are **primitive**: components never reference `gray-900` or `blue-600`
 directly. The usage mapping in §3.3 is the component API.
@@ -480,7 +486,7 @@ remap only the accent and surface-tint entries allowed by §1.2.
 | `color-text-inverse` | `white` | `gray-900` | Text on inverted surfaces |
 | `color-text-disabled` | `gray-400` | `gray-600` | Disabled text; exempt but recorded |
 | `color-border` | `gray-200` | `gray-800` | Decorative divider |
-| `color-border-strong` | `gray-500` | `gray-500` | Interactive boundary; 3:1 |
+| `color-border-strong` | `gray-500` | `gray-500` | Component boundary; 3:1 |
 | `color-focus` | `#4C89EF` | `#4C89EF` | Focus ring, core-fixed |
 | `color-selection-bg` | `gray-900` | `gray-50` | Selected text background |
 | `color-selection-fg` | `white` | `gray-900` | Selected text |
@@ -520,6 +526,25 @@ fill. There is no `info` role; informational messaging uses a neutral surface.
 Contrast is measured on the actual surface, in both themes. "Estimated ~"
 ratios are documentation defects.
 
+Measured core pairs, using the v3.4.17 values and the core surfaces:
+
+| Pair | Light | Dark | Minimum |
+|---|---:|---:|---:|
+| `color-text-primary` on `color-surface` | 17.93:1 | 17.18:1 | 4.5:1 |
+| `color-text-tertiary` on `color-surface-secondary` | 7.17:1 | 6.00:1 | 4.5:1 |
+| `color-border-strong` on `color-background` | 4.54:1 | 4.18:1 | 3:1 |
+| `color-focus` on `color-surface-secondary` | 3.14:1 | 4.42:1 | 3:1 |
+| `color-selection-fg` on `color-selection-bg` | 17.93:1 | 17.18:1 | 4.5:1 |
+| `color-success-strong` on `color-surface` | 5.02:1 | 10.29:1 | 4.5:1 |
+| `color-warning-strong` on `color-surface` | 5.02:1 | 10.74:1 | 4.5:1 |
+| `color-danger-strong` on `color-surface` | 6.47:1 | 9.45:1 | 4.5:1 |
+| `color-on-success` on `color-success` | 5.02:1 | 12.05:1 | 4.5:1 |
+| `color-on-warning` on `color-warning` | 5.02:1 | 12.58:1 | 4.5:1 |
+| `color-on-danger` on `color-danger` | 4.83:1 | 5.58:1 | 4.5:1 |
+
+The full 288-pair verification is generated in `palettes/catalog.md`; the
+personal-series accent pairs are in `DabDesign.md` §3.
+
 ### 3.6 Open color gaps
 
 - **Bright light-theme fills.** A bright `500` fill on a light background needs
@@ -536,20 +561,20 @@ ratios are documentation defects.
 
 | Role | Family | Notes |
 |---|---|---|
-| Latin | Inter (SIL OFL 1.1) | Variable; self-hosted Latin subset; preloaded |
-| CJK and full-width symbols | Noto Sans SC (SIL OFL 1.1) | Optional per-site subset; never the full font |
-| Monospace | system stack | Code and tabular numerals only |
+| Sans | `Dab Sans` | Text, headings, and UI |
+| Monospace | `Dab Mono` | Code and tabular numerals only |
 
-Stack: `"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif`.
-
-- Self-hosted `woff2` only; no font CDN.
-- `font-display: swap` on every `@font-face`.
-- Inter is the only preloaded font file.
-- A Noto subset is optional, self-hosted, and split with `unicode-range`.
-- Targets: Inter Latin subset ≤ 120 KB; any Noto subset ≤ 500 KB total.
-- One sans stack; a site theme may not substitute another family.
+- Family names are the only family-level values this file owns. Font files,
+  loading, fallback, and the allowed weight set are defined by
+  [DabFonts](https://github.com/dabaz-official/DabFonts) in its guideline and
+  typesetting specification.
+- One sans family; a site theme may not substitute another family.
 
 ### 4.2 Scale
+
+This table is the **single authority** for exact sizes, line heights, weights,
+and tracking. DabFonts owns the font files and the constraints they impose;
+this file owns the values assigned to roles.
 
 16px base; integer sizes 12/14/16/18/20/24/30/36/48. Body and below fixed;
 `display` and `h1` fluid via `clamp()`.
@@ -567,13 +592,13 @@ Stack: `"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif`.
 | `type-label` | 14 | 1.4 | 600 | fixed |
 | `type-caption` | 12 | 1.5 | 400 | fixed |
 
-- `type-body` uses 1.8, inside the 1.75–1.85 range DabFonts requires for
+- `type-body` uses 1.8, inside the 1.75–1.85 body range DabFonts requires for
   Chinese body copy.
-- Weights: 400 and 600 only. No 700; font synthesis is allowed where 600 is
-  unavailable.
 - Tracking: zero everywhere, including headings.
-- Casing: sentence case for headings, buttons, labels, navigation.
+- Alignment: body copy is start-aligned; do not justify. Headings inherit the
+  same alignment unless a site theme documents an editorial exception.
 - Numerals: tabular figures in tables, metrics, and aligned columns.
+- Copy style and casing follow DabAgents rule 07; they are not type tokens.
 
 ## 5. Space and shape
 
@@ -671,8 +696,14 @@ Default gap `space-6` 24 on desktop, `space-4` 16 on narrow screens. Cards
 reflow by minimum usable width, not fixed desktop columns. Full-bleed
 backgrounds may extend past the container; content stays aligned.
 
-**Validation widths** — 375, 390, 640, 768, 1024, 1280, 1536. Text-heavy
-content holds a 60–75 character measure rather than filling the container.
+**Measure and indent** — body copy holds a **34–38em** measure, about 36–40 Han
+characters. One Han is 0.94em, so 38em holds about 40 characters. First-line
+indent is `text-indent: 1.88em`, exactly two Han characters. List items,
+captions, and table cells are not indented; paragraphs are separated with
+`margin`, not `<br>` or empty paragraphs.
+
+**Validation widths** — 375, 390, 640, 768, 1024, 1280, 1536, plus 320 for
+horizontal overflow. No horizontal scrolling at 320 or at 200% zoom.
 
 ## 8. Icons
 
@@ -712,21 +743,22 @@ Blanket AAA is a non-goal.
 A component entry includes name, purpose, anatomy (background, text, border,
 typography, padding, height, radius, shadow), variants, sizes, state matrix,
 accessibility (role, keyboard, accessible name, focus), and component-specific
-Do/Don't. Each component lives in `components/<name>.md`;
-`components/README.md` is the registry and template.
+Do/Don't.
 
 **State matrix:** default, hover (pointer platforms only), pressed (real
 variant), focused (ratified focus treatment, both themes), disabled (not
 opacity-only), selected (non-color cue), loading/error (layout-preserving,
 announced, error pairs with text).
 
+**Status at 1.0.0:** no per-component spec is normative in this repository.
+The archived component drafts and previews under `archive/` are not the current
+contract. A component contract is written only after a real site consumes it.
+The v1 pilot set is Button, Text input, and Card; add Dialog only if the pilot
+needs a modal.
+
 **Lifecycle:** Proposed → Draft → Pilot → Adopted → Deprecated. A component is
 promoted only after passing the Definition of Done in a real pilot site. Only
 the Owner moves a component from Draft.
-
-**v1 scope:** the core defines this contract, not per-component specs. The pilot
-starts with Button, Text input, and Card; add Dialog only if the pilot needs a
-modal. No Toast/alert or Empty state spec until a site consumes them.
 
 **Site-owned:** hero/marketing composition, media-player controls and cover
 treatment, game board/HUD and game-specific feedback, illustration and imagery.
@@ -735,14 +767,15 @@ treatment, game board/HUD and game-specific feedback, illustration and imagery.
 
 1. Bright light-theme accent fills (§3.6).
 2. Focus on accent/functional subtle surfaces (§3.6).
-3. Token export is manual: previews and the foundation page still transcribe
-   values; a generator from this frontmatter is not built.
-4. No CI: contrast checks are run by hand; no axe, visual regression, or token
-   linter.
-5. No site theme beyond the DabAZ personal series; the pilot is the missing
-   evidence for whether the shared contract survives real content.
+3. No token-export generator: consumers transcribe values from this
+   frontmatter. `palettes/` is generated, but no CSS/JSON exporter exists.
+4. No CI: `scripts/hue-catalog.mjs` is the only automated check; contrast,
+   keyboard, and viewport checks are run by hand.
+5. No pilot evidence yet. The v1 pilot is the next step; no component is
+   Adopted at 1.0.0.
 
 ## 12. Decisions
 
-Decision IDs, principles, rationale, changelog, and the site-theme contract
-live in `GOVERNANCE.md`. The personal-series theme lives in `DabDesign.md`.
+Decision IDs, principles, rationale, and the site-theme contract live in
+`GOVERNANCE.md`. Released changes live in `CHANGELOG.md`. The personal-series
+theme lives in `DabDesign.md`.
