@@ -1,11 +1,11 @@
 # DabAZ Personal Series
 
-**Status:** Approved theme v1, 2026-11-11. Applies to the **DabAZ official
+**Status:** Approved theme 1.0.0, 2026-11-14. Applies to the **DabAZ official
 site** and **DabResume** only.
-**Depends on:** [`core.md`](core.md) v0.1.0. This document supplies site-theme
+**Depends on:** [`core.md`](core.md) v1.0.0. This document supplies site-theme
 values and composition; it does not redefine core tokens.
-**Read first:** `core.md`, `GOVERNANCE.md`, and `GUIDELINE.md` (all projects),
-then this file. The personal-series theme applies only to the two sites above.
+**Read first:** `GUIDELINE.md`, then `core.md` and `GOVERNANCE.md`, then this
+file. The personal-series theme applies only to the two sites above.
 **Not applicable to:** DabMusic, DabSudoku, DabMinesweeper, or future sites.
 
 ## 1. Character
@@ -46,7 +46,7 @@ accessible identity.
 
 | Alias | Light | Dark |
 |---|---|---|
-| `color-primary-text` | `blue-700` `#1D4ED8` | `blue-300` `#93C5FD` |
+| `color-primary-text` | `blue-700` `#1447E6` | `blue-300` `#8EC5FF` |
 
 Blue never replaces `color-focus`, `color-selection-bg`, or a functional status
 color. Selection stays the core-fixed neutral inversion.
@@ -65,10 +65,10 @@ Measured with the WCAG 2.2 formula on the real surfaces.
 |---|---:|---:|---|
 | `color-on-primary` on `color-primary` — light | 17.93:1 | 4.5:1 | pass |
 | `color-on-primary` on `color-primary` — dark | 17.18:1 | 4.5:1 | pass |
-| `color-primary-text` on `color-surface` — light (`blue-700` on white) | 6.70:1 | 4.5:1 | pass |
-| `color-primary-text` on `color-background` — light (`blue-700` on `gray-50`) | 6.42:1 | 4.5:1 | pass |
-| `color-primary-text` on `color-surface` — dark (`blue-300` on `gray-900`) | 9.94:1 | 4.5:1 | pass |
-| `color-primary-text` on `color-background` — dark (`blue-300` on `gray-950`) | 10.98:1 | 4.5:1 | pass |
+| `color-primary-text` on `color-surface` — light (`blue-700` on white) | 6.83:1 | 4.5:1 | pass |
+| `color-primary-text` on `color-background` — light (`blue-700` on `gray-50`) | 6.55:1 | 4.5:1 | pass |
+| `color-primary-text` on `color-surface` — dark (`blue-300` on `gray-900`) | 9.89:1 | 4.5:1 | pass |
+| `color-primary-text` on `color-background` — dark (`blue-300` on `gray-950`) | 10.92:1 | 4.5:1 | pass |
 | `color-focus` on `color-surface` — light | 3.42:1 | 3:1 | pass |
 | `color-focus` on `color-background` — light | 3.28:1 | 3:1 | pass |
 | `color-focus` on `color-surface` — dark | 5.23:1 | 3:1 | pass |
@@ -113,11 +113,7 @@ headlines; DabResume stays at `type-h2` and below to keep the page scannable.
 
 ## 7. Voice
 
-- Direct, calm, specific. Verbs and concrete nouns.
-- English and Simplified Chinese are first-class; sentence case in both.
-- No hype, no exclamation marks, no "revolutionary" language.
-- Error and empty-state copy follow the core message pattern: what happened,
-  why, what to do next.
+Voice and tone are owned by DabAgents rule 07. This theme does not define them.
 
 ## 8. Theme contract checklist
 
@@ -129,13 +125,12 @@ headlines; DabResume stays at `type-h2` and below to keep the page scannable.
 - [x] Composition and imagery constraints stated.
 - [x] No core token value is redefined.
 - [x] Owner approved the accent choice (DEC-008, 2026-11-11).
+- [x] Depends on `core.md` v1.0.0; voice follows DabAgents rule 07.
 
 ## 9. Open questions
 
-1. **Accent hue.** Blue is the current proposal; should the personal series be
-   fully neutral (no chromatic accent) instead?
-2. **Official-site hero.** Final composition and imagery are not designed.
-3. **Resume portrait.** Whether to include one, and its art direction.
-4. **Print/PDF.** Resume print styles are site-owned and not specified here.
-5. **Dark default.** Both themes are supported; whether the personal series
+1. **Official-site hero.** Final composition and imagery are not designed.
+2. **Resume portrait.** Whether to include one, and its art direction.
+3. **Print/PDF.** Resume print styles are site-owned and not specified here.
+4. **Dark default.** Both themes are supported; whether the personal series
    defaults to light or system is a site-level choice.
