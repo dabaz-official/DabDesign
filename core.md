@@ -178,17 +178,17 @@ themes:
     color-text-disabled: "#A3A3A3"
     color-border: "#E5E5E5"
     color-border-strong: "#737373"
-    color-success: "#008236"
-    color-success-strong: "#008236"
+    color-success: "#15803D"
+    color-success-strong: "#15803D"
     color-success-subtle: "#DCFCE7"
     color-on-success: "#FFFFFF"
-    color-warning: "#BB4D00"
-    color-warning-strong: "#BB4D00"
-    color-warning-subtle: "#FEF3C6"
+    color-warning: "#B45309"
+    color-warning-strong: "#B45309"
+    color-warning-subtle: "#FEF3C7"
     color-on-warning: "#FFFFFF"
-    color-danger: "#E7000B"
-    color-danger-strong: "#C10007"
-    color-danger-subtle: "#FFE2E2"
+    color-danger: "#DC2626"
+    color-danger-strong: "#B91C1C"
+    color-danger-subtle: "#FEE2E2"
     color-on-danger: "#FFFFFF"
     color-focus: "#4C89EF"
     color-selection-bg: "#171717"
@@ -205,25 +205,25 @@ themes:
     color-text-disabled: "#525252"
     color-border: "#262626"
     color-border-strong: "#737373"
-    color-success: "#05DF72"
-    color-success-strong: "#05DF72"
-    color-success-subtle: "#0D542B"
+    color-success: "#4ADE80"
+    color-success-strong: "#4ADE80"
+    color-success-subtle: "#14532D"
     color-on-success: "#000000"
-    color-warning: "#FFB900"
-    color-warning-strong: "#FFB900"
-    color-warning-subtle: "#7B3306"
+    color-warning: "#FBBF24"
+    color-warning-strong: "#FBBF24"
+    color-warning-subtle: "#78350F"
     color-on-warning: "#000000"
-    color-danger: "#FB2C36"
-    color-danger-strong: "#FFA2A2"
-    color-danger-subtle: "#460809"
+    color-danger: "#EF4444"
+    color-danger-strong: "#FCA5A5"
+    color-danger-subtle: "#450A0A"
     color-on-danger: "#000000"
     color-focus: "#4C89EF"
     color-selection-bg: "#FAFAFA"
     color-selection-fg: "#171717"
     color-overlay: "rgba(0, 0, 0, 0.50)"
 typography:
-  # Family names only. Font files, @font-face, fallback stacks, and loading are
-  # defined by DabFonts (GUIDELINE.md, TYPESETTING.md); do not copy them here.
+  # Family names only. Font files, loading, fallback, and allowed weights are
+  # defined by DabFonts; do not copy them here.
   type-family-sans: '"Dab Sans", <fallback stack defined by DabFonts>'
   type-family-mono: '"Dab Mono", <fallback stack defined by DabFonts>'
   type-display:
@@ -450,8 +450,10 @@ families:
 
 Every chromatic ramp has eleven steps: `50 / 100 / 200 / 300 / 400 / 500 / 600 /
 700 / 800 / 900 / 950`. The values are Tailwind CSS v3.4.17 (MIT), frozen in the
-frontmatter. The display step is `500`; darker steps carry text on light
-surfaces, lighter steps carry text on dark surfaces.
+frontmatter. The palette values are v3.4.17; the framework used by consuming
+projects remains Tailwind CSS v4 per DabAgents rule 02 §5. The display step is
+`500`; darker steps carry text on light surfaces, lighter steps carry text on
+dark surfaces.
 
 Ramps are **primitive**: components never reference `gray-900` or `blue-600`
 directly. The usage mapping in §3.3 is the component API.
@@ -523,6 +525,25 @@ fill. There is no `info` role; informational messaging uses a neutral surface.
 Contrast is measured on the actual surface, in both themes. "Estimated ~"
 ratios are documentation defects.
 
+Measured core pairs, using the v3.4.17 values and the core surfaces:
+
+| Pair | Light | Dark | Minimum |
+|---|---:|---:|---:|
+| `color-text-primary` on `color-surface` | 17.93:1 | 17.18:1 | 4.5:1 |
+| `color-text-tertiary` on `color-surface-secondary` | 7.17:1 | 6.00:1 | 4.5:1 |
+| `color-border-strong` on `color-background` | 4.54:1 | 4.18:1 | 3:1 |
+| `color-focus` on `color-surface-secondary` | 3.14:1 | 4.42:1 | 3:1 |
+| `color-selection-fg` on `color-selection-bg` | 17.93:1 | 17.18:1 | 4.5:1 |
+| `color-success-strong` on `color-surface` | 5.02:1 | 10.29:1 | 4.5:1 |
+| `color-warning-strong` on `color-surface` | 5.02:1 | 10.74:1 | 4.5:1 |
+| `color-danger-strong` on `color-surface` | 6.47:1 | 9.45:1 | 4.5:1 |
+| `color-on-success` on `color-success` | 5.02:1 | 12.05:1 | 4.5:1 |
+| `color-on-warning` on `color-warning` | 5.02:1 | 12.58:1 | 4.5:1 |
+| `color-on-danger` on `color-danger` | 4.83:1 | 5.58:1 | 4.5:1 |
+
+The full 288-pair verification is generated in `palettes/catalog.md`; the
+personal-series accent pairs are in `DabDesign.md` §3.
+
 ### 3.6 Open color gaps
 
 - **Bright light-theme fills.** A bright `500` fill on a light background needs
@@ -543,10 +564,9 @@ ratios are documentation defects.
 | Monospace | `Dab Mono` | Code and tabular numerals only |
 
 - Family names are the only family-level values this file owns. Font files,
-  `@font-face`, fallback stacks, `font-synthesis`, `font-display`, preload, and
-  the allowed weight set are defined by
-  [DabFonts](https://github.com/dabaz-official/DabFonts) in `GUIDELINE.md` and
-  `TYPESETTING.md`.
+  loading, fallback, and the allowed weight set are defined by
+  [DabFonts](https://github.com/dabaz-official/DabFonts) in its guideline and
+  typesetting specification.
 - One sans family; a site theme may not substitute another family.
 
 ### 4.2 Scale
@@ -574,6 +594,8 @@ this file owns the values assigned to roles.
 - `type-body` uses 1.8, inside the 1.75–1.85 body range DabFonts requires for
   Chinese body copy.
 - Tracking: zero everywhere, including headings.
+- Alignment: body copy is start-aligned; do not justify. Headings inherit the
+  same alignment unless a site theme documents an editorial exception.
 - Numerals: tabular figures in tables, metrics, and aligned columns.
 - Copy style and casing follow DabAgents rule 07; they are not type tokens.
 
@@ -728,10 +750,10 @@ opacity-only), selected (non-color cue), loading/error (layout-preserving,
 announced, error pairs with text).
 
 **Status at 1.0.0:** no per-component spec is normative in this repository.
-`components/` and its previews from the previous release are archived under
-`archive/` and are not the current contract. A component contract is written
-only after a real site consumes it. The v1 pilot set is Button, Text input, and
-Card; add Dialog only if the pilot needs a modal.
+The archived component drafts and previews under `archive/` are not the current
+contract. A component contract is written only after a real site consumes it.
+The v1 pilot set is Button, Text input, and Card; add Dialog only if the pilot
+needs a modal.
 
 **Lifecycle:** Proposed → Draft → Pilot → Adopted → Deprecated. A component is
 promoted only after passing the Definition of Done in a real pilot site. Only

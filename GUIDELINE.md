@@ -15,7 +15,7 @@ file routes work; if it conflicts with either, they win.
 5. [`DabDesign.md`](DabDesign.md) — **only** for the DabAZ official site
    (`dabaz.me`) and DabResume.
 6. For typography, font loading, punctuation, or mixed-script spacing, start at
-   DabFonts' `GUIDELINE.md`, then `TYPESETTING.md`.
+   DabFonts' guideline, then its typesetting specification.
 
 `references/third-party/` is prior art, never a standard. `archive/` is
 non-normative and is not a reference implementation.
@@ -27,7 +27,7 @@ non-normative and is not a reference implementation.
 | What token value or rule applies? | `core.md` |
 | Why was this decided, and what is approved? | `GOVERNANCE.md` |
 | How should an agent approach the work? | `GUIDELINE.md` |
-| How are fonts loaded, and what do they allow? | DabFonts' `GUIDELINE.md` and `TYPESETTING.md` |
+| How are fonts loaded, and what do they allow? | DabFonts' guideline and typesetting specification |
 | What accent, composition, and imagery does the personal series use? | `DabDesign.md` |
 | What did another company do? | `references/third-party/` — inspiration only |
 | What did the previous release look like? | `archive/` — non-normative |
@@ -36,8 +36,8 @@ non-normative and is not a reference implementation.
 
 | Dependency | Pin | Owns |
 |---|---|---|
-| DabAgents | `85c919479e8209d89203d5c56eeb22dda893db56` | Task process, engineering standards, branches and releases, quality gates, voice, compatibility widths, documentation rules |
-| DabFonts | `v1.0.0` | Font files, family names, `@font-face`, fallback stacks, `font-synthesis`, `font-display`, preload, allowed weights, punctuation, CJK–Latin spacing, capability boundaries |
+| DabAgents | `ebd76db1e9c6c65401e41180fcf75c48c23c50e4` | Task process, engineering standards, branches and releases, quality gates, voice, compatibility widths, documentation rules |
+| DabFonts | `v1.0.0` | Font files, family names, loading, fallback, allowed weights, punctuation, CJK–Latin spacing, capability boundaries |
 | DabDesign | this repository | `type-*` sizes, line heights, weight mapping, measure, first-line indent, alignment, tracking, numeral style; color, space, shape, layout, icons, accessibility, component status |
 
 - Body line height 1.8 is declared only on `type-body` in `core.md`, inside
@@ -66,7 +66,7 @@ If you cannot tell which layer owns it, stop and ask. Do not guess.
   `color-primary`, `color-border-strong`, etc.
 - **No raw values** where a token exists: no hex, px, or ms.
 - **Typography uses `type-`**: `type-body`, `type-h1`, `type-label`. Color roles
-  keep `color-text-*`. Do not write `text-body` as a token.
+  keep `color-text-*`. Do not use the old `text-` prefix for typography tokens.
 - **Do not copy the ramps.** A theme cites token names and records the steps it
   maps; it does not paste 132 hex values.
 - **Do not fork a scale.** If no token fits, the answer is a decision in
@@ -143,8 +143,8 @@ Lifecycle: **Proposed → Draft → Pilot → Adopted → Deprecated**.
   the spec only after the real use exposes the contract.
 - Only the Owner moves a component from Draft to Pilot or Adopted. An agent
   proposes and reports evidence.
-- `components/` and its previews are not part of 1.0.0. They live under
-  `archive/` and are **not the current contract**.
+- The archived component drafts and previews under `archive/` are not part of
+  1.0.0 and are **not the current contract**.
 - A component contract includes anatomy, variants, sizes, the state matrix,
   accessibility, token slots, and Do/Don't.
 - If a shared behavior or token is missing, open a `DEC-`. Do not fork a
@@ -197,7 +197,7 @@ Design-specific verification before handing off:
 
 - Copying hex values or component code from `references/third-party/`.
 - Using primitive steps (`gray-900`, `blue-600`) inside a component.
-- Writing `text-body` instead of `type-body`.
+- Writing a typography token with the old `text-` prefix.
 - Applying `DabDesign.md` to DabMusic, DabSudoku, DabMinesweeper, or a new site.
 - Treating the archived tree as the current contract.
 - Adding a component spec before a real pilot uses it.

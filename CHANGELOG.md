@@ -12,10 +12,9 @@ First stable release, aligned with DabAgents 1.0.0.
 
 - The system name is unified as **DabDesign**. The former name is retired from
   every normative file, generated artifact, and preview.
-- Typography moves from the self-hosted Inter + Noto Sans SC stack to
-  **Dab Sans** and **Dab Mono** from DabFonts. Font files, family stacks,
-  `@font-face`, `font-synthesis`, `font-display`, preload, and allowed weights
-  are now DabFonts' responsibility.
+- Typography moves from the previous self-hosted dual-stack to **Dab Sans**
+  and **Dab Mono** from DabFonts. Font files, family stacks, loading, and
+  allowed weights are now DabFonts' responsibility.
 - Layout parameters move into this repository: body measure **34–38em**,
   first-line indent **1.88em**, and the `type-body` line height **1.8** are
   defined in `core.md` §4.2 and §7, inside DabFonts' 1.75–1.85 body range.
@@ -23,8 +22,8 @@ First stable release, aligned with DabAgents 1.0.0.
   ramp is unchanged; 115 of 132 chromatic steps change. Fill aliases,
   link-safe text steps, and functional mappings are regenerated.
 - The previous component drafts, foundation page, earlier documents, and
-  retired scripts move to `archive/0.1.0/`. `components/` no longer exists at
-  the repository root; its files and previews are not the current contract.
+  retired scripts move to `archive/0.1.0/`. There is no live component
+  directory; its files and previews are not the current contract.
 - Voice and tone leave the personal-series theme. DabAgents rule 07 owns voice
   and microcopy; `DabDesign.md` links to it.
 - Version `0.1.0` becomes `1.0.0`.
@@ -66,14 +65,13 @@ First stable release, aligned with DabAgents 1.0.0.
 
 - Duplicated branch, commit, release, CI, and quality-gate process from
   `GUIDELINE.md`; those belong to DabAgents rules 03 and 04.
-- Inter and Noto Sans SC loading details, fallback stacks, `font-display`, and
-  preload rules from `core.md`; DabFonts owns them.
-- The `font-synthesis` allowance that conflicted with DabFonts'
-  `font-synthesis: none`.
+- The previous font-loading details and fallback stacks from `core.md`;
+  DabFonts owns them.
+- The weight-synthesis allowance that conflicted with DabFonts' policy.
 - The former decision-ID prefix and the pre-1.0 progress log from the current
   documents. The archived tree and git history remain the record.
 - The retired palette scripts from the live `scripts/` path.
-- `ROADMAP.md`; release state lives in this changelog.
+- The roadmap file is removed; release state lives in this changelog.
 
 ## Pre-1.0 history
 

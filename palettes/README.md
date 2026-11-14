@@ -9,7 +9,9 @@ generated evidence.
 Twelve hue ramps adopted from **Tailwind CSS v3.4.17** (MIT), with eleven
 steps: `50 / 100 / 200 / 300 / 400 / 500 / 600 / 700 / 800 / 900 / 950`. White
 and black are separate primitives, not ramp steps. Gray is Tailwind's neutral
-ramp, so both layers come from one source.
+ramp, so both layers come from one source. These are palette values only;
+consuming projects still use the Tailwind CSS v4 framework per DabAgents rule
+02 §5.
 
 | Hue | Display step |
 |---|---:|

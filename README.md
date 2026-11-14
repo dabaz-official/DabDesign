@@ -59,8 +59,8 @@ Then open <http://127.0.0.1:8000/palettes/preview.html>.
 
 | Dependency | Pin | Role |
 |---|---|---|
-| [DabAgents](https://github.com/dabaz-official/DabAgents) | `85c919479e8209d89203d5c56eeb22dda893db56` | Rules: operating, engineering, workflow, quality, content, compatibility, documentation. No 1.0.0 tag exists; the commit is the pin. |
-| [DabFonts](https://github.com/dabaz-official/DabFonts) | `v1.0.0` | Font files, families, `@font-face`, fallback stacks, loading, allowed weights, punctuation, and mixed-script spacing. |
+| [DabAgents](https://github.com/dabaz-official/DabAgents) | `ebd76db1e9c6c65401e41180fcf75c48c23c50e4` | Rules: operating, engineering, workflow, quality, content, compatibility, documentation. The commit is the 1.0.0 merge on `main`. |
+| [DabFonts](https://github.com/dabaz-official/DabFonts) | `v1.0.0` | Font files, families, loading, fallback, allowed weights, punctuation, and mixed-script spacing. |
 
 `core.md` owns the exact type scale; DabFonts owns the fonts and the
 constraints they impose. The two repositories do not duplicate each other's

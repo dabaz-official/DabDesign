@@ -5,13 +5,13 @@
 DabDesign is a **design dependency repository**, not a web application. It
 defines the shared design contract for DabAZ web projects: tokens, typography,
 space and shape, layout, icons, accessibility, and component status. It ships
-no framework, build chain, CI, deploy target, or `package.json`.
+no framework, build chain, CI, deploy target, or package manifest.
 
 ## Pins and entry points
 
 | Dependency | Pin | Entry point |
 |---|---|---|
-| DabAgents | `85c919479e8209d89203d5c56eeb22dda893db56` | `rules/01-operating.md` |
+| DabAgents | `ebd76db1e9c6c65401e41180fcf75c48c23c50e4` | [DabAgents operating rules](https://github.com/dabaz-official/DabAgents/blob/ebd76db1e9c6c65401e41180fcf75c48c23c50e4/rules/01-operating.md) |
 | DabFonts | `v1.0.0` | `GUIDELINE.md` |
 
 Start UI work at this repository's `GUIDELINE.md`. Start typography or font
@@ -58,7 +58,7 @@ Recorded under DabAgents rule 04 §9. Review date: 2027-11-14.
 
 | Area | Exception | Reason |
 |---|---|---|
-| Stack | No framework, build, package manager, or `package.json` | The repository is documentation and one zero-dependency script |
+| Stack | No framework, build, package manager, or package manifest | The repository is documentation and one zero-dependency script |
 | CI | No CI | No build or test pipeline; run the commands above locally |
 | Tests | No unit-test suite | Contrast is verified by `scripts/hue-catalog.mjs`; documentation has no runtime |
 | Deploy | No deploy target | Consumers pin the repository; there is no hosted artifact |
