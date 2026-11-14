@@ -20,6 +20,7 @@ chain, CI, or deploy target.
 4. [`DabDesign.md`](DabDesign.md) — the personal-series theme, for `dabaz.me`
    and DabResume only.
 5. [`CHANGELOG.md`](CHANGELOG.md) — released changes.
+6. [`ROADMAP.md`](ROADMAP.md) — post-1.0 work and open decisions.
 
 [`AGENTS.md`](AGENTS.md) is the repository contract for agents and pins the
 upstream dependencies.
@@ -29,7 +30,7 @@ upstream dependencies.
 | Path | Status |
 |---|---|
 | `GUIDELINE.md`, `core.md`, `GOVERNANCE.md`, `DabDesign.md` | Normative |
-| `README.md`, `AGENTS.md`, `CHANGELOG.md` | Repository metadata |
+| `README.md`, `AGENTS.md`, `CHANGELOG.md`, `ROADMAP.md` | Repository metadata |
 | `palettes/` | Generated evidence for the color contract |
 | `references/third-party/` | Unofficial prior art; never a standard |
 | `archive/` | Non-normative; kept only for comparison |

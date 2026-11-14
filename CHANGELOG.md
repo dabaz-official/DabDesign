@@ -35,6 +35,7 @@ First stable release, aligned with DabAgents 1.0.0.
   DabFonts and exact scale values to `core.md` §4.
 - `core.md` §7 measure and first-line indent, with the 0.94em Han derivation.
 - `archive/README.md`, marking the archived tree as non-normative.
+- `ROADMAP.md` as the post-1.0 plan and open-decision log.
 - `DEC-012` (1.0.0 release scope, archive, voice handover), `DEC-013` (color
   ramps carried forward), and `DEC-014` (ramps unified on Tailwind v3.4.17).
 
@@ -71,7 +72,6 @@ First stable release, aligned with DabAgents 1.0.0.
 - The former decision-ID prefix and the pre-1.0 progress log from the current
   documents. The archived tree and git history remain the record.
 - The retired palette scripts from the live `scripts/` path.
-- The roadmap file is removed; release state lives in this changelog.
 
 ## Pre-1.0 history
 
