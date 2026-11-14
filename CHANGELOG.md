@@ -65,8 +65,8 @@ First stable release, aligned with DabAgents 1.0.0.
   preload rules from `core.md`; DabFonts owns them.
 - The `font-synthesis` allowance that conflicted with DabFonts'
   `font-synthesis: none`.
-- The former `DAB-` decision identifiers and the pre-1.0 progress log from the
-  current documents. The archived tree and git history remain the record.
+- The former decision-ID prefix and the pre-1.0 progress log from the current
+  documents. The archived tree and git history remain the record.
 - The retired palette scripts from the live `scripts/` path.
 
 ## Pre-1.0 history
