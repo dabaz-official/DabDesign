@@ -223,9 +223,9 @@ themes:
     color-overlay: "rgba(0, 0, 0, 0.50)"
 typography:
   # Family names only. Font files, loading, fallback, and allowed weights are
-  # defined by DabFonts; do not copy them here.
-  type-family-sans: '"Dab Sans", <fallback stack defined by DabFonts>'
-  type-family-mono: '"Dab Mono", <fallback stack defined by DabFonts>'
+  # defined by DabFonts; compose the stack per DabFonts, do not copy it here.
+  type-family-sans: '"Dab Sans"'
+  type-family-mono: '"Dab Mono"'
   type-display:
     fontSize: "clamp(2.25rem, 1.5rem + 3vw, 3rem)"
     fontWeight: 600
