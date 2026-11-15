@@ -1,6 +1,6 @@
 # DabDesign
 
-**Version:** 1.0.0 · 2026-11-14
+**Version:** 1.0.0 · 2026-11-15
 **Entry point:** [`GUIDELINE.md`](GUIDELINE.md)
 
 DabDesign is the shared design contract for DabAZ web projects: color ramps and
@@ -58,10 +58,12 @@ Then open <http://127.0.0.1:8000/palettes/preview.html>.
 
 ## Dependencies and pins
 
-| Dependency | Pin | Role |
-|---|---|---|
-| [DabAgents](https://github.com/dabaz-official/DabAgents) | `ebd76db1e9c6c65401e41180fcf75c48c23c50e4` | Rules: operating, engineering, workflow, quality, content, compatibility, documentation. The commit is the 1.0.0 merge on `main`. |
-| [DabFonts](https://github.com/dabaz-official/DabFonts) | `v1.0.0` | Font files, families, loading, fallback, allowed weights, punctuation, and mixed-script spacing. |
+Pins live in [`AGENTS.md`](AGENTS.md). This section records the role each dependency plays.
+
+| Dependency | Role |
+|---|---|
+| [DabAgents](https://github.com/dabaz-official/DabAgents) | Rules: operating, engineering, workflow, quality, content, compatibility, documentation. |
+| [DabFonts](https://github.com/dabaz-official/DabFonts) | Font files, families, loading, fallback, allowed weights, punctuation, and mixed-script spacing. |
 
 `core.md` owns the exact type scale; DabFonts owns the fonts and the
 constraints they impose. The two repositories do not duplicate each other's

@@ -34,11 +34,13 @@ non-normative and is not a reference implementation.
 
 ## 3. Dependencies and ownership
 
-| Dependency | Pin | Owns |
-|---|---|---|
-| DabAgents | `ebd76db1e9c6c65401e41180fcf75c48c23c50e4` | Task process, engineering standards, branches and releases, quality gates, voice, compatibility widths, documentation rules |
-| DabFonts | `v1.0.0` | Font files, family names, loading, fallback, allowed weights, punctuation, CJK–Latin spacing, capability boundaries |
-| DabDesign | this repository | `type-*` sizes, line heights, weight mapping, measure, first-line indent, alignment, tracking, numeral style; color, space, shape, layout, icons, accessibility, component status |
+Upstream pins live in [`AGENTS.md`](AGENTS.md).
+
+| Dependency | Owns |
+|---|---|
+| DabAgents | Task process, engineering standards, branches and releases, quality gates, voice, compatibility widths, documentation rules |
+| DabFonts | Font files, family names, loading, fallback, allowed weights, punctuation, CJK–Latin spacing, capability boundaries |
+| DabDesign | this repository: `type-*` sizes, line heights, weight mapping, measure, first-line indent, alignment, tracking, numeral style; color, space, shape, layout, icons, accessibility, component status |
 
 - Body line height 1.8 is declared only on `type-body` in `core.md`, inside
   DabFonts' 1.75–1.85 body range.

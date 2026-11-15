@@ -11,7 +11,7 @@ no framework, build chain, CI, deploy target, or package manifest.
 
 | Dependency | Pin | Entry point |
 |---|---|---|
-| DabAgents | `ebd76db1e9c6c65401e41180fcf75c48c23c50e4` | [DabAgents operating rules](https://github.com/dabaz-official/DabAgents/blob/ebd76db1e9c6c65401e41180fcf75c48c23c50e4/rules/01-operating.md) |
+| DabAgents | `v1.0.1` | [DabAgents operating rules](https://github.com/dabaz-official/DabAgents/blob/v1.0.1/rules/01-operating.md) |
 | DabFonts | `v1.0.0` | `GUIDELINE.md` |
 
 Start UI work at this repository's `GUIDELINE.md`. Start typography or font
