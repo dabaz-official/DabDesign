@@ -1,6 +1,6 @@
 # Agent Guideline — Using DabDesign
 
-**Status:** 1.0.0, 2026-11-14.
+**Status:** 1.0.1, 2026-11-15.
 **Audience:** coding agents and contributors.
 **Normative:** [`core.md`](core.md) and [`GOVERNANCE.md`](GOVERNANCE.md). This
 file routes work; if it conflicts with either, they win.

@@ -1,6 +1,6 @@
 # DabDesign Governance
 
-**Status:** 1.0.0, approved by the Owner 2026-11-14.
+**Status:** 1.0.1, 2026-11-15. 1.0.0 was approved by the Owner 2026-11-14.
 **Purpose:** principles, decision records, and the site-theme contract. It does
 not carry token values.
 **Normative core:** [`core.md`](core.md).

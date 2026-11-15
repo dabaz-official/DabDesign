@@ -1,7 +1,7 @@
 # DabDesign Roadmap
 
-**Version:** 1.0.0 · **Updated:** 2026-11-15
-**State:** 1.0.0 released; `v1.0.0` points at the release commit.
+**Version:** 1.0.1 · **Updated:** 2026-11-15
+**State:** 1.0.1 released; `v1.0.0` and `v1.0.1` point at their release commits.
 
 ## Next
 
@@ -11,8 +11,6 @@
    the Owner promotes a component from Draft.
 3. Build the token exporter from the `core.md` frontmatter.
 4. Add CI for the hue catalog, link checks, and the internal greps.
-5. Release the unreleased documentation changes: the DabAgents `v1.0.1` pin and
-   the `type-family-*` family-name fix.
 
 ## Open decisions
 

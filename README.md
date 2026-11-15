@@ -1,6 +1,6 @@
 # DabDesign
 
-**Version:** 1.0.0 · 2026-11-15
+**Version:** 1.0.1 · 2026-11-15
 **Entry point:** [`GUIDELINE.md`](GUIDELINE.md)
 
 DabDesign is the shared design contract for DabAZ web projects: color ramps and

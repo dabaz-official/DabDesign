@@ -1,8 +1,8 @@
 # DabAZ Personal Series
 
-**Status:** Approved theme 1.0.0, 2026-11-14. Applies to the **DabAZ official
+**Status:** Approved theme 1.0.1, 2026-11-15. Applies to the **DabAZ official
 site** and **DabResume** only.
-**Depends on:** [`core.md`](core.md) v1.0.0. This document supplies site-theme
+**Depends on:** [`core.md`](core.md) v1.0.1. This document supplies site-theme
 values and composition; it does not redefine core tokens.
 **Read first:** `GUIDELINE.md`, then `core.md` and `GOVERNANCE.md`, then this
 file. The personal-series theme applies only to the two sites above.
@@ -125,7 +125,7 @@ Voice and tone are owned by DabAgents rule 07. This theme does not define them.
 - [x] Composition and imagery constraints stated.
 - [x] No core token value is redefined.
 - [x] Owner approved the accent choice (DEC-008, 2026-11-11).
-- [x] Depends on `core.md` v1.0.0; voice follows DabAgents rule 07.
+- [x] Depends on `core.md` v1.0.1; voice follows DabAgents rule 07.
 
 ## 9. Open questions
 

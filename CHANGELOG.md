@@ -4,13 +4,16 @@ All notable changes to this repository are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 semantic versioning.
 
-## Unreleased
+## 1.0.1 — 2026-11-15
 
 ### Changed
 
 - `AGENTS.md` defines what major, minor, and patch mean for this repository
   (DabAgents rule 03 §5).
-- The DabAgents pin is the `v1.0.1` tag instead of a pre-release commit.
+- The DabAgents pin is the `v1.0.2` tag; the DabFonts pin is `v1.0.1`.
+
+### Fixed
+
 - `core.md` `type-family-sans` and `type-family-mono` carry the family name
   only. The previous values embedded a `<fallback stack defined by DabFonts>`
   placeholder, which is not valid CSS; consumers compose the stack per

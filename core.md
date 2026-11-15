@@ -1,5 +1,5 @@
 ---
-version: "1.0.0"
+version: "1.0.1"
 name: "DabDesign Core"
 description: >
   The normative core contract for DabDesign sites: color ramps, a thin
@@ -334,8 +334,9 @@ containers:
 
 # DabDesign Core
 
-**Status:** 1.0.0, approved by the Owner 2026-11-14. Lean shared core; no
-normative component catalog at this version.
+**Status:** 1.0.1, 2026-11-15. 1.0.0 was approved by the Owner 2026-11-14;
+1.0.1 is a patch. Lean shared core; no normative component catalog at this
+version.
 **Authority:** This file is the normative core contract. `GOVERNANCE.md` records
 principles, decisions, and the site-theme contract; `CHANGELOG.md` records
 released changes; `ROADMAP.md` is the post-1.0 plan; `DabDesign.md` is the
@@ -750,7 +751,7 @@ variant), focused (ratified focus treatment, both themes), disabled (not
 opacity-only), selected (non-color cue), loading/error (layout-preserving,
 announced, error pairs with text).
 
-**Status at 1.0.0:** no per-component spec is normative in this repository.
+**Status at 1.0.1:** no per-component spec is normative in this repository.
 The archived component drafts and previews under `archive/` are not the current
 contract. A component contract is written only after a real site consumes it.
 The v1 pilot set is Button, Text input, and Card; add Dialog only if the pilot
