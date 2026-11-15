@@ -11,18 +11,14 @@
    the Owner promotes a component from Draft.
 3. Build the token exporter from the `core.md` frontmatter.
 4. Add CI for the hue catalog, link checks, and the internal greps.
+5. Release the unreleased documentation changes: the DabAgents `v1.0.1` pin and
+   the `type-family-*` family-name fix.
 
 ## Open decisions
 
 - The audit checklist expects `DEC-013` in the palette catalog, but the current
   v3 ramp decision is `DEC-014`; `DEC-013` is superseded. Update the checklist
   or renumber the decision.
-- DabAgents rule 02 §6 still names `components/` and previews; this repository
-  uses `archive/`. Ask the DabAgents owner to update the rule wording.
-- DabAgents `main` has advanced to `f8030a8`; the pin is `ebd76db` (the 1.0.0
-  merge, main-reachable). Decide whether to follow the tip.
-- The changelog dates 1.0.0 as 2026-11-14; the local tag was re-cut on
-  2026-11-15. Decide whether the date should track the tag.
 
 ## Known gaps
 
