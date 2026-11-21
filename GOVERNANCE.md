@@ -1,6 +1,6 @@
 # DabDesign Governance
 
-**Status:** 1.0.1, 2026-11-15. 1.0.0 was approved by the Owner 2026-11-14.
+**Status:** 1.1.0, 2026-11-22. 1.0.0 was approved by the Owner 2026-11-14.
 **Purpose:** principles, decision records, and the site-theme contract. It does
 not carry token values.
 **Normative core:** [`core.md`](core.md).
@@ -69,6 +69,7 @@ a standard, and neither may override `core.md`.
 | `DEC-012` | 2026-11-14 | 1.0.0 release: adopt the DabAgents 1.0.0 dependency contract, archive the component drafts, foundation page, and earlier documents, move voice to rule 07, and make DabDesign the single system name | The previous release duplicated process rules and font loading, and its artifacts contradicted the revised typography contract | Approved (Owner) |
 | `DEC-013` | 2026-11-14 | Color values: the twelve Tailwind v4 hue ramps, the gray ramp, fill aliases, link-safe text steps, and functional mappings are carried forward from the previous color decision, effective 1.0.0 | The values were already frozen and verified; 1.0.0 changes ownership and naming, not the ramps | Superseded by DEC-014 |
 | `DEC-014` | 2026-11-15 | Ramps: replace the Tailwind v4 chromatic values with Tailwind CSS v3.4.17 values; the gray ramp, eleven steps, and white/black primitives are unchanged; regenerate fill aliases, link-safe text steps, and functional mappings | The Owner chose to unify on the v3 palette; 115 of 132 chromatic values differ from v4 | Approved (Owner) |
+| `DEC-015` | 2026-11-22 | Translucency: glass is an appearance variant available to every component, never a default; `core.md` §6.1 adds the `glass-*` tokens, a 72% tint floor that holds primary and secondary text at ≥4.5:1 over any backdrop, a mandatory opaque fallback, and performance limits; the blanket "no glassmorphism" in `DabDesign.md` §1 is withdrawn | The Owner wants the glass direction opened up rather than confined to a few surfaces, and design freedom is better served by a universal opt-in with a measured alpha floor than by a category ban; the accessibility gate stays intact because tertiary text and focusable controls move to an opaque content plane | Approved (Owner) |
 
 **Status meanings:** Proposed — not yet reviewed; Approved — Owner accepted;
 Carried forward — inherited from an earlier decision without re-litigation;
@@ -76,6 +77,10 @@ Superseded — replaced by a later decision.
 
 `DEC-014` replaces the chromatic values in `DEC-006` and `DEC-013`. It does not
 change the gray ramp or the eleven-step shape.
+
+`DEC-015` adds a material, not a default. DEC-003's flat-at-rest rule still
+governs every resting surface; glass is chosen per surface and must satisfy
+`core.md` §6.1.
 
 ## 4. Changelog
 

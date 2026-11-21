@@ -1,11 +1,11 @@
 # DabDesign
 
-**Version:** 1.0.1 · 2026-11-15
+**Version:** 1.1.0 · 2026-11-22
 **Entry point:** [`GUIDELINE.md`](GUIDELINE.md)
 
 DabDesign is the shared design contract for DabAZ web projects: color ramps and
-a thin semantic mapping, typography roles, space and shape, elevation and
-motion, layout, icons, accessibility, and component status. It is a design
+a thin semantic mapping, typography roles, space and shape, elevation, motion,
+translucency, layout, icons, accessibility, and component status. It is a design
 dependency repository, not a web application. It ships no framework, build
 chain, CI, or deploy target.
 

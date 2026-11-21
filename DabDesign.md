@@ -1,8 +1,8 @@
 # DabAZ Personal Series
 
-**Status:** Approved theme 1.0.1, 2026-11-15. Applies to the **DabAZ official
+**Status:** Approved theme 1.1.0, 2026-11-22. Applies to the **DabAZ official
 site** and **DabResume** only.
-**Depends on:** [`core.md`](core.md) v1.0.1. This document supplies site-theme
+**Depends on:** [`core.md`](core.md) v1.1.0. This document supplies site-theme
 values and composition; it does not redefine core tokens.
 **Read first:** `GUIDELINE.md`, then `core.md` and `GOVERNANCE.md`, then this
 file. The personal-series theme applies only to the two sites above.
@@ -17,8 +17,10 @@ Restrained, editorial, neutral, Apple-like.
 - Flat at rest: separation comes from surface steps and 1px borders, not shadows
   or gradients.
 - One floating shadow, only for interactive card hover and floating layers.
-- No decorative gradient meshes, no glassmorphism, no illustration that replaces
-  a UI affordance.
+- No decorative gradient meshes, no illustration that replaces a UI affordance.
+- Glass is an opt-in appearance variant, not the default (`core.md` §6.1,
+  DEC-015). A glass surface that carries tertiary text or focusable controls
+  keeps an opaque content plane inside it.
 - Motion is functional: short color feedback, one restrained card lift.
 
 ## 2. Accent
@@ -55,7 +57,8 @@ color. Selection stays the core-fixed neutral inversion.
 
 None. The personal series uses the core neutral mapping unchanged:
 `color-background`, `color-surface`, and `color-surface-secondary` as defined in
-`core.md` §3.3.
+`core.md` §3.3. Glass is a core material variant (`core.md` §6.1), not a surface
+tint; it changes no mapping here.
 
 ## 3. Contrast evidence
 
@@ -125,7 +128,7 @@ Voice and tone are owned by DabAgents rule 07. This theme does not define them.
 - [x] Composition and imagery constraints stated.
 - [x] No core token value is redefined.
 - [x] Owner approved the accent choice (DEC-008, 2026-11-11).
-- [x] Depends on `core.md` v1.0.1; voice follows DabAgents rule 07.
+- [x] Depends on `core.md` v1.1.0; voice follows DabAgents rule 07.
 
 ## 9. Open questions
 

@@ -1,11 +1,11 @@
 ---
-version: "1.0.1"
+version: "1.1.0"
 name: "DabDesign Core"
 description: >
   The normative core contract for DabDesign sites: color ramps, a thin
-  semantic mapping, typography, space and shape, elevation and motion,
-  layout, icons, accessibility, and the component contract. Decision
-  history lives in GOVERNANCE.md.
+  semantic mapping, typography, space and shape, elevation, motion,
+  translucency, layout, icons, accessibility, and the component contract.
+  Decision history lives in GOVERNANCE.md.
 colors:
   white: "#FFFFFF"
   gray-50: "#FAFAFA"
@@ -311,6 +311,16 @@ border:
   border-width: 1px
 elevation:
   shadow-floating: "2px 4px 16px rgba(0, 0, 0, 0.16)"
+glass:
+  glass-blur-sm: 12px
+  glass-blur-md: 20px
+  glass-blur-lg: 32px
+  glass-saturate: 180%
+  glass-tint-light: "rgba(255, 255, 255, 0.72)"
+  glass-tint-dark: "rgba(23, 23, 23, 0.72)"
+  glass-border-light: "rgba(0, 0, 0, 0.08)"
+  glass-border-dark: "rgba(255, 255, 255, 0.12)"
+  glass-highlight: "inset 0 1px 0 rgba(255, 255, 255, 0.30)"
 motion:
   duration-fast: 100ms
   duration-base: 200ms
@@ -334,9 +344,9 @@ containers:
 
 # DabDesign Core
 
-**Status:** 1.0.1, 2026-11-15. 1.0.0 was approved by the Owner 2026-11-14;
-1.0.1 is a patch. Lean shared core; no normative component catalog at this
-version.
+**Status:** 1.1.0, 2026-11-22. 1.0.0 was approved by the Owner 2026-11-14;
+1.1.0 adds the translucency tokens and DEC-015. Lean shared core; no normative
+component catalog at this version.
 **Authority:** This file is the normative core contract. `GOVERNANCE.md` records
 principles, decisions, and the site-theme contract; `CHANGELOG.md` records
 released changes; `ROADMAP.md` is the post-1.0 plan; `DabDesign.md` is the
@@ -357,8 +367,8 @@ before a component is promoted.
    API.
 2. **The YAML frontmatter is the only token block.** It holds the neutral ramp,
    the twelve chromatic ramps, the thin light/dark mapping, typography, space
-   and shape, elevation and motion, layout, and containers. Body tables explain
-   intent; they do not create values.
+   and shape, elevation, motion, translucency, layout, and containers. Body
+   tables explain intent; they do not create values.
 3. **Color is organized by color first.** The primaries are the gray and hue
    ramps; the usage roles are a thin mapping at the end of the color section.
 4. **Do not fork a scale.** If no token fits, it is a decision in
@@ -371,9 +381,9 @@ before a component is promoted.
 
 ### 1.1 1.0.0 scope
 
-**In:** boundary; color; typography; space and shape; elevation and motion;
-layout; icons; accessibility baseline; component contract standard; token
-delivery; lightweight decisions.
+**In:** boundary; color; typography; space and shape; elevation;
+translucency; motion; layout; icons; accessibility baseline; component
+contract standard; token delivery; lightweight decisions.
 
 **Out:** the full eight-component catalog; per-component specs for unused
 components; site themes beyond the personal-series document; enterprise
@@ -390,7 +400,7 @@ sameness. A site may look different; it may not behave differently.
 
 | Layer | Owns | Examples |
 |---|---|---|
-| **Core fixed** | Semantic names and mappings; neutral, functional, focus, selection, overlay values; type; space, size, radius, borders; elevation and motion; layout; icons; accessibility baseline; component contract | `color-text-primary`, `type-body`, `space-6`, focus ring, Dialog keyboard model |
+| **Core fixed** | Semantic names and mappings; neutral, functional, focus, selection, overlay values; type; space, size, radius, borders; elevation, motion, and translucency; layout; icons; accessibility baseline; component contract | `color-text-primary`, `type-body`, `space-6`, focus ring, Dialog keyboard model |
 | **Site theme** | One accent hue and its aliases; surface tint by remapping ratified neutral steps; composition; imagery; documented appearance variants | Personal-series accent, hero layout, compact variant |
 | **Site-owned** | Components with no shared behavior contract | Hero composition, media player, game board/HUD, illustration |
 
@@ -654,7 +664,9 @@ default. This assignment is DEC-009 (approved 2026-11-11).
 ## 6. Elevation and motion
 
 **Flat at rest.** Cards, buttons, navigation, and every resting surface carry no
-shadow; layering comes from surface steps and `color-border`. Exactly one shadow:
+shadow; layering comes from surface steps and `color-border`. A glass surface
+(§6.1) is the only other material: it is opt-in, never the default. Exactly one
+shadow:
 
 `shadow-floating: 2px 4px 16px rgba(0, 0, 0, 0.16)`
 
@@ -680,6 +692,67 @@ Only `transform`, `opacity`, `color`, `background-color`, `border-color`, and
 border change at `duration-fast`, not a scale. Under
 `prefers-reduced-motion: reduce`, movement is disabled; color and opacity remain
 at `duration-fast`; `shadow-floating` appears instantly; focus is never reduced.
+
+### 6.1 Translucency — glass
+
+Glass is an **appearance variant available to every component**, never a
+default. A component that offers it documents the variant in its contract; a
+component that declines it records that too. No surface is forbidden glass by
+category, and no surface ships glass unless it was chosen.
+
+| Token | Value | Use |
+|---|---|---|
+| `glass-blur-sm` | 12px | Chips, small controls, inline toolbars |
+| `glass-blur-md` | 20px | Navigation bars, sticky bars, popovers |
+| `glass-blur-lg` | 32px | Sheets, large panels, dialogs |
+| `glass-saturate` | 180% | Pairs with every blur step |
+| `glass-tint-light` | `rgba(255,255,255,.72)` | Base glass fill, light theme |
+| `glass-tint-dark` | `rgba(23,23,23,.72)` | Base glass fill, dark theme |
+| `glass-border-light` | `rgba(0,0,0,.08)` | Hairline edge, light theme |
+| `glass-border-dark` | `rgba(255,255,255,.12)` | Hairline edge, dark theme |
+| `glass-highlight` | `inset 0 1px 0 rgba(255,255,255,.30)` | Optional specular top edge |
+
+**The 72% floor is the accessibility mechanism.** Text on glass sits on the
+composited tint, and any backdrop is bounded by pure black or pure white. At 72%
+those extremes bound the worst case, measured with the WCAG 2.2 formula:
+
+| Pair on `glass-tint` | Light over black | Dark over white | Minimum | Verdict |
+|---|---:|---:|---:|---|
+| `color-text-primary` | 9.0:1 | 6.8:1 | 4.5:1 | pass |
+| `color-text-secondary` | 5.2:1 | 4.8:1 | 4.5:1 | pass |
+| `color-text-tertiary` | 3.9:1 | 2.8:1 | 4.5:1 | fail |
+| `color-focus` | 1.7:1 | 2.1:1 | 3:1 | fail |
+
+Rules:
+
+1. **No default.** A component's resting state is opaque `color-surface`. Glass
+   is a documented variant, chosen per surface.
+2. **Primary and secondary text only.** Tertiary text, disabled text, and any
+   non-text element that owes 3:1 — borders, icons, focus — never sit directly
+   on `glass-tint`. They go on an opaque `color-surface` content plane inside
+   the glass, or the variant does not use glass.
+3. **Focus is never the exception.** Because the core focus colour falls below
+   3:1 on glass, a glass surface that contains focusable controls keeps those
+   controls on an opaque content plane, or provides a measured focus track that
+   reaches 3:1. §9 is unchanged.
+4. **Fallback is mandatory.** Under `@supports not (backdrop-filter: blur(1px))`
+   and under `prefers-reduced-transparency: reduce` where supported,
+   `glass-tint` resolves to opaque `color-surface`. A translucent panel with no
+   blur is never shipped.
+5. **Functional, not decorative.** Glass belongs to a layer that content moves
+   under: navigation, sub-navigation, sticky bars, popovers, dialogs, sheets,
+   toasts, and floating controls. A full-bleed decorative glass panel is out of
+   scope, consistent with DEC-003.
+6. **One blur layer.** Glass never nests. Inner content planes are opaque.
+7. **Blur is not animated.** Animate `opacity` and `transform` only; never
+   `backdrop-filter` or a blur radius. Blur stays off per-item in long lists and
+   off large scrolling areas.
+8. **The tint is core-fixed.** A site theme may choose which components use
+   glass; it may not change the tint alpha. If a surface cannot pass at 72%, it
+   does not carry that content on glass.
+
+This is DEC-015 (approved 2026-11-22). It withdraws the blanket glass ban in
+`DabDesign.md` §1 and leaves DEC-003's flat-at-rest default intact.
 
 ## 7. Layout
 
@@ -751,7 +824,7 @@ variant), focused (ratified focus treatment, both themes), disabled (not
 opacity-only), selected (non-color cue), loading/error (layout-preserving,
 announced, error pairs with text).
 
-**Status at 1.0.1:** no per-component spec is normative in this repository.
+**Status at 1.1.0:** no per-component spec is normative in this repository.
 The archived component drafts and previews under `archive/` are not the current
 contract. A component contract is written only after a real site consumes it.
 The v1 pilot set is Button, Text input, and Card; add Dialog only if the pilot
@@ -774,6 +847,8 @@ treatment, game board/HUD and game-specific feedback, illustration and imagery.
    keyboard, and viewport checks are run by hand.
 5. No pilot evidence yet. The v1 pilot is the next step; no component is
    Adopted at 1.0.0.
+6. Glass (§6.1) has bounds, not measurements: the 72% floor is derived from the
+   black/white extremes, and nothing has yet been measured on a real backdrop.
 
 ## 12. Decisions
 

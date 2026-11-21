@@ -4,6 +4,24 @@ All notable changes to this repository are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 semantic versioning.
 
+## 1.1.0 — 2026-11-22
+
+### Added
+
+- `core.md` §6.1 translucency tokens — `glass-blur-sm/md/lg`,
+  `glass-saturate`, `glass-tint-light/dark`, `glass-border-light/dark`, and
+  `glass-highlight` — with the 72% tint floor, the opaque fallback, and the
+  performance limits.
+- `DEC-015`: glass is an appearance variant available to every component and is
+  never a default.
+
+### Changed
+
+- `DabDesign.md` §1 no longer forbids glassmorphism; the personal series uses
+  glass the same opt-in way as every other theme.
+- `GUIDELINE.md` §9, §12, and §13 document the glass variant, its verification,
+  and its two failure modes.
+
 ## 1.0.1 — 2026-11-15
 
 ### Changed

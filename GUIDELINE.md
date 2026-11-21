@@ -1,6 +1,6 @@
 # Agent Guideline — Using DabDesign
 
-**Status:** 1.0.1, 2026-11-15.
+**Status:** 1.1.0, 2026-11-22.
 **Audience:** coding agents and contributors.
 **Normative:** [`core.md`](core.md) and [`GOVERNANCE.md`](GOVERNANCE.md). This
 file routes work; if it conflicts with either, they win.
@@ -151,6 +151,9 @@ Lifecycle: **Proposed → Draft → Pilot → Adopted → Deprecated**.
   accessibility, token slots, and Do/Don't.
 - If a shared behavior or token is missing, open a `DEC-`. Do not fork a
   component or add a local exception.
+- Glass is an appearance variant any component may document (`core.md` §6.1).
+  It is never a default. A component that offers it records the backdrop, the
+  contrast bound, and the opaque fallback.
 
 ## 10. Site themes
 
@@ -193,6 +196,9 @@ Design-specific verification before handing off:
 - Contrast is measured on the actual surfaces in both themes.
 - Every width in §7 is checked when a UI changes, including 320 px overflow.
 - Keyboard operation, focus visibility, and the 44×44 target are verified.
+- A glass variant is checked with `backdrop-filter` disabled and with reduced
+  transparency; both must land on an opaque surface, and focusable controls must
+  keep a 3:1 focus track.
 - The archived tree is not cited as the contract.
 
 ## 13. Common mistakes
@@ -207,6 +213,8 @@ Design-specific verification before handing off:
 - Overriding focus, selection, or accessibility behavior.
 - Restating font loading or fallback rules instead of pointing at DabFonts.
 - Changing a released contract without a `DEC-` and a version bump.
+- Shipping glass as a component default, or putting tertiary text or a
+  focusable control directly on `glass-tint` (`core.md` §6.1).
 
 ## 14. Task routing
 

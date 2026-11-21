@@ -1,14 +1,16 @@
 # DabDesign Roadmap
 
-**Version:** 1.0.1 · **Updated:** 2026-11-15
-**State:** 1.0.1 released; `v1.0.0` and `v1.0.1` point at their release commits.
+**Version:** 1.1.0 · **Updated:** 2026-11-22
+**State:** 1.1.0 released; `v1.0.0`, `v1.0.1`, and `v1.1.0` point at their
+release commits.
 
 ## Next
 
 1. Run the official-site pilot with Button, Text input, and Card; add Dialog
    only if the pilot needs a modal.
-2. Record real contrast and viewport results, including 320 px overflow. Only
-   the Owner promotes a component from Draft.
+2. Record real contrast and viewport results, including 320 px overflow, and
+   measure the glass `§6.1` bounds on real backdrops. Only the Owner promotes a
+   component from Draft.
 3. Build the token exporter from the `core.md` frontmatter.
 4. Add CI for the hue catalog, link checks, and the internal greps.
 
