@@ -1,6 +1,6 @@
 # DabAZ Personal Series
 
-**Status:** Approved theme 1.0.1, 2026-11-15. Applies to the **DabAZ official
+**Status:** Approved theme 1.1.0, 2026-11-22. Applies to the **DabAZ official
 site** and **DabResume** only.
 **Depends on:** [`core.md`](core.md) v1.0.1. This document supplies site-theme
 values and composition; it does not redefine core tokens.
@@ -18,7 +18,11 @@ Restrained, editorial, neutral, Apple-like.
   or gradients.
 - One floating shadow, only for interactive card hover and floating layers.
 - No decorative gradient meshes, no glassmorphism, no illustration that replaces
-  a UI affordance.
+  a UI affordance. The site header is the one scrimmed-glass surface (DEC-015).
+- Header glass (DEC-015): `backdrop-filter: blur(16px) saturate(1.8)` over a
+  scrim at least 82% of `color-background`; an opaque fallback for
+  `@supports not (backdrop-filter)` and `prefers-reduced-transparency`; contrast
+  measured on the composited scrim; no other surface may use it.
 - Motion is functional: short color feedback, one restrained card lift.
 
 ## 2. Accent
@@ -124,6 +128,7 @@ Voice and tone are owned by DabAgents rule 07. This theme does not define them.
 - [x] Contrast measured in both themes.
 - [x] Composition and imagery constraints stated.
 - [x] No core token value is redefined.
+- [x] Header glass limited to the site header (DEC-015).
 - [x] Owner approved the accent choice (DEC-008, 2026-11-11).
 - [x] Depends on `core.md` v1.0.1; voice follows DabAgents rule 07.
 
