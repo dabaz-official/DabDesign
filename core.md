@@ -1,5 +1,5 @@
 ---
-version: "1.1.0"
+version: "1.2.0"
 name: "DabDesign Core"
 description: >
   The normative core contract for DabDesign sites: color ramps, a thin
@@ -344,9 +344,10 @@ containers:
 
 # DabDesign Core
 
-**Status:** 1.1.0, 2026-11-22. 1.0.0 was approved by the Owner 2026-11-14;
-1.1.0 adds the translucency tokens and DEC-015. Lean shared core; no normative
-component catalog at this version.
+**Status:** 1.2.0, 2026-11-22. 1.0.0 was approved by the Owner 2026-11-14;
+1.1.0 adds the translucency tokens and DEC-015; 1.2.0 amends the blur-animation
+rule (DEC-016). Lean shared core; no normative component catalog at this
+version.
 **Authority:** This file is the normative core contract. `GOVERNANCE.md` records
 principles, decisions, and the site-theme contract; `CHANGELOG.md` records
 released changes; `ROADMAP.md` is the post-1.0 plan; `DabDesign.md` is the
@@ -744,15 +745,26 @@ Rules:
    toasts, and floating controls. A full-bleed decorative glass panel is out of
    scope, consistent with DEC-003.
 6. **One blur layer.** Glass never nests. Inner content planes are opaque.
-7. **Blur is not animated.** Animate `opacity` and `transform` only; never
-   `backdrop-filter` or a blur radius. Blur stays off per-item in long lists and
-   off large scrolling areas.
+7. **Blur may animate only inside a warmed range.** A `backdrop-filter`
+   transition is allowed when all of these hold:
+   - only the blur radius changes; the tint stays at the core value (rule 8);
+   - the maximum radius in the range was painted once before the first
+     interaction — warm-up is part of the feature, not an optimization;
+   - one glass layer, chrome-sized: navigation, bars, sheets, popovers. Never
+     per item in a list, never a full-bleed scrolling surface;
+   - `duration-slow` at most, and nothing else animates with it;
+   - under `prefers-reduced-motion: reduce` the change is instant.
+
+   The first paint of a new filter value costs about 85–100ms on the measured
+   hardware; re-entering an unwarmed radius range can hitch again. Animating
+   `opacity` or `transform` instead stays valid and needs no warm-up.
 8. **The tint is core-fixed.** A site theme may choose which components use
    glass; it may not change the tint alpha. If a surface cannot pass at 72%, it
    does not carry that content on glass.
 
-This is DEC-015 (approved 2026-11-22). It withdraws the blanket glass ban in
-`DabDesign.md` §1 and leaves DEC-003's flat-at-rest default intact.
+This is DEC-015 (approved 2026-11-22), with rule 7 amended by DEC-016. It
+withdraws the blanket glass ban in `DabDesign.md` §1 and leaves DEC-003's
+flat-at-rest default intact.
 
 ## 7. Layout
 
@@ -824,7 +836,7 @@ variant), focused (ratified focus treatment, both themes), disabled (not
 opacity-only), selected (non-color cue), loading/error (layout-preserving,
 announced, error pairs with text).
 
-**Status at 1.1.0:** no per-component spec is normative in this repository.
+**Status at 1.2.0:** no per-component spec is normative in this repository.
 The archived component drafts and previews under `archive/` are not the current
 contract. A component contract is written only after a real site consumes it.
 The v1 pilot set is Button, Text input, and Card; add Dialog only if the pilot
@@ -847,8 +859,9 @@ treatment, game board/HUD and game-specific feedback, illustration and imagery.
    keyboard, and viewport checks are run by hand.
 5. No pilot evidence yet. The v1 pilot is the next step; no component is
    Adopted at 1.0.0.
-6. Glass (§6.1) has bounds, not measurements: the 72% floor is derived from the
-   black/white extremes, and nothing has yet been measured on a real backdrop.
+6. Glass (§6.1): the 72% floor is a bound derived from the black/white
+   extremes, not a measurement on real backdrops. Blur animation was measured on
+   one desktop GPU (DEC-016); mobile Safari and low-end GPUs are unmeasured.
 
 ## 12. Decisions
 

@@ -1,6 +1,6 @@
 # DabDesign Governance
 
-**Status:** 1.1.0, 2026-11-22. 1.0.0 was approved by the Owner 2026-11-14.
+**Status:** 1.2.0, 2026-11-22. 1.0.0 was approved by the Owner 2026-11-14.
 **Purpose:** principles, decision records, and the site-theme contract. It does
 not carry token values.
 **Normative core:** [`core.md`](core.md).
@@ -70,6 +70,7 @@ a standard, and neither may override `core.md`.
 | `DEC-013` | 2026-11-14 | Color values: the twelve Tailwind v4 hue ramps, the gray ramp, fill aliases, link-safe text steps, and functional mappings are carried forward from the previous color decision, effective 1.0.0 | The values were already frozen and verified; 1.0.0 changes ownership and naming, not the ramps | Superseded by DEC-014 |
 | `DEC-014` | 2026-11-15 | Ramps: replace the Tailwind v4 chromatic values with Tailwind CSS v3.4.17 values; the gray ramp, eleven steps, and white/black primitives are unchanged; regenerate fill aliases, link-safe text steps, and functional mappings | The Owner chose to unify on the v3 palette; 115 of 132 chromatic values differ from v4 | Approved (Owner) |
 | `DEC-015` | 2026-11-22 | Translucency: glass is an appearance variant available to every component, never a default; `core.md` §6.1 adds the `glass-*` tokens, a 72% tint floor that holds primary and secondary text at ≥4.5:1 over any backdrop, a mandatory opaque fallback, and performance limits; the blanket "no glassmorphism" in `DabDesign.md` §1 is withdrawn | The Owner wants the glass direction opened up rather than confined to a few surfaces, and design freedom is better served by a universal opt-in with a measured alpha floor than by a category ban; the accessibility gate stays intact because tertiary text and focusable controls move to an opaque content plane | Approved (Owner) |
+| `DEC-016` | 2026-11-22 | Amend `core.md` §6.1 rule 7: the blur radius may animate inside a range whose maximum was painted once before first interaction, at the fixed tint, on one chrome-sized layer, for `duration-slow` at most, instant under reduced motion; animating the tint alpha stays forbidden | Measured on Chromium 158 / ANGLE D3D11 / RTX 3060 Ti at 1264×805, DPR 1 and 2: blur 20→32px on a 64px bar and 32→44px on a 900×600 sheet held 165fps with 0.23–0.26ms of main-thread task per frame, against 0.20–0.21ms for a tint cross-fade; the first paint of a new radius cost 85–100ms and painting the maximum radius once removed it. Mobile Safari and low-end GPUs are unmeasured, so the area, layer, and duration limits stay | Approved (Owner) |
 
 **Status meanings:** Proposed — not yet reviewed; Approved — Owner accepted;
 Carried forward — inherited from an earlier decision without re-litigation;

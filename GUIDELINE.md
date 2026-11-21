@@ -1,6 +1,6 @@
 # Agent Guideline — Using DabDesign
 
-**Status:** 1.1.0, 2026-11-22.
+**Status:** 1.2.0, 2026-11-22.
 **Audience:** coding agents and contributors.
 **Normative:** [`core.md`](core.md) and [`GOVERNANCE.md`](GOVERNANCE.md). This
 file routes work; if it conflicts with either, they win.
@@ -198,7 +198,8 @@ Design-specific verification before handing off:
 - Keyboard operation, focus visibility, and the 44×44 target are verified.
 - A glass variant is checked with `backdrop-filter` disabled and with reduced
   transparency; both must land on an opaque surface, and focusable controls must
-  keep a 3:1 focus track.
+  keep a 3:1 focus track. If the blur animates, the maximum radius is painted
+  once before first interaction (`core.md` §6.1 rule 7).
 - The archived tree is not cited as the contract.
 
 ## 13. Common mistakes

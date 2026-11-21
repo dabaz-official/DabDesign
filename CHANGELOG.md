@@ -4,6 +4,21 @@ All notable changes to this repository are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 semantic versioning.
 
+## 1.2.0 — 2026-11-22
+
+### Added
+
+- `DEC-016`: a blur radius may animate inside a pre-warmed range at the fixed
+  tint, on one chrome-sized layer, for `duration-slow` at most.
+
+### Changed
+
+- `core.md` §6.1 rule 7 replaces "blur is not animated" with the warmed-range
+  rule. Animating the tint alpha remains forbidden, so the 72% contrast floor
+  still holds on every frame.
+- `ROADMAP.md` closes the `glass-tint-active` candidate; its alpha half is
+  rejected, and `GUIDELINE.md` §12 checks the warm-up.
+
 ## 1.1.0 — 2026-11-22
 
 ### Added
