@@ -4,6 +4,22 @@ All notable changes to this repository are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 semantic versioning.
 
+## 1.1.0 — 2026-11-22
+
+### Added
+
+- Personal-series header glass (DEC-015): the site header may use a 16px blur
+  with 1.8 saturation over a scrim of at least 82% of `color-background`, with
+  an opaque fallback for unsupported `backdrop-filter` and
+  `prefers-reduced-transparency`. Confined to the header; every other surface
+  stays opaque. Worst-case contrast on the composited scrim is 11.28:1 for
+  primary text, 6.52:1 for secondary and 4.92:1 for tertiary.
+
+### Changed
+
+- Repository, guideline and personal-series theme versions move to 1.1.0.
+  `core.md` stays at 1.0.1: no token or core rule changed.
+
 ## 1.0.1 — 2026-11-15
 
 ### Changed
